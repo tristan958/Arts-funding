@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SA Arts Funding Dashboard</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>South Africa Arts Funding Dashboard</h1>
+      <p class="subtitle">Live funding opportunities for arts organisations</p>
+      <p class="last-updated" id="lastUpdated"></p>
+    </div>
+  </header>
+
+  <main>
+    <!-- Stats Bar -->
+    <section class="stats-bar" id="statsBar">
+      <div class="stat-card">
+        <span class="stat-number" id="statTotal">0</span>
+        <span class="stat-label">Total Opportunities</span>
+      </div>
+      <div class="stat-card stat-open">
+        <span class="stat-number" id="statOpen">0</span>
+        <span class="stat-label">Open Now</span>
+      </div>
+      <div class="stat-card stat-closing">
+        <span class="stat-number" id="statClosingSoon">0</span>
+        <span class="stat-label">Closing Within 30 Days</span>
+      </div>
+      <div class="stat-card stat-closed">
+        <span class="stat-number" id="statClosed">0</span>
+        <span class="stat-label">Recently Closed</span>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+      <div class="filter-group">
+        <label for="filterType">Type</label>
+        <select id="filterType">
+          <option value="all">All Types</option>
+          <option value="grant">Grants</option>
+          <option value="tender">Tenders</option>
+          <option value="bursary">Bursaries</option>
+          <option value="call">Calls for Proposals</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filterStatus">Status</label>
+        <select id="filterStatus">
+          <option value="all">All</option>
+          <option value="open" selected>Open</option>
+          <option value="closed">Closed</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filterFunder">Funder</label>
+        <select id="filterFunder">
+          <option value="all">All Funders</option>
+        </select>
+      </div>
+      <div class="filter-group search-group">
+        <label for="searchInput">Search</label>
+        <input type="text" id="searchInput" placeholder="Search opportunities...">
+      </div>
+    </section>
+
+    <!-- Opportunities Grid -->
+    <section class="opportunities" id="opportunitiesGrid">
+      <p class="loading">Loading funding opportunities...</p>
+    </section>
+
+    <!-- Data Sources -->
+    <section class="sources">
+      <h2>Monitored Sources</h2>
+      <p>This dashboard aggregates funding data from the following organisations. Data is refreshed weekly.</p>
+      <div class="sources-grid" id="sourcesGrid"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data refreshed weekly via automated scraping. Last update: <span id="footerDate"></span></p>
+    <p>Always verify details on the official funder website before applying.</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
