@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-02-10",
+  "last_updated": "2026-02-16",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -41,13 +41,13 @@
   "opportunities": [
     {
       "id": "nac-annual-2026-2027",
-      "title": "NAC Annual Project Funding 2026\u20132027",
+      "title": "NAC Annual Project Funding 2026–2027",
       "funder": "National Arts Council (NAC)",
       "type": "grant",
       "status": "open",
       "deadline": "2026-03-13",
       "amount": "Up to R350,000",
-      "description": "Funding for individual arts practitioners, registered arts organisations and community art centres for the 2026\u20132027 financial year. Open to craft, dance, literature, music, theatre and musical theatre, visual arts, and multidiscipline arts.",
+      "description": "Funding for individual arts practitioners, registered arts organisations and community art centres for the 2026–2027 financial year. Open to craft, dance, literature, music, theatre and musical theatre, visual arts, and multidiscipline arts.",
       "eligibility": "South African individual arts practitioners, registered arts organisations and community art centres",
       "focus_areas": [
         "Social cohesion",
@@ -106,7 +106,7 @@
       "type": "grant",
       "status": "open",
       "deadline": "2026-05-15",
-      "amount": "Up to \u20ac25,000",
+      "amount": "Up to €25,000",
       "description": "Supports co-productions worldwide arising from collaborative and dialogical work processes between professional artists in music, dance, theater and performance.",
       "eligibility": "Professional artists in music, dance, theatre and performance collaborating internationally",
       "focus_areas": [
@@ -134,13 +134,13 @@
         "Intellectual property training",
         "Community impact"
       ],
-      "how_to_apply": "Applications closed for 2025\u20132026 cycle. Projects must be concluded by 31 March 2026.",
+      "how_to_apply": "Applications closed for 2025–2026 cycle. Projects must be concluded by 31 March 2026.",
       "url": "https://www.dsac.gov.za/Presidential%20Employment%20Stimulus%20Programme%20(PESP%206)",
       "date_added": "2026-02-10"
     },
     {
       "id": "nlc-arts-culture",
-      "title": "National Lotteries Commission \u2013 Arts and Culture Sector",
+      "title": "National Lotteries Commission – Arts and Culture Sector",
       "funder": "National Lotteries Commission (NLC)",
       "type": "grant",
       "status": "open",
@@ -271,6 +271,259 @@
       "how_to_apply": "Visit https://www.theafricanartstrust.org/funding-developing-arts-africa.php",
       "url": "https://www.theafricanartstrust.org/funding-developing-arts-africa.php",
       "date_added": "2026-02-10"
+    },
+    {
+      "id": "ae06c0ef8c97",
+      "title": "Open Calls In South Africa",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Open Calls In South Africa THE GPS 2026 JURY AND PROJECTS HAVE BEEN ANNOUNCED The GPS programme grants seed funding of up to R 100.000 per project to three artistic projects that are realised in rural and peri-urban parts of South Africa, Lesotho and Eswatini between February and November 2026. Â© M",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/kul/psg/g26.html",
+      "url": "https://www.goethe.de../../en/kul/kul/psg/g26.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "7c535a091ef6",
+      "title": "THE GPS 2026 JURY AND PROJECTS HAVE BEEN ANNOUNCED",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "THE GPS 2026 JURY AND PROJECTS HAVE BEEN ANNOUNCED The GPS programme grants seed funding of up to R 100.000 per project to three artistic projects that are realised in rural and peri-urban parts of South Africa, Lesotho and Eswatini between February and November 2026. Â© Mohla-Monene Â© Mohla-Monene",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/kul/psg/g26.html",
+      "url": "https://www.goethe.de../../en/kul/kul/psg/g26.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "52328c67cd78",
+      "title": "GOETHE-INSTITUT GALLERY 2026",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "GOETHE-INSTITUT GALLERY 2026 The Goethe-Institut Gallery Open Call is now closed. The Goethe-Institut in Johannesburg invited artists, curators and collectives to submit rough proposals for gallery interventions, exhibitions and experimental projects that spark debate which is reflective of the vari",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/kul/opc.html",
+      "url": "https://www.goethe.de../../en/kul/kul/opc.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "d969e3fb9052",
+      "title": "PLAYFUL OBSCURA",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "PLAYFUL OBSCURA The Playful Obscura Open Call is now closed. As part of the Goethe-Institut commissioned project, Games Connect AFRICA, A MAZE., Goethe-Institut, and the Node Eight Foundation announced an open call for the PLAYFUL OBSCURA - Arthouse Games Residency, a two-week artist residency that",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/mut/plo.html",
+      "url": "https://www.goethe.de../../en/kul/mut/plo.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "bbc0f75d5fc0",
+      "title": "Africa-Europe Partnerships For Culture",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Africa-Europe Partnerships For Culture TheAfrica-Europe Partnerships For Cultureis a 30Mio. EUR programme funded by the European Union and implemented by the Goethe-Institut, Expertise France, Institut Francais, UNESCO and EUNIC Global. It aims to re-shape cultural cooperation, exchange, co-creation",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/dis/aep.html",
+      "url": "https://www.goethe.de../../en/kul/dis/aep.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "c0429bb81f18",
+      "title": "Funded Projects",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Funded Projects LAPA PROJECT AND RESIDENCY SPACE A communal, experimental public project with a co-working office, reading room and residency. Â© Goethe-Institut Â© Goethe-Institut Goethe-Institut Project Space The \"Goethe-Institut Project Space\" supports artistic projects throughout South Africa. Â",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/kul/lap.html",
+      "url": "https://www.goethe.de../../en/kul/kul/lap.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "965628a0083c",
+      "title": "LAPA PROJECT AND RESIDENCY SPACE",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "LAPA PROJECT AND RESIDENCY SPACE A communal, experimental public project with a co-working office, reading room and residency. Â© Goethe-Institut Â© Goethe-Institut",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/kul/lap.html",
+      "url": "https://www.goethe.de../../en/kul/kul/lap.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "fe555ea2da3b",
+      "title": "Goethe-Institut Project Space",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Goethe-Institut Project Space The \"Goethe-Institut Project Space\" supports artistic projects throughout South Africa. Â© Tseliso Monaheng Â© Tseliso Monaheng",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/kul/psg.html",
+      "url": "https://www.goethe.de../../en/kul/kul/psg.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "19d8f5815a6e",
+      "title": "Henrike Grohs Art Award",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Henrike Grohs Art Award In memory of Henrike Grohs, the Goethe-Institut and the Grohs family have initiated a 20,000â¬ prize dedicated to artists living and working in Africa.",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/kul/hgs.html",
+      "url": "https://www.goethe.de../../en/kul/kul/hgs.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "66a0558988d1",
+      "title": "International Coproduction Fund",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "International Coproduction Fund With the ICF, we support co-productions worldwide that arise from collaborative and dialogical work processes between professional artists in the fields of music, dance, theater and performance. Â© Synaesthesik (Ginna Mora) Â© Synaesthesik (Ginna Mora)",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de/en/kul/foe/int.html?wt_sc=ikf",
+      "url": "https://www.goethe.de/en/kul/foe/int.html?wt_sc=ikf",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "6e5ed1527ee8",
+      "title": "Worldwide Funding Programs",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Worldwide Funding Programs Worldwide Arts funding and residencies The Goethe-Institut promotes art and culture in a variety of projects in Germany and abroad. You can search by genre, funding type and duration. Â© Unsplash/Matthieu Comoy Â© Unsplash/Matthieu Comoy Worldwide Awards and Funds With pri",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de/en/kul/foe.html",
+      "url": "https://www.goethe.de/en/kul/foe.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "c0c3833d4d86",
+      "title": "Worldwide Arts funding and residencies",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Worldwide Arts funding and residencies The Goethe-Institut promotes art and culture in a variety of projects in Germany and abroad. You can search by genre, funding type and duration. Â© Unsplash/Matthieu Comoy Â© Unsplash/Matthieu Comoy",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de/en/kul/foe.html",
+      "url": "https://www.goethe.de/en/kul/foe.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "369aada1ba0b",
+      "title": "Worldwide Awards and Funds",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Worldwide Awards and Funds With prizes and awards, the Goethe-Institut aims to honour outstanding cultural work and promotes international cultural exchange based on partnership and dialogue. Â© Loredana Rocca Â© Loredana Rocca",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de/en/kul/pre.html",
+      "url": "https://www.goethe.de/en/kul/pre.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "9d6319c8af6a",
+      "title": "Translation Programme",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Translation Programme Our translation funding programme supports the publication of books by German authors in other languages.",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/bib/uefo.html",
+      "url": "https://www.goethe.de../../en/bib/uefo.html",
+      "date_added": "2026-02-16"
+    },
+    {
+      "id": "671bc9caa8fc",
+      "title": "VANSA",
+      "funder": "VANSA / Various",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Varies",
+      "amount": "Varies",
+      "description": "VANSA > Arts Opportunities > Funding Expired: NEW CALL FOR THE PRESIDENTIAL EMPLOYMENT STIMULUS PROGRAMME (PESP 5) 2024 – 2025: NATIONAL ARTS COUNCIL 9th June 2024 Funding The PESP is a special government initiative geared towards employment creation for artists, creatives, heritage sector workers a",
+      "eligibility": "South African arts practitioners",
+      "focus_areas": [],
+      "how_to_apply": "https://vansa.co.za",
+      "url": "https://vansa.co.za",
+      "date_added": "2026-02-16"
     }
   ]
 }
