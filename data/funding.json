@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-16",
+  "last_updated": "2026-03-23",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -541,6 +541,23 @@
       "how_to_apply": "https://www.goethe.de../../en/kul/mut/plo.html",
       "url": "https://www.goethe.de../../en/kul/mut/plo.html",
       "date_added": "2026-02-23"
+    },
+    {
+      "id": "f25982ad6dea",
+      "title": "PLAYFUL OBSCURA (Second Edition)",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Open Call: 16 February â 13 March PLAYFUL OBSCURA (Second Edition) This call is now closed. Arthouse Games Residency Africa 2026 As part of the Goethe-Institut commissioned project, GamesConnect AFRICA, A MAZE., Goethe-Institut, and Leti Arts are pleased to announce an open call for the PLAYFUL OB",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de../../en/kul/mut/plo.html",
+      "url": "https://www.goethe.de../../en/kul/mut/plo.html",
+      "date_added": "2026-03-23"
     }
   ]
 }
