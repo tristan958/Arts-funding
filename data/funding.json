@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-30",
+  "last_updated": "2026-04-06",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -85,7 +85,7 @@
       "title": "Goethe-Institut Project Space (GPS) Grant 2026",
       "funder": "Goethe-Institut South Africa",
       "type": "grant",
-      "status": "open",
+      "status": "closed",
       "deadline": "2026-03-31",
       "amount": "Up to R100,000",
       "description": "Seed funding for artistic projects realised in rural and peri-urban parts of South Africa, Lesotho and Eswatini between February and November 2026. Three projects will be selected.",
@@ -202,7 +202,7 @@
       "title": "DSAC Bursary Programme 2026",
       "funder": "Department of Sport, Arts and Culture",
       "type": "bursary",
-      "status": "open",
+      "status": "closed",
       "deadline": "2026-03-31",
       "amount": "Full bursary (tuition, accommodation, books, stipend)",
       "description": "Financial support for eligible South African students pursuing studies in sport, arts, heritage, and culture. Available for both undergraduate and postgraduate students.",
