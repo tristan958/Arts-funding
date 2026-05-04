@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-27",
+  "last_updated": "2026-05-04",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -558,6 +558,23 @@
       "how_to_apply": "https://www.goethe.de../../en/kul/mut/plo.html",
       "url": "https://www.goethe.de../../en/kul/mut/plo.html",
       "date_added": "2026-03-23"
+    },
+    {
+      "id": "9d6b501b6457",
+      "title": "Dreaming New Worlds",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Rolling",
+      "amount": "Varies",
+      "description": "Dreaming New Worlds Dreaming New Worlds is a Pan-African art and technology initiative launched in 2023 to foster cross-disciplinary collaboration between artists, scientists, and creative technologists. The project supports practitioners interested in: â¢ African centered criticality and conceptua",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de/ins/ng/en/kul/sup/co9/dnw26/dnwoc.html",
+      "url": "https://www.goethe.de/ins/ng/en/kul/sup/co9/dnw26/dnwoc.html",
+      "date_added": "2026-05-04"
     }
   ]
 }
