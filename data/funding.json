@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-05-11",
+  "last_updated": "2026-05-18",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -104,7 +104,7 @@
       "title": "Goethe-Institut International Co-production Fund (ICF)",
       "funder": "Goethe-Institut",
       "type": "grant",
-      "status": "open",
+      "status": "closed",
       "deadline": "2026-05-15",
       "amount": "Up to €25,000",
       "description": "Supports co-productions worldwide arising from collaborative and dialogical work processes between professional artists in music, dance, theater and performance.",
