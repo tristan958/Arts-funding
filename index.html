@@ -89,6 +89,15 @@
       </button>
     </section>
 
+    <!-- ===================== SAVED VIEWS ===================== -->
+    <nav class="views" aria-label="Saved views">
+      <button class="view-chip is-active" data-view="all" type="button">All opportunities</button>
+      <button class="view-chip" data-view="vansa" type="button">VANSA</button>
+      <button class="view-chip" data-view="newmedia" type="button">New media &amp; podcast</button>
+      <button class="view-chip" data-view="capacity" type="button">Capacity building</button>
+      <button class="view-chip" data-view="experimental" type="button">Experimental &amp; spatial</button>
+    </nav>
+
     <!-- ===================== FILTERS ===================== -->
     <section class="controls" aria-label="Filter opportunities">
       <div class="field field--search">
@@ -103,9 +112,45 @@
         <select class="select" id="f-type">
           <option value="all">All types</option>
           <option value="grant">Grant</option>
-          <option value="tender">Tender</option>
           <option value="bursary">Bursary</option>
+          <option value="fellowship">Fellowship</option>
+          <option value="residency">Residency</option>
+          <option value="award">Award / prize</option>
           <option value="call">Call</option>
+          <option value="tender">Tender</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-discipline">Art form</label>
+        <select class="select" id="f-discipline">
+          <option value="all">All art forms</option>
+          <option value="visual-art">Visual art</option>
+          <option value="performing-arts">Performing arts</option>
+          <option value="music">Music</option>
+          <option value="film-screen">Film &amp; screen</option>
+          <option value="new-media-digital">New media &amp; digital</option>
+          <option value="podcast-audio">Podcast &amp; audio</option>
+          <option value="literature">Literature</option>
+          <option value="craft">Craft</option>
+          <option value="design">Design</option>
+          <option value="interdisciplinary">Interdisciplinary</option>
+          <option value="public-art">Public &amp; site-specific</option>
+          <option value="heritage">Heritage</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-purpose">Purpose</label>
+        <select class="select" id="f-purpose">
+          <option value="all">All purposes</option>
+          <option value="project">Project funding</option>
+          <option value="capacity-building">Capacity building</option>
+          <option value="bursary">Bursary / study</option>
+          <option value="residency">Residency</option>
+          <option value="mobility">Mobility / travel</option>
+          <option value="production">Production</option>
+          <option value="research">Research</option>
+          <option value="commission">Commission</option>
+          <option value="procurement">Tender / procurement</option>
         </select>
       </div>
       <div class="field">
