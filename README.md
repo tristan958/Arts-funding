@@ -4,9 +4,14 @@ A live dashboard tracking grants, tenders, bursaries and calls for proposals for
 
 ## How it works
 
-- **Dashboard** (`index.html`): Static HTML/CSS/JS page that reads from `data/funding.json` and renders filterable funding opportunities.
-- **Scraper** (`scraper/scrape.py`): Python script that fetches live data from key funding sources (NAC, DSAC, NLC, Goethe-Institut, VANSA) and merges it into the data file.
+- **Dashboard** (`index.html`): Static, dependency-free HTML/CSS/JS page that reads from `data/funding.json` and renders filterable, sortable funding opportunities. Features search, type/status/funder filters, sort, shareable filter URLs, light/dark mode and a responsive card grid.
+- **Data** (`data/funding.json`): The source of truth. It is **curated-first** — hand-written entries are authoritative and are never overwritten or removed by automation.
+- **Scraper** (`scraper/scrape.py`): Python script that discovers new opportunities from key funding sources (NAC, DSAC, Goethe-Institut, VANSA). It only *adds* auto-discovered entries (tagged `"auto": true`), and only candidates that pass strict quality gates — they must mention a funding keyword **and** carry a parseable deadline. Previous auto entries are replaced on every run, so noise can't accumulate. It also keeps every entry's open/closed status in sync with its deadline.
 - **Automation** (`.github/workflows/update-funding.yml`): GitHub Actions workflow runs the scraper every Monday at 08:00 SAST.
+
+### Data model
+
+Each opportunity in `data/funding.json` has: `id`, `title`, `funder`, `type` (`grant` \| `tender` \| `bursary` \| `call`), `status` (`open` \| `closed`), `deadline` (`YYYY-MM-DD`, `Rolling`, or `Varies…`), `amount`, `description`, `eligibility`, `focus_areas` (array), `how_to_apply`, `url`, `date_added`. Auto-discovered entries also carry `"auto": true`. To add a curated opportunity, append an object with a unique slug `id` (and no `auto` flag).
 
 ## Monitored sources
 
