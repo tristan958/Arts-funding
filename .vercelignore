@@ -8,3 +8,6 @@ requirements.txt
 *.py
 README.md
 .gitignore
+.claude/
+docs/
+data/candidates.json
