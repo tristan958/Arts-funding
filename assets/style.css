@@ -325,6 +325,21 @@ a { color: var(--gold-deep); text-underline-offset: 3px; }
 .stat--total .stat__num { color: var(--gold); }
 
 /* =========================================================================
+   SAVED VIEWS
+   ========================================================================= */
+.views { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.view-chip {
+  font-family: var(--font-text); font-size: 13px; font-weight: 600; letter-spacing: .01em;
+  color: var(--ink-2); background: var(--surface);
+  border: 1px solid var(--border-2); border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  transition: color var(--t-fast), border-color var(--t-fast), background var(--t-fast), transform var(--t-fast);
+}
+.view-chip:hover { border-color: var(--gold-bright); color: var(--ink); transform: translateY(-1px); }
+.view-chip.is-active { background: var(--ink); border-color: var(--ink); color: var(--surface); }
+:root[data-theme="dark"] .view-chip.is-active { background: var(--gold); border-color: var(--gold); color: #1a160a; }
+
+/* =========================================================================
    FILTER BAR
    ========================================================================= */
 .controls {
@@ -334,10 +349,12 @@ a { color: var(--gold-deep); text-underline-offset: 3px; }
   box-shadow: var(--shadow-1);
   padding: 14px;
   display: grid;
-  grid-template-columns: minmax(220px, 1.6fr) repeat(4, minmax(0,1fr)) auto;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
   gap: 10px;
   align-items: end;
 }
+.controls .field--search { grid-column: 1 / -1; }
+.controls .reset { grid-column: 1 / -1; justify-content: center; }
 .field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .field > label { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-3); padding-left: 2px; }
 

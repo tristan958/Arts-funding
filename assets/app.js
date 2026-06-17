@@ -62,7 +62,17 @@
   }
 
   /* ---------- state (URL-synced) ---------- */
-  const DEFAULTS = { q: "", type: "all", status: "open", funder: "all", sort: "deadline" };
+  const DEFAULTS = { q: "", type: "all", discipline: "all", purpose: "all", status: "open", funder: "all", sort: "deadline", view: "all" };
+
+  const intersects = (arr, set) => Array.isArray(arr) && arr.some((x) => set.includes(x));
+  // Curated "saved views" — each is a predicate over the enriched taxonomy fields.
+  const VIEW_PREDICATES = {
+    all: () => true,
+    vansa: (o) => (o.audiences || []).includes("vansa"),
+    newmedia: (o) => intersects(o.disciplines, ["new-media-digital", "podcast-audio", "film-screen"]),
+    capacity: (o) => (o.purpose || []).includes("capacity-building"),
+    experimental: (o) => intersects(o.tags, ["experimental", "site-specific", "spatial", "socially-engaged", "research-based", "public-space", "interdisciplinary"]),
+  };
 
   function readURL() {
     const p = new URLSearchParams(location.search);
@@ -88,6 +98,12 @@
     let out = DATA.filter((o) => {
       if (state.type !== "all" && o.type !== state.type) return false;
       if (state.funder !== "all" && o.funder !== state.funder) return false;
+
+      // Discipline matches the entry's disciplines, or entries marked "all-disciplines".
+      const disc = o.disciplines || [];
+      if (state.discipline !== "all" && !disc.includes(state.discipline) && !disc.includes("all-disciplines")) return false;
+      if (state.purpose !== "all" && !(o.purpose || []).includes(state.purpose)) return false;
+      if (state.view !== "all" && !(VIEW_PREDICATES[state.view] || VIEW_PREDICATES.all)(o)) return false;
 
       if (state.status === "open" && isClosed(o)) return false;
       if (state.status === "closed" && !isClosed(o)) return false;
@@ -313,9 +329,12 @@
   function syncControls() {
     $("#f-search").value = state.q;
     $("#f-type").value = state.type;
+    $("#f-discipline").value = state.discipline;
+    $("#f-purpose").value = state.purpose;
     $("#f-status").value = state.status;
     $("#f-funder").value = state.funder;
     $("#f-sort").value = state.sort;
+    $$(".view-chip").forEach((c) => c.classList.toggle("is-active", c.dataset.view === state.view));
   }
 
   function update(patch, replace) {
@@ -337,11 +356,22 @@
       clearTimeout(searchTimer);
       searchTimer = setTimeout(() => update({ q: v }, true), 220);
     });
-    $("#f-type").addEventListener("change",   (e) => update({ type: e.target.value }));
-    $("#f-status").addEventListener("change", (e) => update({ status: e.target.value }));
-    $("#f-funder").addEventListener("change", (e) => update({ funder: e.target.value }));
-    $("#f-sort").addEventListener("change",   (e) => update({ sort: e.target.value }));
+    $("#f-type").addEventListener("change",       (e) => update({ type: e.target.value }));
+    $("#f-discipline").addEventListener("change", (e) => update({ discipline: e.target.value }));
+    $("#f-purpose").addEventListener("change",    (e) => update({ purpose: e.target.value }));
+    $("#f-status").addEventListener("change",     (e) => update({ status: e.target.value }));
+    $("#f-funder").addEventListener("change",     (e) => update({ funder: e.target.value }));
+    $("#f-sort").addEventListener("change",       (e) => update({ sort: e.target.value }));
     $("#reset").addEventListener("click", resetAll);
+
+    // Saved views — each chip jumps to a curated lens across all statuses.
+    $$(".view-chip").forEach((chip) =>
+      chip.addEventListener("click", () => {
+        const v = chip.dataset.view;
+        if (v === "all") { resetAll(); return; }
+        update({ ...DEFAULTS, view: v, status: "all" });
+      })
+    );
 
     // stat cards → set status filter
     const map = { "stat-total": "all", "stat-open": "open", "stat-soon": "closing", "stat-closed": "closed" };
