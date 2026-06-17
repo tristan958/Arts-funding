@@ -1,0 +1,10 @@
+# This is a static site (index.html + assets/ + data/).
+# Keep server-side tooling out of the deployment so Vercel does not
+# misdetect a Python app and so the scraper/build files are not served.
+scraper/
+tools/
+.github/
+requirements.txt
+*.py
+README.md
+.gitignore
