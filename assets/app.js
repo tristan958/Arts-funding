@@ -195,7 +195,7 @@
       <div class="card__body">
         <div class="card__top">
           <div class="card__head">
-            <span class="card__type">${esc(o.type)}</span>
+            <span class="card__type card__type--${esc(o.type)}">${esc(o.type)}</span>
             <h3 class="card__title">${esc(o.title)}</h3>
             <div class="card__funder">${esc(o.funder)}</div>
           </div>

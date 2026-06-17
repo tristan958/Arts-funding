@@ -339,6 +339,17 @@ a { color: var(--gold-deep); text-underline-offset: 3px; }
 .view-chip.is-active { background: var(--ink); border-color: var(--ink); color: var(--surface); }
 :root[data-theme="dark"] .view-chip.is-active { background: var(--gold); border-color: var(--gold); color: #1a160a; }
 
+/* Per-view accent colours — each saved lens has its own identity */
+.view-chip[data-view="vansa"].is-active        { background:#f5f3ff; border-color:#7c3aed; color:#5b21b6; }
+.view-chip[data-view="newmedia"].is-active     { background:#ecfeff; border-color:#0891b2; color:#0e7490; }
+.view-chip[data-view="capacity"].is-active     { background:#eff6ff; border-color:#1d4ed8; color:#1e40af; }
+.view-chip[data-view="experimental"].is-active { background:#fff7ed; border-color:#ea580c; color:#9a3412; }
+
+:root[data-theme="dark"] .view-chip[data-view="vansa"].is-active        { background:#2e1065; border-color:#a78bfa; color:#c4b5fd; }
+:root[data-theme="dark"] .view-chip[data-view="newmedia"].is-active     { background:#083344; border-color:#22d3ee; color:#67e8f9; }
+:root[data-theme="dark"] .view-chip[data-view="capacity"].is-active     { background:#1e3a5f; border-color:#60a5fa; color:#93c5fd; }
+:root[data-theme="dark"] .view-chip[data-view="experimental"].is-active { background:#431407; border-color:#fb923c; color:#fdba74; }
+
 /* =========================================================================
    FILTER BAR
    ========================================================================= */
@@ -450,11 +461,25 @@ a { color: var(--gold-deep); text-underline-offset: 3px; }
 .card__top { display: flex; gap: 14px; justify-content: space-between; align-items: flex-start; }
 .card__head { min-width: 0; }
 .card__type {
-  font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--gold-deep);
+  font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gold-deep); background: var(--gold-wash); border: 1px solid var(--gold-wash-2);
   display: inline-block; margin-bottom: 6px;
+  padding: 3px 9px; border-radius: var(--radius-pill);
 }
-:root[data-theme="dark"] .card__type { color: var(--gold); }
+:root[data-theme="dark"] .card__type { color: var(--gold); background: var(--gold-wash); border-color: var(--gold-wash-2); }
+
+/* Type-specific colours — grant + award keep the gold default */
+.card__type--fellowship { background:#ede9fe; border-color:#ddd6fe; color:#5b21b6; }
+.card__type--residency  { background:#ffedd5; border-color:#fed7aa; color:#9a3412; }
+.card__type--bursary    { background:#dbeafe; border-color:#bfdbfe; color:#1e40af; }
+.card__type--call       { background:#e0f2fe; border-color:#bae6fd; color:#075985; }
+.card__type--tender     { background:#f3f4f6; border-color:#e5e7eb; color:#374151; }
+
+:root[data-theme="dark"] .card__type--fellowship { background:#2e1065; border-color:#4c1d95; color:#c4b5fd; }
+:root[data-theme="dark"] .card__type--residency  { background:#431407; border-color:#7c2d12; color:#fdba74; }
+:root[data-theme="dark"] .card__type--bursary    { background:#1e3a5f; border-color:#1e40af; color:#93c5fd; }
+:root[data-theme="dark"] .card__type--call       { background:#082f49; border-color:#0369a1; color:#7dd3fc; }
+:root[data-theme="dark"] .card__type--tender     { background:#1f2937; border-color:#374151; color:#9ca3af; }
 .card__title {
   font-family: var(--font-display);
   font-weight: 600;
@@ -530,7 +555,7 @@ a { color: var(--gold-deep); text-underline-offset: 3px; }
 .fact--deadline.is-open    { --dl: var(--open); }
 .fact--deadline.is-closed  { --dl: var(--closed); }
 
-.amount__v { font-family: var(--font-display); font-weight: 700; font-size: 21px; line-height: 1.05; color: var(--ink); text-wrap: balance; }
+.amount__v { font-family: var(--font-display); font-weight: 700; font-size: 21px; line-height: 1.05; color: var(--gold); text-wrap: balance; }
 
 /* collapsible */
 .more { border-top: 1px solid var(--border); margin-top: 2px; }
