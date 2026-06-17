@@ -1,0 +1,55 @@
+# Seed sources for the weekly funding-discovery routine (skill: discover-funding).
+# Aggregators list many calls from many funders; funders post their own calls.
+# Keep this list curated — add/remove as sources prove useful or go stale.
+
+aggregators:
+  - name: VANSA Arts Opportunities
+    url: https://vansa.co.za/arts-opportunities/
+    note: Most SA-focused; visual arts. Primary source.
+  - name: ART AFRICA Magazine
+    url: https://artafricamagazine.org/
+    note: Pan-African contemporary art open calls/prizes/residencies.
+  - name: Music In Africa — Opportunities
+    url: https://www.musicinafrica.net/opportunities
+    note: High-volume, dated; music-led but broader arts.
+  - name: On the Move — Africa
+    url: https://on-the-move.org/regions/africa
+    note: Cultural mobility funding; filter to Africa/SA.
+  - name: On the Move — South Africa
+    url: https://on-the-move.org/regions/south-africa
+  - name: Res Artis — Open Calls
+    url: https://resartis.org/open-calls/
+    note: Residencies worldwide; filter for SA/Africa.
+  - name: TransArtists — Open Calls
+    url: https://www.transartists.org/en/other-open-calls
+    note: Residencies + "Funding in Africa" guide.
+  - name: Opportunity Desk — Grants
+    url: https://opportunitydesk.org/category/grants/
+    note: Broad; needs arts/culture keyword filtering.
+
+funders:
+  - name: Electric South
+    url: https://electricsouth.org
+    note: VR/AR/XR & immersive new media.
+  - name: National Film & Video Foundation (NFVF)
+    url: https://www.nfvf.co.za
+  - name: Pro Helvetia Johannesburg
+    url: https://johannesburg.prohelvetia.org
+  - name: Art Moves Africa
+    url: https://artmovesafrica.org
+  - name: Prince Claus Fund
+    url: https://princeclausfund.nl/awards-and-programmes
+  - name: Africa No Filter
+    url: https://africanofilter.org/our-grants
+  - name: Pulitzer Center
+    url: https://pulitzercenter.org/grants-fellowships
+  - name: Durban FilmMart Institute
+    url: https://durbanfilmmart.co.za
+  - name: Institute for Creative Arts (ICA), UCT
+    url: https://humanities.uct.ac.za/ica
+
+# Notes for the routine:
+# - Several of these (Mophradat, ArtConnect, VANSA, On the Move, Res Artis, Music In Africa)
+#   block generic bot user-agents; prefer their RSS/sitemap, else skip + flag for manual check.
+# - Time-sensitive examples seen during research: Doc Society Climate Story Fund,
+#   Future Generation Art Prize — always confirm the live deadline before proposing as "open".
