@@ -1,375 +1,415 @@
-(() => {
+/* ===========================================================================
+   SA ARTS FUNDING DASHBOARD — app.js
+   Plain ES — no framework, no build. Fetches data/funding.json.
+   =========================================================================== */
+(function () {
   "use strict";
 
   const DATA_URL = "data/funding.json";
-  const ROLLING = new Set(["Rolling", "Varies", "Varies per tender"]);
 
-  /** @type {Array<Object>} */
-  let allOpportunities = [];
-  let sources = [];
-  // Cache of id -> days-until-deadline so we don't re-parse dates on every sort/filter.
-  const daysCache = new Map();
-
-  const els = {};
-  const FILTER_IDS = ["filterType", "filterStatus", "filterFunder", "filterSort", "searchInput"];
-
-  // --- Helpers ---------------------------------------------------------------
-
-  /** Escape text destined for innerHTML. Data is third-party (scraped) so this is required. */
-  function esc(value) {
-    return String(value ?? "")
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#39;");
-  }
-
-  function isRolling(dateStr) {
-    return !dateStr || ROLLING.has(dateStr) || dateStr.startsWith("Varies") || dateStr.startsWith("Rolling");
-  }
-
-  function daysUntil(opp) {
-    if (daysCache.has(opp.id)) return daysCache.get(opp.id);
-    let result = null;
-    if (!isRolling(opp.deadline)) {
-      const deadline = new Date(opp.deadline + "T23:59:59");
-      if (!Number.isNaN(deadline.getTime())) {
-        result = Math.ceil((deadline - Date.now()) / 86400000);
-      }
+  /* ---------- tiny helpers ---------- */
+  const $  = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const el = (tag, attrs = {}, html) => {
+    const n = document.createElement(tag);
+    for (const k in attrs) {
+      if (k === "class") n.className = attrs[k];
+      else if (attrs[k] != null) n.setAttribute(k, attrs[k]);
     }
-    daysCache.set(opp.id, result);
-    return result;
-  }
-
-  function formatDate(dateStr) {
-    if (isRolling(dateStr)) return dateStr || "N/A";
-    const d = new Date(dateStr + "T00:00:00");
-    if (Number.isNaN(d.getTime())) return dateStr;
-    return d.toLocaleDateString("en-ZA", { day: "numeric", month: "long", year: "numeric" });
-  }
-
-  /** Returns { text, level } for a deadline pill, or null when nothing useful to show. */
-  function deadlineInfo(opp) {
-    if (isRolling(opp.deadline)) return { text: opp.deadline || "Rolling", level: "rolling" };
-    const days = daysUntil(opp);
-    if (days === null) return null;
-    if (days < 0) return { text: "Closed", level: "passed" };
-    if (days === 0) return { text: "Closes today", level: "urgent" };
-    if (days <= 7) return { text: `${days} day${days > 1 ? "s" : ""} left`, level: "urgent" };
-    if (days <= 30) return { text: `${days} days left`, level: "soon" };
-    return { text: `${days} days left`, level: "open" };
-  }
-
-  function isClosingSoon(opp) {
-    if (opp.status !== "open") return false;
-    const d = daysUntil(opp);
-    return d !== null && d >= 0 && d <= 30;
-  }
-
-  // --- Rendering -------------------------------------------------------------
-
-  function renderStats() {
-    const open = allOpportunities.filter((o) => o.status === "open");
-    els.statTotal.textContent = allOpportunities.length;
-    els.statOpen.textContent = open.length;
-    els.statClosingSoon.textContent = open.filter(isClosingSoon).length;
-    els.statClosed.textContent = allOpportunities.filter((o) => o.status === "closed").length;
-  }
-
-  function cardHTML(opp) {
-    const dl = deadlineInfo(opp);
-    const tags = (opp.focus_areas || [])
-      .map((f) => `<li class="tag">${esc(f)}</li>`)
-      .join("");
-
-    const more = (opp.eligibility || opp.how_to_apply)
-      ? `<details class="card-more">
-           <summary>Eligibility &amp; how to apply</summary>
-           ${opp.eligibility ? `<p><strong>Eligibility:</strong> ${esc(opp.eligibility)}</p>` : ""}
-           ${opp.how_to_apply ? `<p><strong>How to apply:</strong> ${esc(opp.how_to_apply)}</p>` : ""}
-         </details>`
-      : "";
-
-    return `
-      <article class="card status-${esc(opp.status)}">
-        <div class="card-head">
-          <div class="card-headings">
-            <h3 class="card-title">${esc(opp.title)}</h3>
-            <p class="card-funder">${esc(opp.funder)}</p>
-          </div>
-          <div class="card-badges">
-            <span class="badge badge-type">${esc(opp.type)}</span>
-            <span class="badge badge-${esc(opp.status)}">${esc(opp.status)}</span>
-          </div>
-        </div>
-        <p class="card-desc">${esc(opp.description)}</p>
-        ${tags ? `<ul class="card-tags">${tags}</ul>` : ""}
-        <dl class="card-facts">
-          <div class="fact">
-            <dt>Deadline</dt>
-            <dd>${esc(formatDate(opp.deadline))}${dl ? ` <span class="pill pill-${dl.level}">${esc(dl.text)}</span>` : ""}</dd>
-          </div>
-          <div class="fact">
-            <dt>Amount</dt>
-            <dd>${esc(opp.amount)}</dd>
-          </div>
-        </dl>
-        ${more}
-        <div class="card-actions">
-          <a href="${esc(opp.url)}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            View details <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-      </article>`;
-  }
-
-  function sortOpps(opps) {
-    const mode = els.filterSort.value;
-    const copy = [...opps];
-    if (mode === "title") return copy.sort((a, b) => a.title.localeCompare(b.title));
-    if (mode === "funder") return copy.sort((a, b) => a.funder.localeCompare(b.funder) || a.title.localeCompare(b.title));
-    if (mode === "added") return copy.sort((a, b) => (b.date_added || "").localeCompare(a.date_added || ""));
-    // default: deadline — open first, soonest deadline first, rolling/closed last
-    return copy.sort((a, b) => {
-      if (a.status !== b.status) return a.status === "open" ? -1 : 1;
-      const da = daysUntil(a);
-      const db = daysUntil(b);
-      if (da === null && db === null) return 0;
-      if (da === null) return 1;
-      if (db === null) return -1;
-      return da - db;
-    });
-  }
-
-  function renderGrid(opps) {
-    if (opps.length === 0) {
-      els.grid.innerHTML = `
-        <div class="empty-state">
-          <p class="empty-title">No opportunities match your filters</p>
-          <button class="btn btn-primary" type="button" id="emptyReset">Clear filters</button>
-        </div>`;
-      document.getElementById("emptyReset").addEventListener("click", resetFilters);
-      return;
-    }
-    els.grid.innerHTML = sortOpps(opps).map(cardHTML).join("");
-  }
-
-  function renderSources() {
-    els.sourcesGrid.innerHTML = sources
-      .map(
-        (s) =>
-          `<a class="source-card" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.name)}</a>`
-      )
-      .join("");
-  }
-
-  function populateFunderFilter() {
-    const funders = [...new Set(allOpportunities.map((o) => o.funder))].sort((a, b) => a.localeCompare(b));
-    els.filterFunder.append(
-      ...funders.map((f) => new Option(f, f))
+    if (html != null) n.innerHTML = html;
+    return n;
+  };
+  const esc = (s) =>
+    String(s ?? "").replace(/[&<>"']/g, (c) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])
     );
+
+  const TODAY = startOfDay(new Date());
+  function startOfDay(d) { const x = new Date(d); x.setHours(0, 0, 0, 0); return x; }
+
+  /* ---------- deadline math ---------- */
+  // returns { kind, daysLeft, dateLabel, word } where kind drives all urgency styling.
+  // Handles real dates plus free-text "Rolling…" / "Varies…" deadlines.
+  function deadlineInfo(opp) {
+    const raw = opp.deadline;
+    if (!raw || /^rolling/i.test(raw)) return { kind: "rolling", word: "Rolling" };
+    if (/^varies/i.test(raw)) return { kind: "varies", word: "Varies" };
+
+    const d = startOfDay(new Date(raw));
+    if (isNaN(d)) return { kind: "varies", word: "Varies" };
+
+    const days = Math.round((d - TODAY) / 86400000);
+    const dateLabel = d.toLocaleDateString("en-ZA", { day: "numeric", month: "short", year: "numeric" });
+
+    if (opp.status === "closed" || days < 0)
+      return { kind: "closed", word: "Closed", dateLabel, daysLeft: days };
+    if (days === 0) return { kind: "urgent", word: "Today", dateLabel, daysLeft: 0 };
+    if (days <= 7)  return { kind: "urgent", daysLeft: days, dateLabel };
+    if (days <= 30) return { kind: "soon",   daysLeft: days, dateLabel };
+    return { kind: "open", daysLeft: days, dateLabel };
   }
 
-  // --- Filtering -------------------------------------------------------------
+  // is this opp effectively closed (status OR past deadline)?
+  function isClosed(opp) {
+    const i = deadlineInfo(opp);
+    return opp.status === "closed" || i.kind === "closed";
+  }
+  // open AND within 30 days (incl. today)
+  function isClosingSoon(opp) {
+    if (isClosed(opp)) return false;
+    const i = deadlineInfo(opp);
+    return i.kind === "urgent" || i.kind === "soon";
+  }
 
-  function getFiltered() {
-    const type = els.filterType.value;
-    const status = els.filterStatus.value;
-    const funder = els.filterFunder.value;
-    const search = els.searchInput.value.toLowerCase().trim();
+  /* ---------- state (URL-synced) ---------- */
+  const DEFAULTS = { q: "", type: "all", status: "open", funder: "all", sort: "deadline" };
 
-    return allOpportunities.filter((o) => {
-      if (type !== "all" && o.type !== type) return false;
-      if (status === "closing") {
-        if (!isClosingSoon(o)) return false;
-      } else if (status !== "all" && o.status !== status) {
-        return false;
-      }
-      if (funder !== "all" && o.funder !== funder) return false;
-      if (search) {
-        const haystack = `${o.title} ${o.funder} ${o.description} ${(o.focus_areas || []).join(" ")}`.toLowerCase();
-        if (!haystack.includes(search)) return false;
+  function readURL() {
+    const p = new URLSearchParams(location.search);
+    const s = { ...DEFAULTS };
+    for (const k in DEFAULTS) if (p.has(k)) s[k] = p.get(k);
+    return s;
+  }
+  function writeURL(s, replace) {
+    const p = new URLSearchParams();
+    for (const k in DEFAULTS) if (s[k] !== DEFAULTS[k]) p.set(k, s[k]);
+    const url = location.pathname + (p.toString() ? "?" + p.toString() : "");
+    history[replace ? "replaceState" : "pushState"]({}, "", url);
+  }
+
+  let state = readURL();
+  let DATA = [];
+  let SOURCES = [];
+  let LAST_UPDATED = "";
+
+  /* ---------- filtering + sorting ---------- */
+  function apply() {
+    const q = state.q.trim().toLowerCase();
+    let out = DATA.filter((o) => {
+      if (state.type !== "all" && o.type !== state.type) return false;
+      if (state.funder !== "all" && o.funder !== state.funder) return false;
+
+      if (state.status === "open" && isClosed(o)) return false;
+      if (state.status === "closed" && !isClosed(o)) return false;
+      if (state.status === "closing" && !isClosingSoon(o)) return false;
+
+      if (q) {
+        const hay = [o.title, o.funder, o.description, (o.focus_areas || []).join(" "), o.type]
+          .join(" ").toLowerCase();
+        if (!hay.includes(q)) return false;
       }
       return true;
     });
-  }
 
-  function applyFilters() {
-    const filtered = getFiltered();
-    renderGrid(filtered);
-    els.resultCount.textContent =
-      `Showing ${filtered.length} of ${allOpportunities.length} opportunities`;
-    syncStatCards();
-    toggleResetButton();
-    saveStateToURL();
-  }
-
-  function syncStatCards() {
-    const active = els.filterStatus.value;
-    els.statCards.forEach((card) => {
-      card.classList.toggle("is-active", card.dataset.status === active);
+    out.sort((a, b) => {
+      switch (state.sort) {
+        case "added":   return new Date(b.date_added) - new Date(a.date_added);
+        case "title":   return a.title.localeCompare(b.title);
+        case "funder":  return a.funder.localeCompare(b.funder) || a.title.localeCompare(b.title);
+        case "deadline":
+        default: {
+          // soonest real deadline first; rolling/varies after dated; closed last
+          const rank = (o) => {
+            const i = deadlineInfo(o);
+            if (i.kind === "closed") return [3, 0];
+            if (i.kind === "rolling" || i.kind === "varies") return [2, 0];
+            return [1, i.daysLeft];
+          };
+          const ra = rank(a), rb = rank(b);
+          return ra[0] - rb[0] || ra[1] - rb[1];
+        }
+      }
     });
+    return out;
   }
 
-  // --- Filter state: defaults, reset, URL sync -------------------------------
-
-  const DEFAULTS = { type: "all", status: "open", funder: "all", sort: "deadline", q: "" };
-
-  function currentState() {
+  /* ---------- stat counts (always over the full dataset) ---------- */
+  function counts() {
     return {
-      type: els.filterType.value,
-      status: els.filterStatus.value,
-      funder: els.filterFunder.value,
-      sort: els.filterSort.value,
-      q: els.searchInput.value.trim(),
+      total: DATA.length,
+      open: DATA.filter((o) => !isClosed(o)).length,
+      soon: DATA.filter(isClosingSoon).length,
+      closed: DATA.filter(isClosed).length,
     };
   }
 
-  function toggleResetButton() {
-    const s = currentState();
-    const changed = Object.keys(DEFAULTS).some((k) => s[k] !== DEFAULTS[k]);
-    els.resetFilters.hidden = !changed;
+  /* ---------- card render ---------- */
+  const ARROW = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11L11 5M11 5H6M11 5V10"/></svg>';
+  const ARROW_SRC = '<svg class="source__arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 11L11 5M11 5H6M11 5V10"/></svg>';
+  const CHEV  = '<svg class="chev" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l4 4 4-4"/></svg>';
+
+  function cardEl(o) {
+    const di = deadlineInfo(o);
+    const closed = isClosed(o);
+    const accentClass =
+      closed ? "card--closed"
+      : di.kind === "urgent" ? "card--urgent"
+      : di.kind === "soon" ? "card--closing"
+      : "card--open";
+
+    const card = el("article", { class: "card " + accentClass });
+
+    // deadline cell inner
+    let dlInner;
+    if (di.kind === "rolling" || di.kind === "varies") {
+      dlInner = `<div class="deadline__word">${esc(di.word)}</div>
+                 <div class="deadline__date">Apply anytime</div>`;
+    } else if (di.kind === "closed") {
+      dlInner = `<div class="deadline__word">Closed</div>
+                 <div class="deadline__date">${esc(di.dateLabel || "")}</div>`;
+    } else if (di.word === "Today") {
+      dlInner = `<div class="deadline__word">Today</div>
+                 <div class="deadline__date">${esc(di.dateLabel)}</div>`;
+    } else {
+      dlInner = `<div class="deadline"><span class="deadline__num">${di.daysLeft}</span><span class="deadline__unit">${di.daysLeft === 1 ? "day" : "days"} left</span></div>
+                 <div class="deadline__date">${esc(di.dateLabel)}</div>`;
+    }
+    const dlStateClass =
+      di.kind === "urgent" ? "is-urgent"
+      : di.kind === "soon" ? "is-soon"
+      : di.kind === "closed" ? "is-closed"
+      : (di.kind === "open" ? "is-open" : "");
+
+    const tags = (o.focus_areas || [])
+      .slice(0, 4)
+      .map((t) => `<span class="tag">${esc(t)}</span>`)
+      .join("");
+
+    card.innerHTML = `
+      <div class="card__body">
+        <div class="card__top">
+          <div class="card__head">
+            <span class="card__type">${esc(o.type)}</span>
+            <h3 class="card__title">${esc(o.title)}</h3>
+            <div class="card__funder">${esc(o.funder)}</div>
+          </div>
+          <span class="badge ${closed ? "badge--closed" : "badge--open"}">${closed ? "Closed" : "Open"}</span>
+        </div>
+
+        <p class="card__desc">${esc(o.description)}</p>
+
+        ${tags ? `<div class="tags">${tags}</div>` : ""}
+
+        <div class="facts">
+          <div class="fact fact--deadline ${dlStateClass}">
+            <div class="fact__k">Deadline</div>
+            ${dlInner}
+          </div>
+          <div class="fact">
+            <div class="fact__k">Amount</div>
+            <div class="amount__v">${esc(o.amount || "—")}</div>
+          </div>
+        </div>
+      </div>
+
+      <details class="more">
+        <summary>Eligibility &amp; how to apply ${CHEV}</summary>
+        <div class="more__inner">
+          <div class="more__block">
+            <h4>Eligibility</h4>
+            <p>${esc(o.eligibility || "See funder site for details.")}</p>
+          </div>
+          <div class="more__block">
+            <h4>How to apply</h4>
+            <p>${esc(o.how_to_apply || "See funder site for details.")}</p>
+          </div>
+        </div>
+      </details>
+
+      <div class="card__cta">
+        <a class="btn-view" href="${esc(o.url)}" target="_blank" rel="noopener noreferrer">
+          View details ${ARROW}
+        </a>
+      </div>`;
+    return card;
   }
 
-  function resetFilters() {
-    els.filterType.value = DEFAULTS.type;
-    els.filterStatus.value = DEFAULTS.status;
-    els.filterFunder.value = DEFAULTS.funder;
-    els.filterSort.value = DEFAULTS.sort;
-    els.searchInput.value = DEFAULTS.q;
-    applyFilters();
+  /* ---------- skeletons ---------- */
+  function skeletons(n) {
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < n; i++) {
+      frag.appendChild(el("div", { class: "skel-card", "aria-hidden": "true" },
+        `<div class="shimmer l-type"></div>
+         <div class="shimmer l-title"></div>
+         <div class="shimmer l-sub"></div>
+         <div class="shimmer l-text"></div>
+         <div class="shimmer l-band"></div>`));
+    }
+    return frag;
   }
 
-  function saveStateToURL() {
-    const s = currentState();
-    const params = new URLSearchParams();
-    Object.keys(DEFAULTS).forEach((k) => {
-      if (s[k] && s[k] !== DEFAULTS[k]) params.set(k, s[k]);
-    });
-    const qs = params.toString();
-    history.replaceState(null, "", qs ? `?${qs}` : location.pathname);
+  /* ---------- DOM refs ---------- */
+  const grid = $("#grid");
+  const resultCount = $("#result-count");
+
+  const DIA = '<svg viewBox="0 0 56 56" fill="none"><path d="M28 4 52 28 28 52 4 28Z" stroke="currentColor" stroke-width="2.5"/><path d="M28 18 38 28 28 38 18 28Z" fill="currentColor"/></svg>';
+
+  /* ---------- render grid + states ---------- */
+  function renderResults() {
+    const list = apply();
+    grid.innerHTML = "";
+
+    if (list.length === 0) {
+      grid.appendChild(el("div", { class: "state" },
+        `<div class="state__emblem">${DIA}</div>
+         <h3>No opportunities match</h3>
+         <p>Try widening your filters — switch Status to “All”, or clear your search.</p>
+         <button class="btn-line" id="clear-filters" type="button">Clear all filters</button>`));
+      $("#clear-filters").addEventListener("click", resetAll);
+    } else {
+      const frag = document.createDocumentFragment();
+      list.forEach((o) => frag.appendChild(cardEl(o)));
+      grid.appendChild(frag);
+    }
+
+    resultCount.innerHTML = `Showing <b>${list.length}</b> of ${DATA.length} opportunities`;
+    syncControls();
+    renderStats();
   }
 
-  function loadStateFromURL() {
-    const p = new URLSearchParams(location.search);
-    if (p.has("type")) els.filterType.value = p.get("type");
-    if (p.has("status")) els.filterStatus.value = p.get("status");
-    if (p.has("funder")) els.filterFunder.value = p.get("funder");
-    if (p.has("sort")) els.filterSort.value = p.get("sort");
-    if (p.has("q")) els.searchInput.value = p.get("q");
+  function renderError(message) {
+    grid.setAttribute("aria-busy", "false");
+    grid.innerHTML = "";
+    grid.appendChild(el("div", { class: "state state--error" },
+      `<div class="state__emblem">${DIA}</div>
+       <h3>Couldn’t load opportunities</h3>
+       <p>${esc(message || "Something went wrong fetching the latest data. Please try again.")}</p>
+       <button class="btn-line" id="retry" type="button">Retry</button>`));
+    $("#retry").addEventListener("click", boot);
   }
 
-  // --- Theme -----------------------------------------------------------------
+  /* ---------- stats ---------- */
+  function renderStats() {
+    const c = counts();
+    $("#stat-total .stat__num").textContent = c.total;
+    $("#stat-open .stat__num").textContent = c.open;
+    $("#stat-soon .stat__num").textContent = c.soon;
+    $("#stat-closed .stat__num").textContent = c.closed;
 
-  function initTheme() {
-    const stored = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setTheme(stored || (prefersDark ? "dark" : "light"));
-    els.themeToggle.addEventListener("click", () => {
-      setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
-    });
+    // pressed reflects current status filter
+    const map = { all: "stat-total", open: "stat-open", closing: "stat-soon", closed: "stat-closed" };
+    $$(".stat").forEach((s) => s.setAttribute("aria-pressed", s.id === map[state.status] ? "true" : "false"));
   }
 
-  function setTheme(theme) {
-    document.documentElement.dataset.theme = theme;
-    els.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
-    localStorage.setItem("theme", theme);
-  }
-
-  // --- Init ------------------------------------------------------------------
-
-  function debounce(fn, ms) {
-    let t;
-    return (...args) => {
-      clearTimeout(t);
-      t = setTimeout(() => fn(...args), ms);
-    };
-  }
-
-  function showSkeletons() {
-    els.grid.innerHTML = Array.from({ length: 6 }, () =>
-      `<div class="card card-skeleton" aria-hidden="true">
-         <div class="sk sk-line sk-title"></div>
-         <div class="sk sk-line sk-sub"></div>
-         <div class="sk sk-block"></div>
-         <div class="sk sk-line"></div>
-       </div>`
+  /* ---------- monitored sources (from data.sources) ---------- */
+  function renderSources() {
+    const wrap = $("#sources-grid");
+    if (!wrap) return;
+    wrap.innerHTML = SOURCES.map((s) =>
+      `<a class="source" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">` +
+      `<span class="source__dia" aria-hidden="true"></span>` +
+      `<span class="source__name">${esc(s.name)}</span>${ARROW_SRC}</a>`
     ).join("");
   }
 
-  function showError(message) {
-    els.grid.setAttribute("aria-busy", "false");
-    els.grid.innerHTML = `
-      <div class="empty-state">
-        <p class="empty-title">Couldn't load funding data</p>
-        <p class="empty-sub">${esc(message)}</p>
-        <button class="btn btn-primary" type="button" id="retryBtn">Try again</button>
-      </div>`;
-    document.getElementById("retryBtn").addEventListener("click", load);
+  /* ---------- controls binding ---------- */
+  function buildSelectOptions() {
+    const funders = [...new Set(DATA.map((o) => o.funder))].sort((a, b) => a.localeCompare(b));
+    const fSel = $("#f-funder");
+    fSel.innerHTML = `<option value="all">All funders</option>` +
+      funders.map((f) => `<option value="${esc(f)}">${esc(f)}</option>`).join("");
   }
 
-  async function load() {
-    showSkeletons();
-    els.grid.setAttribute("aria-busy", "true");
+  function syncControls() {
+    $("#f-search").value = state.q;
+    $("#f-type").value = state.type;
+    $("#f-status").value = state.status;
+    $("#f-funder").value = state.funder;
+    $("#f-sort").value = state.sort;
+  }
+
+  function update(patch, replace) {
+    state = { ...state, ...patch };
+    writeURL(state, replace);
+    renderResults();
+  }
+
+  function resetAll() {
+    state = { ...DEFAULTS };
+    writeURL(state, false);
+    renderResults();
+  }
+
+  let searchTimer = null;
+  function bindControls() {
+    $("#f-search").addEventListener("input", (e) => {
+      const v = e.target.value;
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => update({ q: v }, true), 220);
+    });
+    $("#f-type").addEventListener("change",   (e) => update({ type: e.target.value }));
+    $("#f-status").addEventListener("change", (e) => update({ status: e.target.value }));
+    $("#f-funder").addEventListener("change", (e) => update({ funder: e.target.value }));
+    $("#f-sort").addEventListener("change",   (e) => update({ sort: e.target.value }));
+    $("#reset").addEventListener("click", resetAll);
+
+    // stat cards → set status filter
+    const map = { "stat-total": "all", "stat-open": "open", "stat-soon": "closing", "stat-closed": "closed" };
+    $$(".stat").forEach((s) =>
+      s.addEventListener("click", () => update({ status: map[s.id] }))
+    );
+
+    // back/forward
+    window.addEventListener("popstate", () => { state = readURL(); renderResults(); });
+  }
+
+  /* ---------- theme ---------- */
+  function initTheme() {
+    const saved = localStorage.getItem("safd-theme");
+    const sysDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const theme = saved || (sysDark ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+    const btn = $("#theme-toggle");
+    btn.setAttribute("aria-pressed", theme === "dark");
+    btn.addEventListener("click", () => {
+      const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      btn.setAttribute("aria-pressed", next === "dark");
+      try { localStorage.setItem("safd-theme", next); } catch (e) {}
+    });
+  }
+
+  /* ---------- updated date (from data.last_updated) ---------- */
+  function initUpdated() {
+    const node = $("#updated-date");
+    if (!node || !LAST_UPDATED) return;
+    const d = startOfDay(new Date(LAST_UPDATED));
+    node.textContent = isNaN(d)
+      ? LAST_UPDATED
+      : d.toLocaleDateString("en-ZA", { day: "numeric", month: "long", year: "numeric" });
+  }
+
+  /* ---------- boot: skeleton → fetch → content ---------- */
+  async function boot() {
+    grid.setAttribute("aria-busy", "true");
+    grid.innerHTML = "";
+    grid.appendChild(skeletons(6));
+    resultCount.textContent = "Loading opportunities…";
+
     try {
       const resp = await fetch(DATA_URL, { cache: "no-cache" });
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      if (!resp.ok) throw new Error("HTTP " + resp.status);
       const data = await resp.json();
 
-      allOpportunities = data.opportunities || [];
-      sources = data.sources || [];
-      daysCache.clear();
+      DATA = (data.opportunities || []).slice();
+      SOURCES = data.sources || [];
+      LAST_UPDATED = data.last_updated || "";
 
-      els.lastUpdated.textContent = data.last_updated
-        ? `Data last updated: ${formatDate(data.last_updated)}`
-        : "";
-      els.footerDate.textContent = formatDate(data.last_updated);
-
-      // Funder filter is populated once; clear extras on retry.
-      els.filterFunder.length = 1;
-      populateFunderFilter();
-      loadStateFromURL();
+      buildSelectOptions();
       renderSources();
-      renderStats();
-      applyFilters();
-      els.grid.setAttribute("aria-busy", "false");
+      initUpdated();
+      renderResults();
+      grid.setAttribute("aria-busy", "false");
     } catch (err) {
-      showError(err.message);
+      console.error(err);
+      renderError(err && err.message);
     }
   }
 
-  function init() {
-    // Cache element references.
-    [
-      "lastUpdated", "footerDate", "filterType", "filterStatus", "filterFunder",
-      "filterSort", "searchInput", "resultCount", "resetFilters", "sourcesGrid",
-      "themeToggle", "statTotal", "statOpen", "statClosingSoon", "statClosed",
-    ].forEach((id) => (els[id] = document.getElementById(id)));
-    els.grid = document.getElementById("opportunitiesGrid");
-    els.statCards = Array.from(document.querySelectorAll(".stat-card"));
-
+  /* ---------- go ---------- */
+  document.addEventListener("DOMContentLoaded", () => {
     initTheme();
-
-    els.filterType.addEventListener("change", applyFilters);
-    els.filterStatus.addEventListener("change", applyFilters);
-    els.filterFunder.addEventListener("change", applyFilters);
-    els.filterSort.addEventListener("change", applyFilters);
-    els.searchInput.addEventListener("input", debounce(applyFilters, 200));
-    els.resetFilters.addEventListener("click", resetFilters);
-    els.statCards.forEach((card) =>
-      card.addEventListener("click", () => {
-        els.filterStatus.value = card.dataset.status;
-        applyFilters();
-      })
-    );
-
-    load();
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
+    bindControls();
+    boot();
+  });
 })();
