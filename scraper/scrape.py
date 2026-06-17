@@ -2,21 +2,33 @@
 """
 SA Arts Funding Scraper
 
-Scrapes funding opportunities from key South African arts funding sources
-and writes them to data/funding.json.  Designed to run weekly via GitHub
-Actions (or manually).
+Discovers funding opportunities from key South African arts funding sources and
+merges them into data/funding.json. Designed to run weekly via GitHub Actions
+(or manually).
 
-Each scraper function returns a list of opportunity dicts.  The main()
-function merges them with any existing manually-curated entries, deduplicates
-by id, and writes the result.
+Design notes
+------------
+The dashboard is curated-first: hand-written entries in funding.json are the
+source of truth and are never overwritten or removed by this script. The scraper
+only *adds* auto-discovered entries, and every auto entry is tagged ``auto:true``.
+
+Web pages on the monitored sites do not expose a clean, machine-readable list of
+opportunities, so naive scraping picks up navigation and teaser noise. To avoid
+polluting the dashboard, candidates must pass strict quality gates
+(``looks_like_opportunity``) before being added — in practice they must mention a
+funding keyword *and* carry a parseable deadline date. Previous auto entries are
+discarded on every run and replaced with the current findings, so junk can never
+accumulate.
 """
 
 import json
 import hashlib
 import re
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
@@ -33,20 +45,35 @@ HEADERS = {
 
 TIMEOUT = 30  # seconds
 
+# A candidate must mention at least one of these to be considered.
+FUNDING_KEYWORDS = (
+    "grant", "fund", "bursary", "scholarship", "tender", "call for",
+    "apply", "application", "deadline", "award", "residency", "fellowship",
+    "open call", "proposal", "submission",
+)
+
+# Obvious non-opportunity titles to reject outright (case-insensitive substring).
+TITLE_BLOCKLIST = (
+    "read more", "learn more", "home", "about", "contact", "newsletter",
+    "privacy", "cookie", "sitemap", "menu", "search", "subscribe", "login",
+    "have been announced", "now closed", "jury", "gallery", "funded projects",
+    "worldwide", "overview",
+)
+
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 
 def fetch(url):
-    """GET a URL and return a BeautifulSoup object, or None on failure."""
+    """GET a URL and return a (BeautifulSoup, base_url) tuple, or (None, url)."""
     try:
         resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
         resp.raise_for_status()
-        return BeautifulSoup(resp.text, "html.parser")
+        return BeautifulSoup(resp.text, "html.parser"), resp.url
     except requests.RequestException as exc:
         print(f"  [WARN] Failed to fetch {url}: {exc}")
-        return None
+        return None, url
 
 
 def make_id(title, funder):
@@ -55,10 +82,16 @@ def make_id(title, funder):
     return hashlib.md5(raw.encode()).hexdigest()[:12]
 
 
+def absolute_url(href, base):
+    """Resolve a possibly-relative href against the page's base URL."""
+    if not href:
+        return base
+    return urljoin(base, href.strip())
+
+
 def parse_date(text):
-    """Try to extract a date from free-form text.  Returns YYYY-MM-DD or None."""
-    # Patterns: '13 March 2026', 'March 13, 2026', '2026-03-13'
-    for fmt in ("%d %B %Y", "%B %d, %Y", "%Y-%m-%d", "%d %b %Y"):
+    """Try to parse a single date string. Returns YYYY-MM-DD or None."""
+    for fmt in ("%d %B %Y", "%B %d, %Y", "%B %d %Y", "%Y-%m-%d", "%d %b %Y", "%d/%m/%Y"):
         try:
             return datetime.strptime(text.strip(), fmt).strftime("%Y-%m-%d")
         except ValueError:
@@ -66,342 +99,225 @@ def parse_date(text):
     return None
 
 
-def extract_dates_from_text(text):
-    """Search for date-like patterns in a block of text."""
-    patterns = [
-        r"\d{1,2}\s+\w+\s+\d{4}",
-        r"\w+\s+\d{1,2},?\s+\d{4}",
+def extract_date(text):
+    """Search for the first date-like pattern in a block of text."""
+    patterns = (
+        r"\d{1,2}\s+[A-Za-z]+\s+\d{4}",
+        r"[A-Za-z]+\s+\d{1,2},?\s+\d{4}",
         r"\d{4}-\d{2}-\d{2}",
-    ]
+        r"\d{1,2}/\d{1,2}/\d{4}",
+    )
     for pat in patterns:
         match = re.search(pat, text)
         if match:
-            d = parse_date(match.group())
-            if d:
-                return d
+            parsed = parse_date(match.group())
+            if parsed:
+                return parsed
     return None
 
 
+def has_real_deadline(deadline):
+    """True only for a concrete YYYY-MM-DD date (not 'Rolling'/'Varies'/empty)."""
+    return bool(re.fullmatch(r"\d{4}-\d{2}-\d{2}", deadline or ""))
+
+
+def looks_like_opportunity(opp):
+    """Quality gate: keep only candidates that read like a real opportunity."""
+    title = opp["title"]
+    if not (8 <= len(title) <= 160):
+        return False
+    if any(bad in title.lower() for bad in TITLE_BLOCKLIST):
+        return False
+    haystack = f"{title} {opp['description']}".lower()
+    if not any(kw in haystack for kw in FUNDING_KEYWORDS):
+        return False
+    # A concrete, parseable deadline is the strongest signal that a candidate is a
+    # real, time-bound call rather than a page heading or teaser.
+    return has_real_deadline(opp["deadline"])
+
+
+def build_opp(title, funder, body, link, *, type_="grant",
+              eligibility="", focus_areas=None, deadline=None):
+    """Assemble a normalised opportunity dict for an auto-discovered candidate."""
+    return {
+        "id": make_id(title, funder),
+        "title": title[:200].strip(),
+        "funder": funder,
+        "type": type_,
+        "status": "open",
+        "deadline": deadline or "Rolling",
+        "amount": "Varies",
+        "description": " ".join(body.split())[:300].strip(),
+        "eligibility": eligibility,
+        "focus_areas": focus_areas or [],
+        "how_to_apply": link,
+        "url": link,
+        "date_added": date.today().isoformat(),
+        "auto": True,
+    }
+
+
 # ---------------------------------------------------------------------------
-# Scrapers — one per source
+# Scrapers — one per source. Each yields candidate opportunities; quality
+# gating is applied centrally in collect().
 # ---------------------------------------------------------------------------
 
-def scrape_nac():
-    """Scrape the National Arts Council funding overview page."""
-    print("[NAC] Scraping nac.org.za ...")
-    results = []
-    soup = fetch("https://www.nac.org.za/funding-news/funding-overview/")
+def _scrape_listing(url, funder, *, type_="grant", eligibility="",
+                    focus_areas=None, selectors="article, .post, .entry, .views-row, .teaser"):
+    """Generic listing scraper shared by most sources."""
+    soup, base = fetch(url)
     if not soup:
-        return results
+        return []
 
-    # The NAC funding overview page lists funding calls in article / post blocks
-    for article in soup.select("article, .post, .entry, .funding-item"):
-        title_el = article.select_one("h2, h3, h4, .entry-title, a")
+    results = []
+    seen_titles = set()
+    for block in soup.select(selectors):
+        title_el = block.select_one("h2, h3, h4, .entry-title, .teaser-title, a")
         if not title_el:
             continue
         title = title_el.get_text(strip=True)
-        if not title:
+        if not title or title.lower() in seen_titles:
             continue
+        seen_titles.add(title.lower())
 
-        link = title_el.get("href") or ""
-        if title_el.name != "a":
-            a = title_el.find("a")
-            if a:
-                link = a.get("href", "")
-        if link and not link.startswith("http"):
-            link = "https://www.nac.org.za" + link
+        anchor = title_el if title_el.name == "a" else block.find("a", href=True)
+        link = absolute_url(anchor.get("href") if anchor else "", base)
 
-        body = article.get_text(" ", strip=True)
-        deadline = extract_dates_from_text(body)
-
-        opp = {
-            "id": make_id(title, "NAC"),
-            "title": title,
-            "funder": "National Arts Council (NAC)",
-            "type": "grant",
-            "status": "open",
-            "deadline": deadline or "Rolling",
-            "amount": "Varies",
-            "description": body[:300].strip(),
-            "eligibility": "South African arts practitioners and organisations",
-            "focus_areas": [],
-            "how_to_apply": link or "https://www.nac.org.za/funding-news/funding-overview/",
-            "url": link or "https://www.nac.org.za/funding-news/funding-overview/",
-            "date_added": date.today().isoformat(),
-        }
-        results.append(opp)
-
-    print(f"  Found {len(results)} items from NAC")
+        body = block.get_text(" ", strip=True)
+        results.append(build_opp(
+            title, funder, body, link or url,
+            type_=type_, eligibility=eligibility,
+            focus_areas=focus_areas, deadline=extract_date(body),
+        ))
     return results
+
+
+def scrape_nac():
+    print("[NAC] Scraping nac.org.za ...")
+    return _scrape_listing(
+        "https://www.nac.org.za/funding-news/funding-overview/",
+        "National Arts Council (NAC)",
+        eligibility="South African arts practitioners and organisations",
+    )
 
 
 def scrape_dsac_tenders():
-    """Scrape DSAC tenders page."""
     print("[DSAC] Scraping dsac.gov.za tenders ...")
-    results = []
-    soup = fetch("https://www.dsac.gov.za/qt-tenders")
-    if not soup:
-        return results
-
-    for row in soup.select("tr, .view-content .views-row, article"):
-        text = row.get_text(" ", strip=True)
-        if len(text) < 20:
-            continue
-
-        # Try to find a link
-        a = row.find("a")
-        link = ""
-        title = text[:120]
-        if a:
-            link = a.get("href", "")
-            title = a.get_text(strip=True) or title
-            if link and not link.startswith("http"):
-                link = "https://www.dsac.gov.za" + link
-
-        deadline = extract_dates_from_text(text)
-
-        opp = {
-            "id": make_id(title, "DSAC"),
-            "title": title[:200],
-            "funder": "Department of Sport, Arts and Culture",
-            "type": "tender",
-            "status": "open",
-            "deadline": deadline or "Varies per tender",
-            "amount": "Varies per tender",
-            "description": text[:300].strip(),
-            "eligibility": "Registered service providers",
-            "focus_areas": [],
-            "how_to_apply": link or "https://www.dsac.gov.za/qt-tenders",
-            "url": link or "https://www.dsac.gov.za/qt-tenders",
-            "date_added": date.today().isoformat(),
-        }
-        results.append(opp)
-
-    print(f"  Found {len(results)} items from DSAC tenders")
-    return results
-
-
-def scrape_nlc():
-    """Scrape the NLC arts and culture page."""
-    print("[NLC] Scraping nlcsa.org.za ...")
-    results = []
-    soup = fetch("https://www.nlcsa.org.za/arts-and-culture/")
-    if not soup:
-        return results
-
-    # NLC page is mostly informational; extract what we can
-    main = soup.select_one("main, .entry-content, #content, article")
-    if main:
-        text = main.get_text(" ", strip=True)
-        desc = text[:400].strip() if text else ""
-        results.append({
-            "id": make_id("NLC Arts and Culture Sector", "NLC"),
-            "title": "National Lotteries Commission - Arts and Culture Sector",
-            "funder": "National Lotteries Commission (NLC)",
-            "type": "grant",
-            "status": "open",
-            "deadline": "Rolling",
-            "amount": "Varies",
-            "description": desc or (
-                "Funds the development of the arts and the preservation of "
-                "South African culture and national heritage."
-            ),
-            "eligibility": "South African registered non-profit organisations",
-            "focus_areas": [
-                "Arts development",
-                "Cultural preservation",
-                "National heritage",
-            ],
-            "how_to_apply": "https://www.nlcsa.org.za/arts-and-culture/",
-            "url": "https://www.nlcsa.org.za/arts-and-culture/",
-            "date_added": date.today().isoformat(),
-        })
-
-    print(f"  Found {len(results)} items from NLC")
-    return results
+    return _scrape_listing(
+        "https://www.dsac.gov.za/qt-tenders",
+        "Department of Sport, Arts and Culture",
+        type_="tender",
+        eligibility="Registered service providers",
+        selectors="tr, .views-row, article",
+    )
 
 
 def scrape_goethe():
-    """Scrape Goethe-Institut SA cultural funding page."""
     print("[Goethe] Scraping goethe.de ...")
-    results = []
-    soup = fetch("https://www.goethe.de/ins/za/en/kul/kul.html")
-    if not soup:
-        return results
-
-    for section in soup.select("article, .teaser, .accordion-item, section"):
-        title_el = section.select_one("h2, h3, h4, .teaser-title")
-        if not title_el:
-            continue
-        title = title_el.get_text(strip=True)
-        if not title or len(title) < 5:
-            continue
-
-        body = section.get_text(" ", strip=True)
-        a = section.find("a", href=True)
-        link = ""
-        if a:
-            link = a["href"]
-            if link and not link.startswith("http"):
-                link = "https://www.goethe.de" + link
-
-        deadline = extract_dates_from_text(body)
-
-        results.append({
-            "id": make_id(title, "Goethe"),
-            "title": title[:200],
-            "funder": "Goethe-Institut South Africa",
-            "type": "grant",
-            "status": "open",
-            "deadline": deadline or "Rolling",
-            "amount": "Varies",
-            "description": body[:300].strip(),
-            "eligibility": "Artists in South Africa and the region",
-            "focus_areas": ["International collaboration"],
-            "how_to_apply": link or "https://www.goethe.de/ins/za/en/kul/kul.html",
-            "url": link or "https://www.goethe.de/ins/za/en/kul/kul.html",
-            "date_added": date.today().isoformat(),
-        })
-
-    print(f"  Found {len(results)} items from Goethe-Institut")
-    return results
+    return _scrape_listing(
+        "https://www.goethe.de/ins/za/en/kul/kul.html",
+        "Goethe-Institut South Africa",
+        eligibility="Artists in South Africa and the region",
+        focus_areas=["International collaboration"],
+        selectors="article, .teaser, .accordion-item",
+    )
 
 
 def scrape_vansa():
-    """Scrape VANSA arts opportunities / funding page."""
     print("[VANSA] Scraping vansa.co.za ...")
-    results = []
-    soup = fetch("https://vansa.co.za/arts-opportunities/funding/")
-    if not soup:
-        return results
+    return _scrape_listing(
+        "https://vansa.co.za/arts-opportunities/funding/",
+        "VANSA / Various",
+        eligibility="South African arts practitioners",
+        selectors="article, .post, .opportunity-item, .entry",
+    )
 
-    for item in soup.select("article, .post, .opportunity-item, .entry"):
-        title_el = item.select_one("h2, h3, h4, .entry-title, a")
-        if not title_el:
-            continue
-        title = title_el.get_text(strip=True)
-        if not title:
-            continue
 
-        link = ""
-        a = item.find("a", href=True)
-        if a:
-            link = a["href"]
-
-        body = item.get_text(" ", strip=True)
-        deadline = extract_dates_from_text(body)
-
-        results.append({
-            "id": make_id(title, "VANSA"),
-            "title": title[:200],
-            "funder": "VANSA / Various",
-            "type": "grant",
-            "status": "open",
-            "deadline": deadline or "Varies",
-            "amount": "Varies",
-            "description": body[:300].strip(),
-            "eligibility": "South African arts practitioners",
-            "focus_areas": [],
-            "how_to_apply": link or "https://vansa.co.za/arts-opportunities/funding/",
-            "url": link or "https://vansa.co.za/arts-opportunities/funding/",
-            "date_added": date.today().isoformat(),
-        })
-
-    print(f"  Found {len(results)} items from VANSA")
-    return results
+SCRAPERS = (scrape_nac, scrape_dsac_tenders, scrape_goethe, scrape_vansa)
 
 
 # ---------------------------------------------------------------------------
-# Merge logic
+# Collect, merge, status
 # ---------------------------------------------------------------------------
+
+def collect():
+    """Run all scrapers concurrently and return gated, de-duplicated candidates."""
+    raw = []
+    with ThreadPoolExecutor(max_workers=len(SCRAPERS)) as pool:
+        for fn, items in zip(SCRAPERS, pool.map(_safe_run, SCRAPERS)):
+            print(f"  {fn.__name__}: {len(items)} candidate(s)")
+            raw.extend(items)
+
+    gated, seen = [], set()
+    for opp in raw:
+        if opp["id"] in seen or not looks_like_opportunity(opp):
+            continue
+        seen.add(opp["id"])
+        gated.append(opp)
+    print(f"\n{len(gated)} candidate(s) passed quality gates (from {len(raw)} raw).")
+    return gated
+
+
+def _safe_run(fn):
+    try:
+        return fn()
+    except Exception as exc:  # noqa: BLE001 - never let one source kill the run
+        print(f"  [ERROR] {fn.__name__} failed: {exc}")
+        return []
+
 
 def load_existing():
-    """Load the current funding.json, if it exists."""
     if FUNDING_FILE.exists():
-        with open(FUNDING_FILE) as f:
+        with open(FUNDING_FILE, encoding="utf-8") as f:
             return json.load(f)
     return {"last_updated": None, "sources": [], "opportunities": []}
 
 
-def merge_opportunities(existing, scraped):
+def merge(existing, scraped):
     """
-    Merge scraped opportunities into existing ones.
-    - Manually curated entries (those already in the file) are kept as-is.
-    - Scraped entries are added or updated by id.
+    Curated entries (no ``auto`` flag) are kept verbatim. All previous auto
+    entries are dropped and replaced by the current scrape, so stale or junk
+    auto entries never accumulate. Auto entries that collide with a curated id
+    are skipped in favour of the curated version.
     """
-    by_id = {o["id"]: o for o in existing}
-
-    for opp in scraped:
-        oid = opp["id"]
-        if oid not in by_id:
-            by_id[oid] = opp
-        else:
-            # Update scraped fields but keep manual overrides for description, etc.
-            old = by_id[oid]
-            # Only overwrite if the old entry was also scraped (date_added will match pattern)
-            if old.get("date_added") != opp.get("date_added"):
-                # Keep the existing curated entry
-                continue
-            by_id[oid] = opp
-
-    return list(by_id.values())
+    curated = [o for o in existing if not o.get("auto")]
+    curated_ids = {o["id"] for o in curated}
+    fresh_auto = [o for o in scraped if o["id"] not in curated_ids]
+    return curated + fresh_auto
 
 
 def update_statuses(opportunities):
-    """Mark opportunities with past deadlines as closed."""
+    """Mark opportunities with past deadlines as closed (reliable automation)."""
     today = date.today()
     for opp in opportunities:
         dl = opp.get("deadline", "")
-        if dl and dl not in ("Rolling", "Varies", "Varies per tender"):
-            try:
-                dl_date = datetime.strptime(dl, "%Y-%m-%d").date()
-                if dl_date < today:
-                    opp["status"] = "closed"
-            except ValueError:
-                pass
+        if has_real_deadline(dl):
+            dl_date = datetime.strptime(dl, "%Y-%m-%d").date()
+            opp["status"] = "closed" if dl_date < today else "open"
     return opportunities
 
-
-# ---------------------------------------------------------------------------
-# Main
-# ---------------------------------------------------------------------------
 
 def main():
     print(f"=== SA Arts Funding Scraper - {date.today().isoformat()} ===\n")
 
-    scraped = []
-    scrapers = [
-        scrape_nac,
-        scrape_dsac_tenders,
-        scrape_nlc,
-        scrape_goethe,
-        scrape_vansa,
-    ]
-
-    for scraper_fn in scrapers:
-        try:
-            scraped.extend(scraper_fn())
-        except Exception as exc:
-            print(f"  [ERROR] {scraper_fn.__name__} failed: {exc}")
-        print()
-
-    print(f"Total scraped: {len(scraped)} opportunities\n")
+    scraped = collect()
 
     data = load_existing()
-    existing_opps = data.get("opportunities", [])
-    merged = merge_opportunities(existing_opps, scraped)
-    merged = update_statuses(merged)
+    merged = update_statuses(merge(data.get("opportunities", []), scraped))
 
     data["opportunities"] = merged
     data["last_updated"] = date.today().isoformat()
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
-    with open(FUNDING_FILE, "w") as f:
+    with open(FUNDING_FILE, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
 
-    print(f"Written {len(merged)} opportunities to {FUNDING_FILE}")
+    auto = sum(1 for o in merged if o.get("auto"))
+    print(f"\nWritten {len(merged)} opportunities "
+          f"({len(merged) - auto} curated, {auto} auto) to {FUNDING_FILE}")
     print("Done.")
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
