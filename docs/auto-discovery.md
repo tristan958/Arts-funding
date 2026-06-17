@@ -1,42 +1,56 @@
-# Automated source discovery (Claude Code Routine)
+# Automated updates (Claude Code Routine)
 
-This dashboard is **curated-first**: a human always approves what goes live. To
-keep it current without manual trawling, a weekly **Claude Code Routine** crawls
-the monitored aggregators and funders, extracts new candidate opportunities into
-the dashboard's taxonomy, and opens a **review PR**. Nothing publishes
-automatically — you merge candidates from `data/candidates.json` into
-`data/funding.json` after a look.
+A weekly **Claude Code Routine** keeps the dashboard current with **no API key**
+— it runs on Anthropic's cloud using your Claude subscription. It updates the
+live site **directly**: it adds newly-discovered open opportunities, refreshes
+each entry's open/closed status, **removes opportunities that have closed**, and
+commits straight to the default branch (Vercel then redeploys).
 
-Routines run on Anthropic's cloud using your **Claude subscription** — there is
-**no `ANTHROPIC_API_KEY` to manage**.
+> The dashboard intentionally shows **current opportunities only** — closed/past
+> calls are pruned automatically.
 
 ## Moving parts (in this repo)
 - `.claude/skills/discover-funding/SKILL.md` — what the routine does each run.
 - `tools/discovery/sources.yml` — the seed aggregators/funders to crawl.
-- `tools/discovery/SCHEMA.md` — the candidate schema + controlled vocabularies.
-- `data/candidates.json` — the review queue the routine appends to (starts `[]`).
+- `tools/discovery/SCHEMA.md` — the entry schema + controlled vocabularies.
 
-## One-time setup
-1. Go to **https://claude.ai/code/routines** (Pro, Max, Team, or Enterprise plan).
+## One-time setup (must be a **remote** routine)
+1. Go to **https://claude.ai/code/routines** (Pro / Max / Team / Enterprise).
 2. **New routine** → choose this repository (`tristan958/Arts-funding`).
 3. **Trigger:** Scheduled → **Weekly** (e.g. Monday 06:00 SAST).
-4. **Environment → Network access:** set to **Full** (the routine must reach
-   external funder/aggregator sites). See
+4. **Environment → Network access:** **Full** (needed to crawl funder sites) —
    https://code.claude.com/docs/en/claude-code-on-the-web#network-access
-5. **Prompt:** `Run the discover-funding skill.`
-6. Save. The first run will open a PR if it finds anything.
+5. **Prompt:** either `Run the discover-funding skill.` **or** paste the full
+   prompt below.
+6. Save. It will keep the live site updated each week.
 
-## Reviewing a discovery PR
-1. Open the PR; skim the candidate table (each row notes confidence + any
-   "verify deadline" flag).
-2. Spot-check the official `url` and the deadline for anything you'll keep.
-3. Move good entries from `data/candidates.json` into the `opportunities` array
-   in `data/funding.json` (and add the funder to `sources` if new), then delete
-   them from `candidates.json`. Merge.
-4. Vercel redeploys production automatically.
+### Full routine prompt (self-contained, if you prefer not to rely on the skill)
+
+```
+You maintain the South African Arts Funding Dashboard in this repository. Once a
+week, keep data/funding.json current and accurate, then commit directly to the
+default branch (the site auto-deploys). Steps:
+1. Read data/funding.json and tools/discovery/SCHEMA.md.
+2. For every entry with a real dated deadline, recompute status (closed if the
+   deadline is in the past, else open).
+3. REMOVE every opportunity that is closed or past its deadline — the dashboard
+   shows only current opportunities (keep live Rolling/Varies/annual ones).
+4. Crawl each source in tools/discovery/sources.yml (you have Full network
+   access) and find new, currently-open arts-funding opportunities open to South
+   African artists or arts organisations.
+5. For each genuinely new one that passes basic checks (real funder URL you
+   fetched, not a duplicate, currently open, parseable or Rolling/Varies
+   deadline), append a full entry matching tools/discovery/SCHEMA.md — include
+   disciplines, purpose, eligibility_type, org_focus, tags, audiences, region;
+   date_added = today; add audiences:["vansa"] for contemporary-visual-arts items.
+6. Set last_updated to today.
+7. Commit directly to the default branch (message like "chore: weekly discovery
+   — +N new, -M closed (date)") and push. Do not open a PR.
+Never fabricate data — be conservative and accurate. Skip sites that block bots
+(try their RSS/sitemap first). If nothing changed, make no commit.
+```
 
 ## Tuning
-- Add/remove sites in `tools/discovery/sources.yml`.
-- Tighten or relax the quality gates in the skill's **Quality gates** section.
-- If a source keeps getting blocked (bot protection), prefer its RSS/sitemap or
-  drop it — the skill already flags blocked sources for manual review.
+- Add/remove crawl targets in `tools/discovery/sources.yml`.
+- Adjust the quality gates / removal policy in the skill (e.g. keep recently-closed
+  entries for a 30-day grace period instead of removing immediately).

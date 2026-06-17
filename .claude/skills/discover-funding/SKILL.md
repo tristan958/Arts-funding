@@ -1,36 +1,29 @@
 ---
 name: discover-funding
-description: Weekly discovery of NEW South African arts-funding opportunities. Crawls the monitored aggregators and funders, extracts candidates into the dashboard's taxonomy schema, dedupes against data/funding.json, and opens a review PR adding to data/candidates.json. Curated-first — it never modifies or auto-publishes curated entries.
+description: Weekly AUTO-UPDATE of the SA Arts Funding Dashboard. Crawls monitored aggregators/funders, adds newly-found OPEN opportunities directly to data/funding.json, refreshes every entry's open/closed status by deadline, REMOVES entries that have closed, updates last_updated, and commits straight to the default branch (which auto-deploys to the live site). Accuracy-first; never fabricates.
 ---
 
-# Discover funding opportunities
+# Auto-update the funding dashboard
 
-You are running as a scheduled **Routine** to keep the SA Arts Funding Dashboard current. Your job: find NEW, real, currently-relevant arts-funding opportunities for South African artists and arts organisations, and open a **review PR** proposing them. A human merges them into the live data later. **Never invent data. Never modify existing entries in `data/funding.json`.**
+You run weekly as a scheduled **Routine** to keep the **live** SA Arts Funding Dashboard current and accurate. You edit `data/funding.json` **directly** and commit to the **default branch** — the site redeploys automatically. There is no review queue. **Never fabricate data.**
 
-## Procedure
+## Each run
 
-1. **Load state.** Read `data/funding.json` (existing `opportunities` + `sources`) and `data/candidates.json` (already-proposed). Build a dedupe set of existing `id`s, lowercased `url`s, and `funder`+`title` pairs.
+1. **Load.** Read `data/funding.json` and `tools/discovery/SCHEMA.md` (schema + controlled vocabularies).
+2. **Refresh status.** For every existing opportunity that has a real *dated* deadline, recompute `status`: `"closed"` if the deadline is in the past (Africa/Johannesburg time), else `"open"`. Leave `Rolling`/`Varies`/annual entries `"open"` unless you have clear evidence the programme ended.
+3. **Remove closed.** Delete every opportunity whose deadline has passed or whose `status` is `"closed"`. The dashboard shows **current opportunities only**. Do **not** delete still-live `Rolling`/`Varies`/annual entries.
+4. **Discover.** Crawl each source in `tools/discovery/sources.yml` (the environment has **Full** network access). Extract individual open calls / grants / residencies / fellowships / awards / bursaries / tenders.
+5. **Add.** For each genuinely new, **currently-open** opportunity that passes the quality gates, append a fully-formed entry (every schema field, taxonomy included, `date_added` = today) to `opportunities`. Skip anything already present (by `id`, `url`, or `funder`+`title`) or already closed.
+6. **Stamp.** Set `last_updated` to today.
+7. **Commit directly.** Commit to the **default branch** with a clear message, e.g. `chore: weekly discovery — +N new, -M closed (YYYY-MM-DD)`, and push. **Do not open a PR** — this routine updates the site directly. If nothing changed, make no commit.
 
-2. **Crawl sources.** For every entry in `tools/discovery/sources.yml`, fetch its opportunities/calls page (the routine's environment has **Full** network access). Go sequentially and politely. If a page blocks bots (HTTP 403) or fails, try its `/rss`, `/feed`, or sitemap; if still blocked, skip it and record it under "needs manual check" for the PR body.
+## Quality gates (for additions)
 
-3. **Extract candidates.** Pull out individual open calls / grants / residencies / fellowships / awards / bursaries. For each, build an object matching `tools/discovery/SCHEMA.md` exactly — including the taxonomy fields (`disciplines`, `purpose`, `eligibility_type`, `org_focus`, `tags`, `audiences`, `region`). Set `date_added` to today (YYYY-MM-DD).
-
-4. **Quality gates.** Keep a candidate only if **all** hold:
-   - It is a genuine funding/opportunity (not navigation, a teaser, a news post, or a past/archived call).
-   - It is plausibly open to South African artists or arts organisations (SA, pan-African incl. SA, or international explicitly open to SA/Africa).
-   - It has a real official `url` you actually fetched.
-   - It is **not already** in `funding.json` or `candidates.json` (by `id`, `url`, or `funder`+`title`).
-   - It has a parseable deadline **or** an explicit cadence (`Rolling`, `Varies`, or a named annual/quarterly cycle).
-
-5. **Tag thoughtfully.** Use the controlled vocabulary in `SCHEMA.md`. Add `audiences: ["vansa"]` for contemporary-visual-arts-relevant items. Prefer conservative values; when a field is genuinely unknown, use `"Varies"`/empty arrays and flag it — do not guess amounts or deadlines.
-
-6. **Write the review queue.** Append accepted candidates to the JSON array in `data/candidates.json` (keep it valid JSON). **Do not touch `data/funding.json`.**
-
-7. **Open a PR.** Branch `discovery/<YYYY-MM-DD>`; title `Discovery: <N> new funding candidates (week of <YYYY-MM-DD>)`; body = a markdown table (funder · title · type · deadline · confidence · "verify?" flag) plus a "needs manual check" list of any blocked sources. **If there are zero new candidates, do not open a PR.**
+Keep a candidate only if **all** hold: it's a genuine funding opportunity (not nav/teaser/news/archived); plausibly open to South African artists or arts organisations (SA, pan-African incl. SA, or international explicitly open to SA/Africa); has a real official `url` you actually fetched; is not a duplicate; and is **currently open** with a parseable deadline or an explicit `Rolling`/`Varies`/annual cadence. Add `audiences: ["vansa"]` for contemporary-visual-arts-relevant items.
 
 ## Rules
 
-- **Curated-first.** A human reviews `candidates.json` and promotes entries into `funding.json`. You never publish to `funding.json` yourself.
-- **Accuracy over volume.** Five solid candidates beat thirty noisy ones. Never fabricate URLs, deadlines, amounts or eligibility.
-- **Respect robots/ToS.** Skip anything that blocks automated access and list it for manual review rather than working around it.
-- Keep `data/candidates.json` from growing unbounded: if an entry there has since appeared in `funding.json`, drop it.
+- **Accuracy over volume.** Never invent URLs, deadlines, amounts or eligibility. When unsure of a value, use `"Varies"` and keep the entry conservative — do not guess.
+- **Respect robots/ToS.** Skip sites that block automated access (try their RSS/sitemap first) and note them in the commit message.
+- Keep `data/funding.json` **valid JSON** and schema-consistent at all times.
+- If pushing to the default branch is ever blocked (branch protection / permissions), fall back to opening a PR and say so in the PR body.
