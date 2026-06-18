@@ -19,7 +19,7 @@ You run weekly as a scheduled **Routine** to keep the **live** SA Arts Funding D
 
 ## Quality gates (for additions)
 
-Keep a candidate only if **all** hold: it's a genuine funding opportunity (not nav/teaser/news/archived); plausibly open to South African artists or arts organisations (SA, pan-African incl. SA, or international explicitly open to SA/Africa); has a real official `url` you actually fetched; is not a duplicate; and is **currently open** with a parseable deadline or an explicit `Rolling`/`Varies`/annual cadence. Add `audiences: ["vansa"]` for contemporary-visual-arts-relevant items.
+Keep a candidate only if **all** hold: it's a genuine funding opportunity (not nav/teaser/news/archived); plausibly open to South African artists or arts organisations (SA, pan-African incl. SA, or international explicitly open to SA/Africa); has a real official `url` you actually fetched; is not a duplicate; and is **currently open** with a parseable deadline or an explicit `Rolling`/`Varies`/annual cadence. Add `audiences: ["vansa"]` for items on-mission for contemporary visual art (network-relevant). The **VANSA (org)** saved view further narrows this to funding VANSA *itself* can apply for — i.e. `vansa`-tagged **and** (`eligibility_type` includes `organisation` **or** `purpose` includes `capacity-building`) — so set `eligibility_type` and `purpose` accurately for org-applicable funders.
 
 ## Rules
 

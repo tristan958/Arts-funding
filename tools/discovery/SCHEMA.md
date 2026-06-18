@@ -21,7 +21,7 @@ saved views on the dashboard work consistently.
   "eligibility_type": ["individual"],   // "individual" | "organisation" | "collective" (multi)
   "org_focus": false,                   // true if specifically for arts ORGANISATIONS
   "tags": ["experimental"],             // see TAGS (multi, free-ish)
-  "audiences": [],                      // ["vansa"] when visual-arts-network-relevant
+  "audiences": [],                      // ["vansa"] when on-mission for contemporary visual art
   "region": "national",                 // see REGION
   "how_to_apply": "Where/how to apply.",
   "url": "https://official-funder-link",
@@ -45,7 +45,7 @@ saved views on the dashboard work consistently.
 > The **Experimental & spatial** saved view matches any of: `experimental, site-specific, spatial, socially-engaged, research-based, public-space, interdisciplinary`.
 
 ## Saved-view triggers (so candidates surface in the right lens)
-- **VANSA** → `audiences` includes `vansa`
+- **VANSA (org)** → `audiences` includes `vansa` **AND** (`eligibility_type` includes `organisation` **OR** `purpose` includes `capacity-building`). This lens is for funding **VANSA itself** can apply for — core/project funding open to arts organisations, plus organisational capacity building. Still tag on-mission *individual*-artist visual-art opportunities with `vansa` (they're useful to members and surface in search/facets) — they just won't appear in this org-scoped view unless an organisation is also eligible.
 - **New media & podcast** → `disciplines` includes `new-media-digital`, `podcast-audio`, or `film-screen`
 - **Capacity building** → `purpose` includes `capacity-building`
 - **Experimental & spatial** → see the tag set above
