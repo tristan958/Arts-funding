@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-17",
+  "last_updated": "2026-06-18",
   "sources": [
     { "name": "National Arts Council (NAC)", "url": "https://www.nac.org.za/funding-news/funding-overview/" },
     { "name": "Department of Sport, Arts and Culture (DSAC)", "url": "https://www.dsac.gov.za/funding" },
@@ -23,7 +23,8 @@
     { "name": "Durban FilmMart Institute", "url": "https://durbanfilmmart.co.za" },
     { "name": "Pulitzer Center", "url": "https://pulitzercenter.org" },
     { "name": "FNB Art Joburg", "url": "https://artjoburg.com" },
-    { "name": "Investec Cape Town Art Fair", "url": "https://www.investeccapetownartfair.co.za" }
+    { "name": "Investec Cape Town Art Fair", "url": "https://www.investeccapetownartfair.co.za" },
+    { "name": "African Culture Fund (ACF)", "url": "https://www.africanculturefund.net/en/" }
   ],
   "opportunities": [
     {
@@ -531,6 +532,28 @@
       "how_to_apply": "Apply (rolling) via https://www.pkf.org/apply/how-to-apply/",
       "url": "https://www.pkf.org/apply/how-to-apply/",
       "date_added": "2026-06-17"
+    },
+    {
+      "id": "acf-sofaco-structuring",
+      "title": "African Culture Fund – SOFACO Organisational Structuring Support",
+      "funder": "African Culture Fund (ACF)",
+      "type": "grant",
+      "status": "open",
+      "deadline": "Varies (per call)",
+      "amount": "Up to €5,000 (6–12 month projects)",
+      "description": "Through the Solidarity Fund for Artists and Cultural Organisations (SOFACO), ACF awards professional grants to strengthen the structures of African cultural organisations — strategic planning, fundraising, governance, M&E, restructuring and internal capacity building. Open to organisations across Africa, including South Africa.",
+      "eligibility": "Legally registered cultural organisations based in Africa with at least 3 years of proven activity and a physical address in an African country",
+      "focus_areas": ["Organisational structuring", "Governance & fundraising", "Capacity building"],
+      "disciplines": ["all-disciplines"],
+      "purpose": ["capacity-building"],
+      "eligibility_type": ["organisation"],
+      "org_focus": true,
+      "tags": ["organisational-development", "sustainability"],
+      "audiences": ["vansa"],
+      "region": "africa",
+      "how_to_apply": "Complete the SOFACO application form from the ACF site and email it as a PDF to applications@africanculturefund.net and administrator@africanculturefund.net (English or French). Watch for the current call on the ACF website.",
+      "url": "https://www.africanculturefund.net/en/",
+      "date_added": "2026-06-18"
     }
   ]
 }
