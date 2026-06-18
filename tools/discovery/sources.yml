@@ -65,6 +65,17 @@ capacity_building:
     url: https://www.basa.co.za
     note: Supporting Grants + skills/mentorship; already in dataset.
 
+# Government tender portals (procurement). These list ALL government tenders, so
+# keyword-filter HARD to arts/culture/heritage/museum/public-art/creative-industries,
+# and confirm each tender's per-bid closing date before proposing it as "open".
+tenders:
+  - name: eTenders Portal (national)
+    url: https://www.etenders.gov.za/Home/opportunities?id=1
+    note: SA central eTender portal — JS-driven & blocks generic bots; prefer its OCDS API / opportunities feed over scraping the page. Keyword-filter (arts, culture, heritage, museum, public art, creative). Closing dates are per-tender.
+  - name: DSAC — Tenders (national)
+    url: https://www.dsac.gov.za/qt-tenders
+    note: National Dept of Sport, Arts & Culture; also provincial DSAC/SAC sites (KZN, Limpopo, Northern Cape, Free State, Eastern Cape).
+
 # Notes for the routine:
 # - Several of these (Mophradat, ArtConnect, VANSA, On the Move, Res Artis, Music In Africa,
 #   African Culture Fund, NAC, UNESCO) block generic bot user-agents; prefer their RSS/sitemap,
