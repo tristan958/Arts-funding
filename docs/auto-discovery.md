@@ -11,8 +11,11 @@ commits straight to the default branch (Vercel then redeploys).
 
 ## Moving parts (in this repo)
 - `.claude/skills/discover-funding/SKILL.md` — what the routine does each run.
-- `tools/discovery/sources.yml` — the seed aggregators/funders to crawl.
+- `tools/discovery/sources.yml` — the seed aggregators/funders/tender portals to crawl.
 - `tools/discovery/SCHEMA.md` — the entry schema + controlled vocabularies.
+- `tools/discovery/fetch_tenders.py` — stdlib script that pulls **arts/culture government
+  tenders** from the National Treasury **eTenders OCDS API** (structured, dated, CC-BY) and
+  prints ready-shaped candidate entries. Far more robust than scraping the JS eTenders site.
 
 ## One-time setup (must be a **remote** routine)
 1. Go to **https://claude.ai/code/routines** (Pro / Max / Team / Enterprise).
@@ -38,6 +41,9 @@ default branch (the site auto-deploys). Steps:
 4. Crawl each source in tools/discovery/sources.yml (you have Full network
    access) and find new, currently-open arts-funding opportunities open to South
    African artists or arts organisations.
+4b. Run `python3 tools/discovery/fetch_tenders.py` to pull arts/culture government
+   tenders from the eTenders OCDS API; treat its JSON output as candidates (drop the
+   _source field, re-confirm each closing date, dedupe). It prints [] if unreachable.
 5. For each genuinely new one that passes basic checks (real funder URL you
    fetched, not a duplicate, currently open, parseable or Rolling/Varies
    deadline), append a full entry matching tools/discovery/SCHEMA.md — include
