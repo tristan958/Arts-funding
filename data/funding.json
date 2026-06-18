@@ -554,6 +554,28 @@
       "how_to_apply": "Complete the SOFACO application form from the ACF site and email it as a PDF to applications@africanculturefund.net and administrator@africanculturefund.net (English or French). Watch for the current call on the ACF website.",
       "url": "https://www.africanculturefund.net/en/",
       "date_added": "2026-06-18"
+    },
+    {
+      "id": "africa-europe-mobility-grants",
+      "title": "Africa-Europe Partnerships for Culture – Mobility Grants",
+      "funder": "Goethe-Institut (Africa-Europe Partnerships for Culture)",
+      "type": "grant",
+      "status": "open",
+      "deadline": "2026-09-15",
+      "amount": "Up to €4,000 per mobility",
+      "description": "Mobility grants supporting short-term travel for individual artists and cultural professionals — both intra-African (Africa–Africa) and intercontinental (Africa–Europe) — for collaboration, research, networking and career development. Run under the EU/Goethe-Institut Africa-Europe Partnerships for Culture programme with quarterly cut-off dates (next: 15 September 2026).",
+      "eligibility": "Individual artists and cultural professionals (18+) based in Sub-Saharan Africa (incl. South Africa) or the EU, working across artistic disciplines",
+      "focus_areas": ["Mobility / travel", "Africa–Europe & intra-African exchange", "Research & collaboration"],
+      "disciplines": ["all-disciplines"],
+      "purpose": ["mobility", "research"],
+      "eligibility_type": ["individual"],
+      "org_focus": false,
+      "tags": ["international-exchange"],
+      "audiences": ["vansa"],
+      "region": "international",
+      "how_to_apply": "Apply online via the Goethe Application Portal (GAP); next cut-off 15 September 2026. See https://www.goethe.de/prj/aep/en/cal/ssa/mga.html",
+      "url": "https://www.goethe.de/prj/aep/en/cal/ssa/mga.html",
+      "date_added": "2026-06-17"
     }
   ]
 }
