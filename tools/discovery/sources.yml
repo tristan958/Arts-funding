@@ -48,8 +48,39 @@ funders:
   - name: Institute for Creative Arts (ICA), UCT
     url: https://humanities.uct.ac.za/ica
 
+# Organisational capacity-building / core-support funders (for arts ORGANISATIONS).
+# These power the "Capacity building" and "VANSA (org)" lenses — most run annual or
+# multi-year cycles, so re-check them each run and add when a window is open.
+capacity_building:
+  - name: African Culture Fund (ACF) — SOFACO
+    url: https://www.africanculturefund.net/en/
+    note: Organisational structuring grants (governance, fundraising, M&E) up to €5k; recurring SOFACO calls; pan-African incl. SA. May block bots — try the "call for projects" page.
+  - name: National Arts Council (NAC) — Arts Organisation Support Funding
+    url: https://www.nac.org.za/funding-news/funding-overview/
+    note: Three-year org support for registered SA arts organisations; annual/triennial cycle (2025–2028 call closed 23 Jan 2026) — watch for the next call.
+  - name: UNESCO — International Fund for Cultural Diversity (IFCD)
+    url: https://www.unesco.org/creativity/en/ifcd/apply
+    note: Up to US$100k for structural/capacity projects; annual call via the SA National Commission (2026/17th call closed 6 May 2026) — watch for the next call.
+  - name: Business and Arts South Africa (BASA)
+    url: https://www.basa.co.za
+    note: Supporting Grants + skills/mentorship; already in dataset.
+
+# Government tender portals (procurement). These list ALL government tenders, so
+# keyword-filter HARD to arts/culture/heritage/museum/public-art/creative-industries,
+# and confirm each tender's per-bid closing date before proposing it as "open".
+tenders:
+  - name: eTenders OCDS API (national) — preferred
+    url: https://ocds-api.etenders.gov.za/swagger/index.html
+    note: Structured Open Contracting (OCDS) JSON feed of ALL govt tenders. Use the helper `python3 tools/discovery/fetch_tenders.py` (stdlib) which queries it, keyword-filters to arts/culture/heritage, and emits ready-shaped candidates. Robust — no HTML scraping. Portal mirror for humans → https://www.etenders.gov.za/Home/opportunities?id=1
+  - name: DSAC — Tenders (national)
+    url: https://www.dsac.gov.za/qt-tenders
+    note: National Dept of Sport, Arts & Culture; also provincial DSAC/SAC sites (KZN, Limpopo, Northern Cape, Free State, Eastern Cape).
+
 # Notes for the routine:
-# - Several of these (Mophradat, ArtConnect, VANSA, On the Move, Res Artis, Music In Africa)
-#   block generic bot user-agents; prefer their RSS/sitemap, else skip + flag for manual check.
+# - Several of these (Mophradat, ArtConnect, VANSA, On the Move, Res Artis, Music In Africa,
+#   African Culture Fund, NAC, UNESCO) block generic bot user-agents; prefer their RSS/sitemap,
+#   else skip + flag for manual check.
 # - Time-sensitive examples seen during research: Doc Society Climate Story Fund,
 #   Future Generation Art Prize — always confirm the live deadline before proposing as "open".
+# - Capacity-building org funders are scarce and mostly annual — the NAC AOSF and UNESCO IFCD
+#   calls above had just closed at last check; re-add them automatically when they reopen.

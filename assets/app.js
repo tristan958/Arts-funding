@@ -68,7 +68,13 @@
   // Curated "saved views" — each is a predicate over the enriched taxonomy fields.
   const VIEW_PREDICATES = {
     all: () => true,
-    vansa: (o) => (o.audiences || []).includes("vansa"),
+    // "VANSA" — opportunities VANSA *as an organisation* can pursue: on-mission for
+    // contemporary visual art (audiences: vansa) AND either open to arts organisations
+    // (core / project funding) or for organisational capacity building.
+    vansa: (o) =>
+      (o.audiences || []).includes("vansa") &&
+      ((o.eligibility_type || []).includes("organisation") ||
+        (o.purpose || []).includes("capacity-building")),
     newmedia: (o) => intersects(o.disciplines, ["new-media-digital", "podcast-audio", "film-screen"]),
     capacity: (o) => (o.purpose || []).includes("capacity-building"),
     experimental: (o) => intersects(o.tags, ["experimental", "site-specific", "spatial", "socially-engaged", "research-based", "public-space", "interdisciplinary"]),
@@ -195,7 +201,7 @@
       <div class="card__body">
         <div class="card__top">
           <div class="card__head">
-            <span class="card__type">${esc(o.type)}</span>
+            <span class="card__type card__type--${esc(o.type)}">${esc(o.type)}</span>
             <h3 class="card__title">${esc(o.title)}</h3>
             <div class="card__funder">${esc(o.funder)}</div>
           </div>
