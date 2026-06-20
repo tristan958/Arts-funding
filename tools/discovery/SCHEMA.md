@@ -49,3 +49,4 @@ saved views on the dashboard work consistently.
 - **New media & podcast** → `disciplines` includes `new-media-digital`, `podcast-audio`, or `film-screen`
 - **Capacity building** → `purpose` includes `capacity-building`
 - **Experimental & spatial** → see the tag set above
+- **Residencies & fellowships** → `type` is `residency`/`fellowship`, **or** `purpose` includes `residency` or `mobility` (residencies, fellowships and similar place-/programme-based or exchange opportunities, across all disciplines)

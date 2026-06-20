@@ -78,6 +78,12 @@
     newmedia: (o) => intersects(o.disciplines, ["new-media-digital", "podcast-audio", "film-screen"]),
     capacity: (o) => (o.purpose || []).includes("capacity-building"),
     experimental: (o) => intersects(o.tags, ["experimental", "site-specific", "spatial", "socially-engaged", "research-based", "public-space", "interdisciplinary"]),
+    // "Residencies & fellowships" — residencies, fellowships and similar place-/
+    // programme-based opportunities (incl. residency components and mobility/
+    // exchange) across every discipline.
+    residencies: (o) =>
+      o.type === "residency" || o.type === "fellowship" ||
+      intersects(o.purpose, ["residency", "mobility"]),
   };
 
   function readURL() {

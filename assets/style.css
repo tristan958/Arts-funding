@@ -358,11 +358,13 @@ a { color: var(--gold-deep); text-underline-offset: 3px; }
 .view-chip[data-view="newmedia"].is-active     { background:#ecfeff; border-color:#0891b2; color:#0e7490; }
 .view-chip[data-view="capacity"].is-active     { background:#eff6ff; border-color:#1d4ed8; color:#1e40af; }
 .view-chip[data-view="experimental"].is-active { background:#fff7ed; border-color:#ea580c; color:#9a3412; }
+.view-chip[data-view="residencies"].is-active  { background:#fdf2f8; border-color:#db2777; color:#9d174f; }
 
 :root[data-theme="dark"] .view-chip[data-view="vansa"].is-active        { background:#2e1065; border-color:#a78bfa; color:#c4b5fd; }
 :root[data-theme="dark"] .view-chip[data-view="newmedia"].is-active     { background:#083344; border-color:#22d3ee; color:#67e8f9; }
 :root[data-theme="dark"] .view-chip[data-view="capacity"].is-active     { background:#1e3a5f; border-color:#60a5fa; color:#93c5fd; }
 :root[data-theme="dark"] .view-chip[data-view="experimental"].is-active { background:#431407; border-color:#fb923c; color:#fdba74; }
+:root[data-theme="dark"] .view-chip[data-view="residencies"].is-active  { background:#500724; border-color:#f472b6; color:#fbcfe8; }
 
 /* =========================================================================
    FILTER BAR
