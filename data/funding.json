@@ -24,7 +24,8 @@
     { "name": "Pulitzer Center", "url": "https://pulitzercenter.org" },
     { "name": "FNB Art Joburg", "url": "https://artjoburg.com" },
     { "name": "Investec Cape Town Art Fair", "url": "https://www.investeccapetownartfair.co.za" },
-    { "name": "African Culture Fund (ACF)", "url": "https://www.africanculturefund.net/en/" }
+    { "name": "African Culture Fund (ACF)", "url": "https://www.africanculturefund.net/en/" },
+    { "name": "British Council Arts", "url": "https://arts.britishcouncil.org/" }
   ],
   "opportunities": [
     {
@@ -576,6 +577,28 @@
       "how_to_apply": "Apply online via the Goethe Application Portal (GAP); next cut-off 15 September 2026. See https://www.goethe.de/prj/aep/en/cal/ssa/mga.html",
       "url": "https://www.goethe.de/prj/aep/en/cal/ssa/mga.html",
       "date_added": "2026-06-17"
+    },
+    {
+      "id": "british-council-ctc-2026",
+      "title": "British Council – Connections Through Culture Grants",
+      "funder": "British Council",
+      "type": "grant",
+      "status": "open",
+      "deadline": "2026-08-12",
+      "amount": "£5,000–£15,000 (varies by country)",
+      "description": "Grants for fresh cultural partnerships between the UK and South Africa — helping artists, collectives, festivals, hubs and cultural organisations develop new collaborations and exchange at any stage. Each project pairs at least one UK-based partner with a South African partner; delivery runs Dec 2026–Dec 2027.",
+      "eligibility": "Creative practitioners, artists, collectives and cultural organisations based in South Africa, partnering with at least one UK-based collaborator",
+      "focus_areas": ["UK–SA collaboration", "International exchange", "Partnership development"],
+      "disciplines": ["all-disciplines"],
+      "purpose": ["project", "mobility", "research"],
+      "eligibility_type": ["individual", "collective", "organisation"],
+      "org_focus": false,
+      "tags": ["international-exchange"],
+      "audiences": ["vansa"],
+      "region": "international",
+      "how_to_apply": "Apply online during the open round at https://arts.britishcouncil.org/connections-through-culture (applications close 12 August 2026, 23:59 BST).",
+      "url": "https://arts.britishcouncil.org/connections-through-culture",
+      "date_added": "2026-06-18"
     }
   ]
 }
