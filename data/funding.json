@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-18",
+  "last_updated": "2026-06-22",
   "sources": [
     { "name": "National Arts Council (NAC)", "url": "https://www.nac.org.za/funding-news/funding-overview/" },
     { "name": "Department of Sport, Arts and Culture (DSAC)", "url": "https://www.dsac.gov.za/funding" },
@@ -25,7 +25,8 @@
     { "name": "FNB Art Joburg", "url": "https://artjoburg.com" },
     { "name": "Investec Cape Town Art Fair", "url": "https://www.investeccapetownartfair.co.za" },
     { "name": "African Culture Fund (ACF)", "url": "https://www.africanculturefund.net/en/" },
-    { "name": "British Council Arts", "url": "https://arts.britishcouncil.org/" }
+    { "name": "British Council Arts", "url": "https://arts.britishcouncil.org/" },
+    { "name": "Liu Shiming Art Foundation", "url": "https://www.lsmartfund.org/grants" }
   ],
   "opportunities": [
     {
@@ -599,6 +600,28 @@
       "how_to_apply": "Apply online during the open round at https://arts.britishcouncil.org/connections-through-culture (applications close 12 August 2026, 23:59 BST).",
       "url": "https://arts.britishcouncil.org/connections-through-culture",
       "date_added": "2026-06-18"
+    },
+    {
+      "id": "liu-shiming-artist-grants-2026",
+      "title": "Liu Shiming Artist Grants",
+      "funder": "Liu Shiming Art Foundation",
+      "type": "grant",
+      "status": "open",
+      "deadline": "2026-08-31",
+      "amount": "US$5,000 (up to five artists)",
+      "description": "Project-based grants supporting early-career visual artists worldwide, including South Africa. Up to five artists each receive US$5,000 (US$3,000 on selection, US$2,000 on project completion) to advance a new body of work or artistic project.",
+      "eligibility": "Early-career visual artists internationally (2–10 years' practice); must hold a studio-arts degree awarded 2016–2024 or have had a debut gallery/juried exhibition between 2016 and 2026. Applications submitted in English.",
+      "focus_areas": ["Early-career visual artists", "Project development", "International"],
+      "disciplines": ["visual-art"],
+      "purpose": ["project"],
+      "eligibility_type": ["individual"],
+      "org_focus": false,
+      "tags": [],
+      "audiences": ["vansa"],
+      "region": "international",
+      "how_to_apply": "Apply online via the Liu Shiming Art Foundation at https://www.lsmartfund.org/grants (deadline 31 August 2026).",
+      "url": "https://www.lsmartfund.org/grants",
+      "date_added": "2026-06-22"
     }
   ]
 }
