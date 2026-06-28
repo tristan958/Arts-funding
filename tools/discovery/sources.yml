@@ -19,13 +19,28 @@ aggregators:
     url: https://on-the-move.org/regions/south-africa
   - name: Res Artis — Open Calls
     url: https://resartis.org/open-calls/
-    note: Residencies worldwide; filter for SA/Africa.
+    note: Residencies worldwide; filter for SA/Africa. Use search filter "South Africa" for local hosts.
   - name: TransArtists — Open Calls
     url: https://www.transartists.org/en/other-open-calls
     note: Residencies + "Funding in Africa" guide.
   - name: Opportunity Desk — Grants
     url: https://opportunitydesk.org/category/grants/
     note: Broad; needs arts/culture keyword filtering.
+  - name: grantZA — Arts, Culture & Innovation
+    url: https://grantza.org.za/arts-innovation
+    note: SA-focused aggregator listing NAC, NRF, TIA and other SA grants. Good primary check.
+  - name: South African Cultural Observatory — Funding News
+    url: https://www.southafricanculturalobservatory.org.za/news/funding-opportunities
+    note: SACO monitors the creative industries sector; funding news section lists current calls.
+  - name: interartsfunding.com — Open Calls
+    url: https://www.interartsfunding.com/opencalls
+    note: International arts funding aggregator; filter by region. Good for international calls open to SA.
+  - name: fundsforNGOs — Arts & Culture
+    url: https://www2.fundsforngos.org/arts-culture/
+    note: Broad NGO funding database; filter to arts/culture. Covers many SA-relevant international calls.
+  - name: advance-africa.com — Artist Grants
+    url: https://www.advance-africa.com/Artist-Grants-and-Opportunities.html
+    note: Africa-focused grants database. Often picks up SA and pan-African opportunities.
 
 funders:
   - name: Electric South
@@ -50,6 +65,45 @@ funders:
   - name: British Council Arts
     url: https://arts.britishcouncil.org/
     note: Connections Through Culture (UK–partner collaboration grants, SA eligible, annual ~June–Aug), International Collaboration Grants (UK-lead), Biennials Connect. Watch the open-calls listing.
+  - name: Goethe-Institut South Africa
+    url: https://www.goethe.de/ins/za/en/kul/kul.html
+    note: Two key programmes — (1) Project Space (GPS): seed grants up to R100k for rural/peri-urban artistic projects in SA, Lesotho and Eswatini; annual call ~Aug–Sept for following year. (2) Africa-Europe Partnerships for Culture (AEPC): mobility grants up to €4k (quarterly cut-offs) and visual-art collaboration grants up to €20k (annual). May block bots — check the cultural funding page manually.
+  - name: Institut Français / IFAS South Africa
+    url: https://frenchinstitute.org.za/
+    note: French cultural diplomacy in SA. Key programmes — Création Africa (cultural entrepreneurship incubation, €15k–€30k support, annual); Open Call for Immersive Artist Teams (R500k–R1.2M, archival digital storytelling); Cité des arts residency prizes. Check frenchinstitute.org.za and on-the-move.org.
+  - name: Hivos — African Crossroads
+    url: https://hivos.org/program/african-crossroads/
+    note: Collaboration grants up to €25k for organisations and individuals working across arts, culture, heritage and technology in Africa (North, East and Southern Africa). Peer-to-peer learning focus. Email proposals.hubsaf@hivos.org or watch for open call announcements.
+  - name: Nirox Foundation (artist residencies)
+    url: https://niroxfoundation.com/
+    note: International artist residency at Nirox Sculpture Park, Cradle of Humankind, Gauteng. Visual art, sculpture and interdisciplinary. Annual call via Res Artis (~Aug deadline for Jan–Jun residency). Fully funded.
+  - name: University of Johannesburg Artists in Residence
+    url: https://on-the-move.org/news/university-johannesburg-artist-residence-programme-south-africa-remote
+    note: Rolling AiR programme, physical and remote formats. Preference for African-linked artists. Check UJ Department of Visual Art and On the Move listing.
+  - name: Oppenheimer Memorial Trust (OMT)
+    url: https://www.omt.org.za/
+    note: SA foundation supporting arts & culture organisations and practitioners, plus education and policy. Invitation-based but does accept unsolicited letters of inquiry. Arts & culture is an explicit sector — contact applicationqueries@omt.org.za.
+  - name: National Arts Festival (Standard Bank Young Artist)
+    url: https://nationalartsfestival.co.za/
+    note: Standard Bank Young Artist Awards — annual, 5 disciplines, cash + production budget; nominations open ~August each year (self-nominations not accepted). Also watch the curated programme call for artists (~October deadline for following July festival).
+  - name: IDFA Bertha Fund
+    url: https://professionals.idfa.nl/training-funding/funding/about-the-idfa-bertha-fund/
+    note: Creative documentary, SA typically eligible; annual dev/production/post grants.
+  - name: Sundance Institute Documentary Fund
+    url: https://www.sundance.org/programs/documentary-fund
+    note: Global nonfiction; rolling windows. SA eligible.
+  - name: Commonwealth Foundation — Culture & Diversity
+    url: https://commonwealthfoundation.com/grants/annual/
+    note: Annual grants up to £60k (£15k–£30k/yr, 2-yr max) to Commonwealth CSOs. SA eligible. Three strands (health justice, climate justice, freedom of expression) — culture strand fits freedom of expression. Open ~September each year; closed for 2025/26 cycle, reopens Sept 2026.
+  - name: Pollock-Krasner Foundation
+    url: https://www.pkf.org/apply/how-to-apply/
+    note: Rolling need-based grants for professional visual artists worldwide (incl. SA); painters, sculptors, works on paper. No deadline.
+  - name: Ampersand Foundation
+    url: https://www.theampersandfoundation.com/how-to-apply
+    note: Funded NY residency for professional SA contemporary visual artists; annual cycle.
+  - name: Tierney Fellowship (Photography)
+    url: https://marketphotoworkshop.co.za/projects/mentorships-residencies/tierney-fellowship/
+    note: Emerging SA photographers, R50k + year-long mentorship; via Market Photo Workshop, Wits, Michaelis. Annual.
 
 # Organisational capacity-building / core-support funders (for arts ORGANISATIONS).
 # These power the "Capacity building" and "VANSA (org)" lenses — most run annual or
@@ -67,6 +121,37 @@ capacity_building:
   - name: Business and Arts South Africa (BASA)
     url: https://www.basa.co.za
     note: Supporting Grants + skills/mentorship; already in dataset.
+  - name: Oppenheimer Memorial Trust (OMT) — Arts & Culture
+    url: https://www.omt.org.za/
+    note: SA foundation making grants to PBOs in arts & culture — both individual and organisational support. Invitation-preferred but unsolicited LOIs accepted; contact applicationqueries@omt.org.za.
+
+# Government grants programmes (non-tender). These have annual competitive open calls
+# distinct from the procurement tenders below.
+government_grants:
+  - name: DSAC — Mzansi Golden Economy (MGE)
+    url: https://www.dsac.gov.za/Revised%20Mzansi-Golden-Economy-MGE-2025/2026-Open%20Call
+    note: SA's LARGEST competitive arts grant (up to R2M per beneficiary). Open to SA arts, culture and heritage NPOs and Pty Ltd. Two streams — Cultural & Creative Industries Projects (CCIPs) and Touring Ventures. Annual open call ~Dec–Jan via eservices.gov.za. Watch dsac.gov.za for each year's guidelines PDF.
+  - name: NAC — Annual Project Funding
+    url: https://www.nac.org.za/new-call-for-the-nac-annual-project-funding-applications-for-2026-2027/
+    note: Up to R350k per project for individual practitioners and registered organisations across all disciplines. Annual cycle, typically Jan–March deadline; apply via nac.praxisgms.co.za. Also check grantZA for current call status.
+  - name: Western Cape Dept of Cultural Affairs and Sport
+    url: https://www.westerncape.gov.za/cas/service/arts-and-culture-funding
+    note: Annual provincial grants R50k–R500k for arts, culture and heritage in the Western Cape. Open to individuals, orgs and events companies. Next call typically Dec; 2026/27 closed 9 March 2026.
+  - name: Gauteng Dept of Sport, Arts, Culture and Recreation
+    url: https://gautengfilm.org.za/
+    note: Annual call for arts, sport and culture events/festivals for Gauteng projects; 2026/27 closed March 20, 2026. Watch DSACR and Gauteng Film Commission site for next call.
+  - name: KZN Dept of Sport, Arts and Culture
+    url: https://provincialgovernment.co.za/units/view/44/kwazulu-natal/arts-and-culture
+    note: Provincial arts and culture funding for KZN-based organisations. Check their annual call timelines.
+  - name: eThekwini Municipality — Arts and Culture Grant-in-Aid
+    url: https://ethekwini.org.za/
+    note: Annual Grant-in-Aid for NPOs/NPCs in performing arts and culture within eThekwini Metro (Durban). Deadline typically February; 2025/26 closed Feb 15, 2026. Applications from ethekwini.gov.za.
+  - name: Eastern Cape Provincial Arts and Culture Council (PACC)
+    url: https://www.ecpacc.org.za/
+    note: Provincial arts funder for Eastern Cape organisations and practitioners; watch for annual open calls.
+  - name: Goethe-Institut — Project Space (GPS)
+    url: https://www.goethe.de/ins/za/en/kul/kul/psg.html
+    note: Annual seed grants up to R100k for 3 projects in rural/peri-urban SA, Lesotho, Eswatini. Call opens ~Aug, deadline ~Sept; applications to gpsapplications@goethe.de. 2026 cycle in implementation; next call expected Sept 2026.
 
 # Government tender portals (procurement). These list ALL government tenders, so
 # keyword-filter HARD to arts/culture/heritage/museum/public-art/creative-industries,
@@ -81,9 +166,14 @@ tenders:
 
 # Notes for the routine:
 # - Several of these (Mophradat, ArtConnect, VANSA, On the Move, Res Artis, Music In Africa,
-#   African Culture Fund, NAC, UNESCO) block generic bot user-agents; prefer their RSS/sitemap,
-#   else skip + flag for manual check.
+#   African Culture Fund, NAC, UNESCO, Goethe-Institut) block generic bot user-agents; prefer
+#   their RSS/sitemap, else skip + flag for manual check.
 # - Time-sensitive examples seen during research: Doc Society Climate Story Fund,
 #   Future Generation Art Prize — always confirm the live deadline before proposing as "open".
 # - Capacity-building org funders are scarce and mostly annual — the NAC AOSF and UNESCO IFCD
 #   calls above had just closed at last check; re-add them automatically when they reopen.
+# - Government grants (MGE, NAC Project Funding, Western Cape) are large and highly relevant —
+#   always check their current call status each weekly run, as they open once per year.
+# - Corporate CSI: Standard Bank sponsors the Young Artist Awards (nominations via National Arts
+#   Festival); Absa backs L'Atelier; Sasol backs New Signatures. These are award/prize-based CSI.
+#   BASA's Supporting Grants are the main channel for business-arts partnership funding.
