@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-06-22",
+  "last_updated": "2026-06-29",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -103,83 +103,6 @@
     }
   ],
   "opportunities": [
-    {
-      "id": "future-generation-art-prize",
-      "title": "Future Generation Art Prize",
-      "funder": "Victor Pinchuk Foundation / PinchukArtCentre",
-      "type": "award",
-      "status": "open",
-      "deadline": "2026-06-28",
-      "amount": "US$100,000 (main + production)",
-      "description": "Global prize for artists up to 35, any nationality or medium, with a shortlist exhibition at PinchukArtCentre. Open to South African and African artists.",
-      "eligibility": "Individual artists aged 35 or under, any nationality (excluding RU/BY)",
-      "focus_areas": [
-        "Contemporary art",
-        "Emerging artists",
-        "International prize"
-      ],
-      "disciplines": [
-        "visual-art",
-        "interdisciplinary"
-      ],
-      "purpose": [
-        "award"
-      ],
-      "eligibility_type": [
-        "individual"
-      ],
-      "org_focus": false,
-      "tags": [
-        "youth",
-        "international-exchange"
-      ],
-      "audiences": [
-        "vansa"
-      ],
-      "region": "international",
-      "how_to_apply": "Apply via https://futuregenerationartprize.org/",
-      "url": "https://futuregenerationartprize.org/",
-      "date_added": "2026-06-17"
-    },
-    {
-      "id": "doc-society-climate-story",
-      "title": "Doc Society – Climate Story Fund",
-      "funder": "Doc Society",
-      "type": "grant",
-      "status": "open",
-      "deadline": "2026-06-22",
-      "amount": "Up to US$125,000",
-      "description": "Funds documentary and impact-media storytelling on the climate crisis, open to storytellers worldwide including South Africa. Expression of interest stage.",
-      "eligibility": "Individual filmmakers, storytellers and teams worldwide (SA eligible)",
-      "focus_areas": [
-        "Climate storytelling",
-        "Documentary",
-        "Impact media"
-      ],
-      "disciplines": [
-        "film-screen",
-        "new-media-digital"
-      ],
-      "purpose": [
-        "project",
-        "production"
-      ],
-      "eligibility_type": [
-        "individual",
-        "collective"
-      ],
-      "org_focus": false,
-      "tags": [
-        "documentary",
-        "climate",
-        "narrative-change"
-      ],
-      "audiences": [],
-      "region": "international",
-      "how_to_apply": "Submit an EOI via https://climatestoryunit.org/fund/",
-      "url": "https://climatestoryunit.org/fund/",
-      "date_added": "2026-06-17"
-    },
     {
       "id": "nlc-arts-culture",
       "title": "National Lotteries Commission – Arts and Culture Sector",
@@ -1096,22 +1019,41 @@
       "date_added": "2026-06-18"
     },
     {
-      "id": "9a75512a889f",
-      "title": "Open Call: The Truth Lab",
-      "funder": "Goethe-Institut South Africa",
-      "type": "grant",
+      "id": "naca-2026",
+      "title": "National Arts and Culture Awards (NACA) 2026",
+      "funder": "Department of Sport, Arts and Culture (DSAC)",
+      "type": "award",
       "status": "open",
-      "deadline": "2026-06-28",
-      "amount": "Varies",
-      "description": "Open Call: The Truth Lab Deadline: 28 June 2026 Truth Lab is a Southern African programme that strengthens media literacy and counters misinformation. It connects young journalists, Wikipedians, artists and creators to explore disinformation and build inclusive knowledge systems through verification",
-      "eligibility": "Artists in South Africa and the region",
+      "deadline": "2026-07-17",
+      "amount": "Recognition awards (Varies)",
+      "description": "DSAC's national awards celebrate achievement, innovation and excellence across South Africa's cultural and creative sectors — including visual arts, design, performance, literature, film, heritage, audio-visual, interactive media and digital content. Held under the theme 'Celebrating Our Nation's Creative Excellence', with the 2026 ceremony at Sun City on 21 August 2026. Public nominations are submitted via an online portal.",
+      "eligibility": "South African artists and creative practitioners across the cultural and creative sectors; nominations submitted by the public",
       "focus_areas": [
-        "International collaboration"
+        "National recognition",
+        "Creative excellence",
+        "All creative sectors"
       ],
-      "how_to_apply": "https://www.goethe.de/ins/za/en/kul/kul/tru.html",
-      "url": "https://www.goethe.de/ins/za/en/kul/kul/tru.html",
-      "date_added": "2026-06-22",
-      "auto": true
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "award"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [
+        "nomination-only",
+        "sa-only"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "national",
+      "how_to_apply": "Submit nominations via the official NACA portal at https://naca.dsac.gov.za/ before 17 July 2026.",
+      "url": "https://naca.dsac.gov.za/",
+      "date_added": "2026-06-29"
     }
   ]
 }
