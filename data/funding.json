@@ -1054,6 +1054,24 @@
       "how_to_apply": "Submit nominations via the official NACA portal at https://naca.dsac.gov.za/ before 17 July 2026.",
       "url": "https://naca.dsac.gov.za/",
       "date_added": "2026-06-29"
+    },
+    {
+      "id": "9a75512a889f",
+      "title": "Open Call: The Truth Lab",
+      "funder": "Goethe-Institut South Africa",
+      "type": "grant",
+      "status": "closed",
+      "deadline": "2026-06-28",
+      "amount": "Varies",
+      "description": "Open Call: The Truth Lab Deadline: 28 June 2026 Truth Lab is a Southern African programme that strengthens media literacy and counters misinformation. It connects young journalists, Wikipedians, artists and creators to explore disinformation and build inclusive knowledge systems through verification",
+      "eligibility": "Artists in South Africa and the region",
+      "focus_areas": [
+        "International collaboration"
+      ],
+      "how_to_apply": "https://www.goethe.de/ins/za/en/kul/kul/tru.html",
+      "url": "https://www.goethe.de/ins/za/en/kul/kul/tru.html",
+      "date_added": "2026-06-29",
+      "auto": true
     }
   ]
 }
