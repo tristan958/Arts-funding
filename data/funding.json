@@ -1,74 +1,180 @@
 {
   "last_updated": "2026-07-01",
   "sources": [
-    { "name": "National Arts Council (NAC)", "url": "https://www.nac.org.za/funding-news/funding-overview/" },
-    { "name": "Department of Sport, Arts and Culture (DSAC)", "url": "https://www.dsac.gov.za/funding" },
-    { "name": "National Lotteries Commission (NLC)", "url": "https://www.nlcsa.org.za/arts-and-culture/" },
-    { "name": "Goethe-Institut South Africa", "url": "https://www.goethe.de/ins/za/en/kul/kul.html" },
-    { "name": "Business and Arts South Africa (BASA)", "url": "https://www.basa.co.za" },
-    { "name": "Arts & Culture Trust (ACT)", "url": "https://act.org.za/" },
-    { "name": "Western Cape Government", "url": "https://www.westerncape.gov.za/cas/service/arts-and-culture-funding" },
-    { "name": "VANSA Arts Opportunities", "url": "https://vansa.co.za/arts-opportunities/" },
-    { "name": "eTenders Portal (gov)", "url": "https://www.etenders.gov.za/Home/opportunities?id=1" },
-    { "name": "National Film & Video Foundation (NFVF)", "url": "https://www.nfvf.co.za" },
-    { "name": "Institute for Creative Arts (ICA), UCT", "url": "https://humanities.uct.ac.za/ica" },
-    { "name": "Pro Helvetia Johannesburg", "url": "https://johannesburg.prohelvetia.org" },
-    { "name": "Electric South (immersive / new media)", "url": "https://electricsouth.org" },
-    { "name": "Art Moves Africa (mobility)", "url": "https://artmovesafrica.org" },
-    { "name": "Prince Claus Fund", "url": "https://princeclausfund.nl" },
-    { "name": "Africa No Filter", "url": "https://africanofilter.org" },
-    { "name": "ART AFRICA Magazine (Opportunities)", "url": "https://artafricamagazine.org" },
-    { "name": "Music In Africa (Opportunities)", "url": "https://www.musicinafrica.net/opportunities" },
-    { "name": "On the Move (cultural mobility)", "url": "https://on-the-move.org" },
-    { "name": "Durban FilmMart Institute", "url": "https://durbanfilmmart.co.za" },
-    { "name": "Pulitzer Center", "url": "https://pulitzercenter.org" },
-    { "name": "FNB Art Joburg", "url": "https://artjoburg.com" },
-    { "name": "Investec Cape Town Art Fair", "url": "https://www.investeccapetownartfair.co.za" },
-    { "name": "African Culture Fund (ACF)", "url": "https://www.africanculturefund.net/en/" },
-    { "name": "British Council Arts", "url": "https://arts.britishcouncil.org/" },
-    { "name": "Goethe-Institut South Africa", "url": "https://www.goethe.de/ins/za/en/kul/kul.html" },
-    { "name": "Institut Français / IFAS South Africa", "url": "https://frenchinstitute.org.za/" },
-    { "name": "Hivos – African Crossroads", "url": "https://hivos.org/program/african-crossroads/" },
-    { "name": "Nirox Foundation (artist residencies)", "url": "https://resartis.org/listings/artist-in-residence-south-africa-npo-243-824/" },
-    { "name": "University of Johannesburg Artists in Residence", "url": "https://on-the-move.org/news/university-johannesburg-artist-residence-programme-south-africa-remote" },
-    { "name": "Oppenheimer Memorial Trust (OMT)", "url": "https://www.omt.org.za/" },
-    { "name": "National Arts Festival (Standard Bank Young Artist)", "url": "https://nationalartsfestival.co.za/" },
-    { "name": "Gauteng Dept of Sport, Arts, Culture & Recreation", "url": "https://gautengfilm.org.za/" },
-    { "name": "KZN Dept of Sport, Arts and Culture / eThekwini Arts", "url": "https://ethekwini.org.za/" },
-    { "name": "Eastern Cape Provincial Arts & Culture Council (PACC)", "url": "https://www.facebook.com/aspiredevelopmentagency" },
-    { "name": "grantZA – Arts & Culture grants", "url": "https://grantza.org.za/arts-innovation" },
-    { "name": "South African Cultural Observatory (funding news)", "url": "https://www.southafricanculturalobservatory.org.za/news/funding-opportunities" },
-    { "name": "interartsfunding.com (open calls)", "url": "https://www.interartsfunding.com/opencalls" },
-    { "name": "Bag Factory Artists' Studios", "url": "https://www.bagfactoryart.org.za/category/artist-opportunities/" },
-    { "name": "SAMRO Foundation (music)", "url": "https://www.samrofoundation.org.za/" },
-    { "name": "National Heritage Council (NHC)", "url": "https://www.nhc.org.za/funding/" },
-    { "name": "Jakes Gerwel Foundation (writing residencies)", "url": "https://jgf.org.za/residencies/" },
-    { "name": "Thami Mnyele Foundation (Amsterdam residency)", "url": "https://www.thami-mnyele.nl/" },
-    { "name": "Spier Light Art", "url": "https://spierlightart.co.za/" }
+    {
+      "name": "National Arts Council (NAC)",
+      "url": "https://www.nac.org.za/funding-news/funding-overview/"
+    },
+    {
+      "name": "Department of Sport, Arts and Culture (DSAC)",
+      "url": "https://www.dsac.gov.za/funding"
+    },
+    {
+      "name": "National Lotteries Commission (NLC)",
+      "url": "https://www.nlcsa.org.za/arts-and-culture/"
+    },
+    {
+      "name": "Goethe-Institut South Africa",
+      "url": "https://www.goethe.de/ins/za/en/kul/kul.html"
+    },
+    {
+      "name": "Business and Arts South Africa (BASA)",
+      "url": "https://www.basa.co.za"
+    },
+    {
+      "name": "Arts & Culture Trust (ACT)",
+      "url": "https://act.org.za/"
+    },
+    {
+      "name": "Western Cape Government",
+      "url": "https://www.westerncape.gov.za/cas/service/arts-and-culture-funding"
+    },
+    {
+      "name": "VANSA Arts Opportunities",
+      "url": "https://vansa.co.za/arts-opportunities/"
+    },
+    {
+      "name": "eTenders Portal (gov)",
+      "url": "https://www.etenders.gov.za/Home/opportunities?id=1"
+    },
+    {
+      "name": "National Film & Video Foundation (NFVF)",
+      "url": "https://www.nfvf.co.za"
+    },
+    {
+      "name": "Institute for Creative Arts (ICA), UCT",
+      "url": "https://humanities.uct.ac.za/ica"
+    },
+    {
+      "name": "Pro Helvetia Johannesburg",
+      "url": "https://johannesburg.prohelvetia.org"
+    },
+    {
+      "name": "Electric South (immersive / new media)",
+      "url": "https://electricsouth.org"
+    },
+    {
+      "name": "Art Moves Africa (mobility)",
+      "url": "https://artmovesafrica.org"
+    },
+    {
+      "name": "Prince Claus Fund",
+      "url": "https://princeclausfund.nl"
+    },
+    {
+      "name": "Africa No Filter",
+      "url": "https://africanofilter.org"
+    },
+    {
+      "name": "ART AFRICA Magazine (Opportunities)",
+      "url": "https://artafricamagazine.org"
+    },
+    {
+      "name": "Music In Africa (Opportunities)",
+      "url": "https://www.musicinafrica.net/opportunities"
+    },
+    {
+      "name": "On the Move (cultural mobility)",
+      "url": "https://on-the-move.org"
+    },
+    {
+      "name": "Durban FilmMart Institute",
+      "url": "https://durbanfilmmart.co.za"
+    },
+    {
+      "name": "Pulitzer Center",
+      "url": "https://pulitzercenter.org"
+    },
+    {
+      "name": "FNB Art Joburg",
+      "url": "https://artjoburg.com"
+    },
+    {
+      "name": "Investec Cape Town Art Fair",
+      "url": "https://www.investeccapetownartfair.co.za"
+    },
+    {
+      "name": "African Culture Fund (ACF)",
+      "url": "https://www.africanculturefund.net/en/"
+    },
+    {
+      "name": "British Council Arts",
+      "url": "https://arts.britishcouncil.org/"
+    },
+    {
+      "name": "Institut Français / IFAS South Africa",
+      "url": "https://frenchinstitute.org.za/"
+    },
+    {
+      "name": "Hivos – African Crossroads",
+      "url": "https://hivos.org/program/african-crossroads/"
+    },
+    {
+      "name": "Nirox Foundation (artist residencies)",
+      "url": "https://resartis.org/listings/artist-in-residence-south-africa-npo-243-824/"
+    },
+    {
+      "name": "University of Johannesburg Artists in Residence",
+      "url": "https://on-the-move.org/news/university-johannesburg-artist-residence-programme-south-africa-remote"
+    },
+    {
+      "name": "Oppenheimer Memorial Trust (OMT)",
+      "url": "https://www.omt.org.za/"
+    },
+    {
+      "name": "National Arts Festival (Standard Bank Young Artist)",
+      "url": "https://nationalartsfestival.co.za/"
+    },
+    {
+      "name": "Gauteng Dept of Sport, Arts, Culture & Recreation",
+      "url": "https://gautengfilm.org.za/"
+    },
+    {
+      "name": "KZN Dept of Sport, Arts and Culture / eThekwini Arts",
+      "url": "https://ethekwini.org.za/"
+    },
+    {
+      "name": "Eastern Cape Provincial Arts & Culture Council (PACC)",
+      "url": "https://www.facebook.com/aspiredevelopmentagency"
+    },
+    {
+      "name": "grantZA – Arts & Culture grants",
+      "url": "https://grantza.org.za/arts-innovation"
+    },
+    {
+      "name": "South African Cultural Observatory (funding news)",
+      "url": "https://www.southafricanculturalobservatory.org.za/news/funding-opportunities"
+    },
+    {
+      "name": "interartsfunding.com (open calls)",
+      "url": "https://www.interartsfunding.com/opencalls"
+    },
+    {
+      "name": "Bag Factory Artists' Studios",
+      "url": "https://www.bagfactoryart.org.za/category/artist-opportunities/"
+    },
+    {
+      "name": "SAMRO Foundation (music)",
+      "url": "https://www.samrofoundation.org.za/"
+    },
+    {
+      "name": "National Heritage Council (NHC)",
+      "url": "https://www.nhc.org.za/funding/"
+    },
+    {
+      "name": "Jakes Gerwel Foundation (writing residencies)",
+      "url": "https://jgf.org.za/residencies/"
+    },
+    {
+      "name": "Thami Mnyele Foundation (Amsterdam residency)",
+      "url": "https://www.thami-mnyele.nl/"
+    },
+    {
+      "name": "Spier Light Art",
+      "url": "https://spierlightart.co.za/"
+    }
   ],
   "opportunities": [
-    {
-      "id": "spier-light-art-2027",
-      "title": "Spier Light Art 2027 – Open Call for Proposals",
-      "funder": "Spier Arts Trust / Spier Light Art",
-      "type": "call",
-      "status": "open",
-      "deadline": "2026-07-21",
-      "amount": "Standardised artist fee + production budget (scale-dependent)",
-      "description": "South Africa's leading platform for light-based contemporary art — Africa's longest-running exhibition of its kind, now in its ninth year. Commissions site-specific, sculptural, interactive, digital, video, sound and light-based works for the Spier Wine Farm in Stellenbosch (exhibition 26 Feb–21 Mar 2027). Light must be central to the concept, medium and subject.",
-      "eligibility": "Artists, designers, collectives, students and institutions from diverse backgrounds, disciplines and career stages",
-      "focus_areas": ["Light art", "Site-specific commissions", "Digital & interactive", "Public exhibition"],
-      "disciplines": ["public-art", "new-media-digital", "visual-art", "interdisciplinary"],
-      "purpose": ["commission", "production"],
-      "eligibility_type": ["individual", "collective", "organisation"],
-      "org_focus": false,
-      "tags": ["site-specific", "spatial", "experimental", "public-space", "immersive-xr"],
-      "audiences": ["vansa"],
-      "region": "western-cape",
-      "how_to_apply": "Email an expression of interest via spierlightart.co.za by 21 July 2026. Shortlist notified end Aug 2026; detailed proposals due mid-Sept 2026; final selection early Oct 2026.",
-      "url": "https://spierlightart.co.za/",
-      "date_added": "2026-07-01"
-    },
     {
       "id": "nlc-arts-culture",
       "title": "National Lotteries Commission – Arts and Culture Sector",
@@ -79,13 +185,33 @@
       "amount": "Varies",
       "description": "Funds the development of the arts and the preservation of South African culture and national heritage, including natural environmental heritage, historical and architectural heritage. Empowers communities and enables artists to showcase work internationally.",
       "eligibility": "South African registered non-profit organisations working in arts and culture",
-      "focus_areas": ["Arts development", "Cultural preservation", "National heritage", "Community empowerment", "International showcasing"],
-      "disciplines": ["all-disciplines", "heritage"],
-      "purpose": ["project", "capacity-building"],
-      "eligibility_type": ["organisation"],
+      "focus_areas": [
+        "Arts development",
+        "Cultural preservation",
+        "National heritage",
+        "Community empowerment",
+        "International showcasing"
+      ],
+      "disciplines": [
+        "all-disciplines",
+        "heritage"
+      ],
+      "purpose": [
+        "project",
+        "capacity-building"
+      ],
+      "eligibility_type": [
+        "organisation"
+      ],
       "org_focus": true,
-      "tags": ["community", "heritage", "sustainability"],
-      "audiences": ["vansa"],
+      "tags": [
+        "community",
+        "heritage",
+        "sustainability"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "Apply via the NLC portal at https://www.nlcsa.org.za/arts-and-culture/",
       "url": "https://www.nlcsa.org.za/arts-and-culture/",
@@ -101,13 +227,30 @@
       "amount": "Matching grants up to R100,000",
       "description": "Funded by the Department of Sport, Arts and Culture. Provides matching grants to support partnerships between business and the arts sector in South Africa, building organisational sustainability.",
       "eligibility": "Arts organisations with confirmed business sponsorship",
-      "focus_areas": ["Business-arts partnerships", "Corporate sponsorship matching", "Arts sector sustainability"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["capacity-building", "project"],
-      "eligibility_type": ["organisation"],
+      "focus_areas": [
+        "Business-arts partnerships",
+        "Corporate sponsorship matching",
+        "Arts sector sustainability"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "capacity-building",
+        "project"
+      ],
+      "eligibility_type": [
+        "organisation"
+      ],
       "org_focus": true,
-      "tags": ["organisational-development", "partnerships", "sustainability"],
-      "audiences": ["vansa"],
+      "tags": [
+        "organisational-development",
+        "partnerships",
+        "sustainability"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "Contact BASA at info@basa.co.za or visit www.basa.co.za",
       "url": "https://www.basa.co.za",
@@ -123,13 +266,29 @@
       "amount": "Varies",
       "description": "ACT has served the arts and culture sector across all 9 provinces for 31 years through development and grant making. Founded in 1994 with support from Nedcor Bank and Sun International.",
       "eligibility": "South African arts and culture practitioners and organisations across all 9 provinces",
-      "focus_areas": ["Arts development", "Cultural sector support", "Provincial reach"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["project", "capacity-building"],
-      "eligibility_type": ["individual", "organisation"],
+      "focus_areas": [
+        "Arts development",
+        "Cultural sector support",
+        "Provincial reach"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "capacity-building"
+      ],
+      "eligibility_type": [
+        "individual",
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["community"],
-      "audiences": ["vansa"],
+      "tags": [
+        "community"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "Visit https://act.org.za/ for current application information",
       "url": "https://act.org.za/",
@@ -145,12 +304,24 @@
       "amount": "Varies per tender",
       "description": "The Department of Sport, Arts and Culture regularly publishes tenders for service provision related to arts and culture infrastructure, programmes, and services.",
       "eligibility": "Registered service providers meeting specific tender requirements",
-      "focus_areas": ["Service provision", "Infrastructure", "Programme delivery"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["procurement"],
-      "eligibility_type": ["organisation"],
+      "focus_areas": [
+        "Service provision",
+        "Infrastructure",
+        "Programme delivery"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "procurement"
+      ],
+      "eligibility_type": [
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["infrastructure"],
+      "tags": [
+        "infrastructure"
+      ],
       "audiences": [],
       "region": "national",
       "how_to_apply": "Check https://www.dsac.gov.za/qt-tenders and https://www.etenders.gov.za/ regularly",
@@ -167,13 +338,29 @@
       "amount": "Varies",
       "description": "Grant making concentrated on Eastern and Southern Africa, supporting the development of arts across the continent.",
       "eligibility": "Arts organisations and practitioners in Eastern and Southern Africa",
-      "focus_areas": ["Arts development in Africa", "Eastern and Southern Africa focus"],
-      "disciplines": ["visual-art", "all-disciplines"],
-      "purpose": ["project", "capacity-building"],
-      "eligibility_type": ["individual", "organisation"],
+      "focus_areas": [
+        "Arts development in Africa",
+        "Eastern and Southern Africa focus"
+      ],
+      "disciplines": [
+        "visual-art",
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "capacity-building"
+      ],
+      "eligibility_type": [
+        "individual",
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["community"],
-      "audiences": ["vansa"],
+      "tags": [
+        "community"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "africa",
       "how_to_apply": "Visit https://www.theafricanartstrust.org/funding-developing-arts-africa.php",
       "url": "https://www.theafricanartstrust.org/funding-developing-arts-africa.php",
@@ -189,12 +376,30 @@
       "amount": "Up to ~US$20,000 (completion grants)",
       "description": "Backs African artists making virtual reality, augmented reality and immersive/interactive non-fiction — from prototype through to completion — via the New Dimensions Lab and completion grants. Premiered at Venice VR, Sundance New Frontier and IDFA DocLab.",
       "eligibility": "African artists, storytellers and teams working in VR/AR/XR and digital storytelling",
-      "focus_areas": ["VR / AR / XR", "Immersive non-fiction", "Digital storytelling"],
-      "disciplines": ["new-media-digital", "film-screen", "interdisciplinary"],
-      "purpose": ["production", "project"],
-      "eligibility_type": ["individual", "collective"],
+      "focus_areas": [
+        "VR / AR / XR",
+        "Immersive non-fiction",
+        "Digital storytelling"
+      ],
+      "disciplines": [
+        "new-media-digital",
+        "film-screen",
+        "interdisciplinary"
+      ],
+      "purpose": [
+        "production",
+        "project"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective"
+      ],
       "org_focus": false,
-      "tags": ["immersive-xr", "documentary", "experimental"],
+      "tags": [
+        "immersive-xr",
+        "documentary",
+        "experimental"
+      ],
       "audiences": [],
       "region": "africa",
       "how_to_apply": "Watch https://electricsouth.org for open lab and grant calls",
@@ -211,12 +416,29 @@
       "amount": "Hard reporting costs (varies)",
       "description": "Grants covering the hard costs of ambitious, underreported journalism — including audio/podcast, documentary and multimedia — with a dedicated Africa reporting track. South African journalists and storytellers are eligible.",
       "eligibility": "Individual journalists, storytellers and newsrooms (South Africa eligible)",
-      "focus_areas": ["Audio & podcast", "Documentary", "Multimedia journalism"],
-      "disciplines": ["podcast-audio", "new-media-digital", "film-screen"],
-      "purpose": ["project", "research"],
-      "eligibility_type": ["individual", "organisation"],
+      "focus_areas": [
+        "Audio & podcast",
+        "Documentary",
+        "Multimedia journalism"
+      ],
+      "disciplines": [
+        "podcast-audio",
+        "new-media-digital",
+        "film-screen"
+      ],
+      "purpose": [
+        "project",
+        "research"
+      ],
+      "eligibility_type": [
+        "individual",
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["documentary", "narrative-change"],
+      "tags": [
+        "documentary",
+        "narrative-change"
+      ],
       "audiences": [],
       "region": "international",
       "how_to_apply": "Apply via https://pulitzercenter.org/grants-fellowships",
@@ -233,12 +455,26 @@
       "amount": "Up to £1,000",
       "description": "Monthly micro-grants plus mentoring to help creators develop and produce podcast episodes or pilots. Open to applicants worldwide, including South Africa.",
       "eligibility": "Individual podcasters, 18+, worldwide",
-      "focus_areas": ["Podcast & audio", "Mentoring", "Pilot development"],
-      "disciplines": ["podcast-audio"],
-      "purpose": ["production", "project"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Podcast & audio",
+        "Mentoring",
+        "Pilot development"
+      ],
+      "disciplines": [
+        "podcast-audio"
+      ],
+      "purpose": [
+        "production",
+        "project"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["narrative-change", "youth"],
+      "tags": [
+        "narrative-change",
+        "youth"
+      ],
       "audiences": [],
       "region": "international",
       "how_to_apply": "Apply via https://contentisqueen.org",
@@ -255,13 +491,35 @@
       "amount": "Fellowship + commission (varies)",
       "description": "Fellowships and commissions for interdisciplinary, live and public-space art — including the biennial ICA Live Art Festival and Infecting the City. A strong home for experimental, site-responsive and socially-engaged practice.",
       "eligibility": "Individual artists and researchers (SA / Africa-based; some international fellowships)",
-      "focus_areas": ["Live & interdisciplinary art", "Site-specific / public space", "Socially-engaged practice"],
-      "disciplines": ["interdisciplinary", "public-art", "performing-arts"],
-      "purpose": ["research", "production", "project"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Live & interdisciplinary art",
+        "Site-specific / public space",
+        "Socially-engaged practice"
+      ],
+      "disciplines": [
+        "interdisciplinary",
+        "public-art",
+        "performing-arts"
+      ],
+      "purpose": [
+        "research",
+        "production",
+        "project"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["experimental", "site-specific", "public-space", "socially-engaged", "interdisciplinary"],
-      "audiences": ["vansa"],
+      "tags": [
+        "experimental",
+        "site-specific",
+        "public-space",
+        "socially-engaged",
+        "interdisciplinary"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "See open calls and fellowship windows at https://humanities.uct.ac.za/ica",
       "url": "https://humanities.uct.ac.za/ica",
@@ -277,13 +535,28 @@
       "amount": "Travel costs (flights, visa, insurance)",
       "description": "Travel grants enabling artists and cultural operators to move within Africa for research, residencies, festivals, training and collaboration.",
       "eligibility": "Artists, curators and cultural operators living and working in Africa",
-      "focus_areas": ["Mobility / travel", "Pan-African exchange", "Research & collaboration"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["mobility", "research"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Mobility / travel",
+        "Pan-African exchange",
+        "Research & collaboration"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "mobility",
+        "research"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["international-exchange"],
-      "audiences": ["vansa"],
+      "tags": [
+        "international-exchange"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "africa",
       "how_to_apply": "Apply during open rounds at https://artmovesafrica.org",
       "url": "https://artmovesafrica.org/en/about-the-grants-program/",
@@ -299,12 +572,28 @@
       "amount": "Development, production & training grants (varies)",
       "description": "South Africa's statutory screen funder: development, production, marketing and distribution funding, plus bursaries for film study and training.",
       "eligibility": "South African filmmakers and production companies (orgs majority black-owned); individuals for training and bursaries",
-      "focus_areas": ["Film & video", "Development & production", "Bursaries & training"],
-      "disciplines": ["film-screen", "new-media-digital"],
-      "purpose": ["project", "production", "bursary"],
-      "eligibility_type": ["individual", "organisation"],
+      "focus_areas": [
+        "Film & video",
+        "Development & production",
+        "Bursaries & training"
+      ],
+      "disciplines": [
+        "film-screen",
+        "new-media-digital"
+      ],
+      "purpose": [
+        "project",
+        "production",
+        "bursary"
+      ],
+      "eligibility_type": [
+        "individual",
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["documentary"],
+      "tags": [
+        "documentary"
+      ],
       "audiences": [],
       "region": "national",
       "how_to_apply": "See current calls at https://www.nfvf.co.za",
@@ -321,13 +610,30 @@
       "amount": "Seed €5,000 + mentorship/mobility programmes",
       "description": "Supports emerging artists and cultural practitioners doing socially and politically engaged work, through Seed Awards, Mentorship Awards and mobility/building programmes. Global South including South Africa.",
       "eligibility": "Emerging artists and cultural practitioners (1–10 years), Global South incl. SA",
-      "focus_areas": ["Socially-engaged practice", "Emerging practitioners", "Culture & development"],
-      "disciplines": ["all-disciplines", "interdisciplinary"],
-      "purpose": ["award", "mobility"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Socially-engaged practice",
+        "Emerging practitioners",
+        "Culture & development"
+      ],
+      "disciplines": [
+        "all-disciplines",
+        "interdisciplinary"
+      ],
+      "purpose": [
+        "award",
+        "mobility"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["experimental", "socially-engaged"],
-      "audiences": ["vansa"],
+      "tags": [
+        "experimental",
+        "socially-engaged"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "international",
       "how_to_apply": "See current calls at https://princeclausfund.nl/awards-and-programmes",
       "url": "https://princeclausfund.nl/awards-and-programmes",
@@ -343,12 +649,31 @@
       "amount": "Micro to project grants (~US$3k–US$25k)",
       "description": "Grants to shift African narratives — supporting storytellers, media and creatives working in digital, audio and new-media storytelling (Kekere micro-grants, Story Labs and project support).",
       "eligibility": "Individual storytellers and organisations across Africa (some calls under-35)",
-      "focus_areas": ["Narrative change", "Digital & audio storytelling", "New media"],
-      "disciplines": ["new-media-digital", "podcast-audio", "film-screen", "all-disciplines"],
-      "purpose": ["project", "production"],
-      "eligibility_type": ["individual", "organisation"],
+      "focus_areas": [
+        "Narrative change",
+        "Digital & audio storytelling",
+        "New media"
+      ],
+      "disciplines": [
+        "new-media-digital",
+        "podcast-audio",
+        "film-screen",
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual",
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["narrative-change", "documentary", "youth"],
+      "tags": [
+        "narrative-change",
+        "documentary",
+        "youth"
+      ],
       "audiences": [],
       "region": "africa",
       "how_to_apply": "See open calls at https://africanofilter.org/our-grants",
@@ -365,13 +690,36 @@
       "amount": "Project, mobility & residency funding (varies)",
       "description": "The Swiss Arts Council's Southern Africa office funds collaboration, research, mobility and interdisciplinary/digital projects between Switzerland and Southern Africa, plus an annual residency.",
       "eligibility": "Individuals, collectives and organisations (a Swiss + Southern/E/W/Central African partner for co-creation)",
-      "focus_areas": ["Cross-disciplinary collaboration", "Design & interactive media", "Mobility & research"],
-      "disciplines": ["interdisciplinary", "new-media-digital", "visual-art", "performing-arts"],
-      "purpose": ["project", "mobility", "residency", "research"],
-      "eligibility_type": ["individual", "collective", "organisation"],
+      "focus_areas": [
+        "Cross-disciplinary collaboration",
+        "Design & interactive media",
+        "Mobility & research"
+      ],
+      "disciplines": [
+        "interdisciplinary",
+        "new-media-digital",
+        "visual-art",
+        "performing-arts"
+      ],
+      "purpose": [
+        "project",
+        "mobility",
+        "residency",
+        "research"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective",
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["experimental", "international-exchange"],
-      "audiences": ["vansa"],
+      "tags": [
+        "experimental",
+        "international-exchange"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "international",
       "how_to_apply": "See guidelines and calls at https://johannesburg.prohelvetia.org",
       "url": "https://johannesburg.prohelvetia.org",
@@ -387,12 +735,25 @@
       "amount": "€7,500 (development) / €25,000 (production/post)",
       "description": "Supports author-driven creative documentary by filmmakers from under-resourced regions, including South Africa (subject to the annual country list).",
       "eligibility": "Director + producer teams from eligible countries (SA typically eligible)",
-      "focus_areas": ["Creative documentary", "Development & production"],
-      "disciplines": ["film-screen"],
-      "purpose": ["project", "production"],
-      "eligibility_type": ["individual", "collective"],
+      "focus_areas": [
+        "Creative documentary",
+        "Development & production"
+      ],
+      "disciplines": [
+        "film-screen"
+      ],
+      "purpose": [
+        "project",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective"
+      ],
       "org_focus": false,
-      "tags": ["documentary"],
+      "tags": [
+        "documentary"
+      ],
       "audiences": [],
       "region": "international",
       "how_to_apply": "See https://professionals.idfa.nl/training-funding/funding/about-the-idfa-bertha-fund/",
@@ -409,12 +770,25 @@
       "amount": "Development–post grants (varies)",
       "description": "Unrestricted grants and labs for nonfiction filmmakers worldwide, including South Africa, from development through post-production.",
       "eligibility": "Individual nonfiction filmmakers worldwide (SA eligible)",
-      "focus_areas": ["Documentary", "Nonfiction film"],
-      "disciplines": ["film-screen"],
-      "purpose": ["project", "production", "research"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Documentary",
+        "Nonfiction film"
+      ],
+      "disciplines": [
+        "film-screen"
+      ],
+      "purpose": [
+        "project",
+        "production",
+        "research"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["documentary"],
+      "tags": [
+        "documentary"
+      ],
       "audiences": [],
       "region": "international",
       "how_to_apply": "See open windows at https://www.sundance.org/programs/documentary-fund",
@@ -431,13 +805,28 @@
       "amount": "R100,000 first prize + Pretoria Art Museum solo exhibition",
       "description": "South Africa's longest-running national art competition for emerging artists, with cash prizes and a solo exhibition for the winner.",
       "eligibility": "South African citizens/permanent residents, 18+, not previously solo-exhibited or gallery-represented",
-      "focus_areas": ["Emerging visual artists", "All media incl. photography & video"],
-      "disciplines": ["visual-art", "new-media-digital"],
-      "purpose": ["award"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Emerging visual artists",
+        "All media incl. photography & video"
+      ],
+      "disciplines": [
+        "visual-art",
+        "new-media-digital"
+      ],
+      "purpose": [
+        "award"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["sa-only", "photography"],
-      "audiences": ["vansa"],
+      "tags": [
+        "sa-only",
+        "photography"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "Enter via https://www.sasolsignatures.co.za/",
       "url": "https://www.sasolsignatures.co.za/",
@@ -453,13 +842,28 @@
       "amount": "Cash awards + residencies (SA / France), incl. the Gérard Sekoto Award",
       "description": "Pan-African emerging-artist competition offering cash and residency awards, including the Gérard Sekoto Award for a South African artist.",
       "eligibility": "Emerging artists from participating African countries (incl. SA)",
-      "focus_areas": ["Emerging visual artists", "Residencies", "Pan-African"],
-      "disciplines": ["visual-art"],
-      "purpose": ["award", "residency"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Emerging visual artists",
+        "Residencies",
+        "Pan-African"
+      ],
+      "disciplines": [
+        "visual-art"
+      ],
+      "purpose": [
+        "award",
+        "residency"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["international-exchange"],
-      "audiences": ["vansa"],
+      "tags": [
+        "international-exchange"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "africa",
       "how_to_apply": "See https://www.absa.africa/absa-latelier-2026/",
       "url": "https://www.absa.africa/absa-latelier-2026/",
@@ -475,13 +879,27 @@
       "amount": "Funded 1–2 month New York residency fellowship",
       "description": "A funded New York (Tribeca) residency fellowship for professional South African contemporary visual artists.",
       "eligibility": "Professional South African contemporary visual artists",
-      "focus_areas": ["New York residency", "Contemporary visual art"],
-      "disciplines": ["visual-art"],
-      "purpose": ["residency"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "New York residency",
+        "Contemporary visual art"
+      ],
+      "disciplines": [
+        "visual-art"
+      ],
+      "purpose": [
+        "residency"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["sa-only", "international-exchange"],
-      "audiences": ["vansa"],
+      "tags": [
+        "sa-only",
+        "international-exchange"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "international",
       "how_to_apply": "See https://www.theampersandfoundation.com/how-to-apply",
       "url": "https://www.theampersandfoundation.com/how-to-apply",
@@ -497,13 +915,28 @@
       "amount": "R50,000 + year-long mentorship",
       "description": "A fellowship for emerging South African photographers to produce a new photographic body of work with year-long mentorship, via partner institutions.",
       "eligibility": "Emerging photographers via SA partner institutions (Market Photo Workshop, Wits, Michaelis)",
-      "focus_areas": ["Photography / lens-based", "Mentorship"],
-      "disciplines": ["visual-art"],
-      "purpose": ["project", "research"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Photography / lens-based",
+        "Mentorship"
+      ],
+      "disciplines": [
+        "visual-art"
+      ],
+      "purpose": [
+        "project",
+        "research"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["photography", "sa-only"],
-      "audiences": ["vansa"],
+      "tags": [
+        "photography",
+        "sa-only"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "See https://marketphotoworkshop.co.za/projects/mentorships-residencies/tierney-fellowship/",
       "url": "https://marketphotoworkshop.co.za/projects/mentorships-residencies/tierney-fellowship/",
@@ -519,13 +952,25 @@
       "amount": "Need-based grants (up to ~US$50,000)",
       "description": "Need-based project/working grants to professional visual artists worldwide, including South Africa. Painters, sculptors and artists working on paper.",
       "eligibility": "Professional, actively-exhibiting visual artists worldwide (SA eligible)",
-      "focus_areas": ["Visual arts", "Working / project grants"],
-      "disciplines": ["visual-art"],
-      "purpose": ["project", "production"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Visual arts",
+        "Working / project grants"
+      ],
+      "disciplines": [
+        "visual-art"
+      ],
+      "purpose": [
+        "project",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
       "tags": [],
-      "audiences": ["vansa"],
+      "audiences": [
+        "vansa"
+      ],
       "region": "international",
       "how_to_apply": "Apply (rolling) via https://www.pkf.org/apply/how-to-apply/",
       "url": "https://www.pkf.org/apply/how-to-apply/",
@@ -541,13 +986,28 @@
       "amount": "Up to €5,000 (6–12 month projects)",
       "description": "Through the Solidarity Fund for Artists and Cultural Organisations (SOFACO), ACF awards professional grants to strengthen the structures of African cultural organisations — strategic planning, fundraising, governance, M&E, restructuring and internal capacity building. Open to organisations across Africa, including South Africa.",
       "eligibility": "Legally registered cultural organisations based in Africa with at least 3 years of proven activity and a physical address in an African country",
-      "focus_areas": ["Organisational structuring", "Governance & fundraising", "Capacity building"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["capacity-building"],
-      "eligibility_type": ["organisation"],
+      "focus_areas": [
+        "Organisational structuring",
+        "Governance & fundraising",
+        "Capacity building"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "capacity-building"
+      ],
+      "eligibility_type": [
+        "organisation"
+      ],
       "org_focus": true,
-      "tags": ["organisational-development", "sustainability"],
-      "audiences": ["vansa"],
+      "tags": [
+        "organisational-development",
+        "sustainability"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "africa",
       "how_to_apply": "Complete the SOFACO application form from the ACF site and email it as a PDF to applications@africanculturefund.net and administrator@africanculturefund.net (English or French). Watch for the current call on the ACF website.",
       "url": "https://www.africanculturefund.net/en/",
@@ -563,13 +1023,28 @@
       "amount": "Up to €4,000 per mobility",
       "description": "Mobility grants supporting short-term travel for individual artists and cultural professionals — both intra-African (Africa–Africa) and intercontinental (Africa–Europe) — for collaboration, research, networking and career development. Run under the EU/Goethe-Institut Africa-Europe Partnerships for Culture programme with quarterly cut-off dates (next: 15 September 2026).",
       "eligibility": "Individual artists and cultural professionals (18+) based in Sub-Saharan Africa (incl. South Africa) or the EU, working across artistic disciplines",
-      "focus_areas": ["Mobility / travel", "Africa–Europe & intra-African exchange", "Research & collaboration"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["mobility", "research"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Mobility / travel",
+        "Africa–Europe & intra-African exchange",
+        "Research & collaboration"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "mobility",
+        "research"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["international-exchange"],
-      "audiences": ["vansa"],
+      "tags": [
+        "international-exchange"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "international",
       "how_to_apply": "Apply online via the Goethe Application Portal (GAP); next cut-off 15 September 2026. See https://www.goethe.de/prj/aep/en/cal/ssa/mga.html",
       "url": "https://www.goethe.de/prj/aep/en/cal/ssa/mga.html",
@@ -585,17 +1060,119 @@
       "amount": "£5,000–£15,000 (varies by country)",
       "description": "Grants for fresh cultural partnerships between the UK and South Africa — helping artists, collectives, festivals, hubs and cultural organisations develop new collaborations and exchange at any stage. Each project pairs at least one UK-based partner with a South African partner; delivery runs Dec 2026–Dec 2027.",
       "eligibility": "Creative practitioners, artists, collectives and cultural organisations based in South Africa, partnering with at least one UK-based collaborator",
-      "focus_areas": ["UK–SA collaboration", "International exchange", "Partnership development"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["project", "mobility", "research"],
-      "eligibility_type": ["individual", "collective", "organisation"],
+      "focus_areas": [
+        "UK–SA collaboration",
+        "International exchange",
+        "Partnership development"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "mobility",
+        "research"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective",
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["international-exchange"],
-      "audiences": ["vansa"],
+      "tags": [
+        "international-exchange"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "international",
       "how_to_apply": "Apply online during the open round at https://arts.britishcouncil.org/connections-through-culture (applications close 12 August 2026, 23:59 BST).",
       "url": "https://arts.britishcouncil.org/connections-through-culture",
       "date_added": "2026-06-18"
+    },
+    {
+      "id": "naca-2026",
+      "title": "National Arts and Culture Awards (NACA) 2026",
+      "funder": "Department of Sport, Arts and Culture (DSAC)",
+      "type": "award",
+      "status": "open",
+      "deadline": "2026-07-17",
+      "amount": "Recognition awards (Varies)",
+      "description": "DSAC's national awards celebrate achievement, innovation and excellence across South Africa's cultural and creative sectors — including visual arts, design, performance, literature, film, heritage, audio-visual, interactive media and digital content. Held under the theme 'Celebrating Our Nation's Creative Excellence', with the 2026 ceremony at Sun City on 21 August 2026. Public nominations are submitted via an online portal.",
+      "eligibility": "South African artists and creative practitioners across the cultural and creative sectors; nominations submitted by the public",
+      "focus_areas": [
+        "National recognition",
+        "Creative excellence",
+        "All creative sectors"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "award"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [
+        "nomination-only",
+        "sa-only"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "national",
+      "how_to_apply": "Submit nominations via the official NACA portal at https://naca.dsac.gov.za/ before 17 July 2026.",
+      "url": "https://naca.dsac.gov.za/",
+      "date_added": "2026-06-29"
+    },
+    {
+      "id": "spier-light-art-2027",
+      "title": "Spier Light Art 2027 – Open Call for Proposals",
+      "funder": "Spier Arts Trust / Spier Light Art",
+      "type": "call",
+      "status": "open",
+      "deadline": "2026-07-21",
+      "amount": "Standardised artist fee + production budget (scale-dependent)",
+      "description": "South Africa's leading platform for light-based contemporary art — Africa's longest-running exhibition of its kind, now in its ninth year. Commissions site-specific, sculptural, interactive, digital, video, sound and light-based works for the Spier Wine Farm in Stellenbosch (exhibition 26 Feb–21 Mar 2027). Light must be central to the concept, medium and subject.",
+      "eligibility": "Artists, designers, collectives, students and institutions from diverse backgrounds, disciplines and career stages",
+      "focus_areas": [
+        "Light art",
+        "Site-specific commissions",
+        "Digital & interactive",
+        "Public exhibition"
+      ],
+      "disciplines": [
+        "public-art",
+        "new-media-digital",
+        "visual-art",
+        "interdisciplinary"
+      ],
+      "purpose": [
+        "commission",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective",
+        "organisation"
+      ],
+      "org_focus": false,
+      "tags": [
+        "site-specific",
+        "spatial",
+        "experimental",
+        "public-space",
+        "immersive-xr"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "western-cape",
+      "how_to_apply": "Email an expression of interest via spierlightart.co.za by 21 July 2026. Shortlist notified end Aug 2026; detailed proposals due mid-Sept 2026; final selection early Oct 2026.",
+      "url": "https://spierlightart.co.za/",
+      "date_added": "2026-07-01"
     },
     {
       "id": "nac-annual-project-funding",
@@ -607,13 +1184,33 @@
       "amount": "Up to R350,000",
       "description": "The NAC's core annual grant for South African arts practitioners and organisations across all disciplines — craft, dance, literature, music, theatre, visual arts and multidiscipline. Projects must address at least two of six focus areas: social cohesion, marginalised/indigenous arts, social issues, vulnerable groups, innovation/digital arts, and skills/entrepreneurship. Annual cycle (2026–2027 round closed 13 March 2026; next expected Jan–Feb 2027).",
       "eligibility": "Individual arts practitioners, registered arts organisations and community art centres in South Africa, active in any arts discipline",
-      "focus_areas": ["All disciplines", "Social cohesion", "Indigenous arts", "Digital arts", "Skills development"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["project", "capacity-building"],
-      "eligibility_type": ["individual", "organisation"],
+      "focus_areas": [
+        "All disciplines",
+        "Social cohesion",
+        "Indigenous arts",
+        "Digital arts",
+        "Skills development"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "capacity-building"
+      ],
+      "eligibility_type": [
+        "individual",
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["community", "sa-only", "youth"],
-      "audiences": ["vansa"],
+      "tags": [
+        "community",
+        "sa-only",
+        "youth"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "Register and apply online at https://nac.praxisgms.co.za/ during the open call (watch for next cycle announcement around Jan 2027).",
       "url": "https://www.nac.org.za/funding-news/funding-overview/",
@@ -629,13 +1226,30 @@
       "amount": "Up to R2,000,000",
       "description": "South Africa's largest single competitive arts grant. DSAC's Mzansi Golden Economy programme funds Cultural and Creative Industries Projects (CCIPs) and Touring Ventures, with individual grants of up to R2 million. Open to SA-citizen-owned arts, culture and heritage NPOs and Pty Ltd companies. Annual open call, typically December to January. 2025/26 round (projects May 2026–Feb 2027) closed 1 February 2026; next call expected December 2026.",
       "eligibility": "SA-citizen-owned and managed arts, culture and heritage NPOs or Pty Ltd companies, tax-compliant with independent legal status",
-      "focus_areas": ["Cultural & creative industries", "Touring ventures", "Arts events & programmes"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["project", "production"],
-      "eligibility_type": ["organisation"],
+      "focus_areas": [
+        "Cultural & creative industries",
+        "Touring ventures",
+        "Arts events & programmes"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "production"
+      ],
+      "eligibility_type": [
+        "organisation"
+      ],
       "org_focus": true,
-      "tags": ["community", "sa-only", "sustainability"],
-      "audiences": ["vansa"],
+      "tags": [
+        "community",
+        "sa-only",
+        "sustainability"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "Apply via https://www.eservices.gov.za during the annual open call. Watch https://www.dsac.gov.za for the 2026/27 call (~December 2026).",
       "url": "https://www.dsac.gov.za/Revised%20Mzansi-Golden-Economy-MGE-2025/2026-Open%20Call",
@@ -651,13 +1265,32 @@
       "amount": "Up to R100,000 per project (3 projects selected annually)",
       "description": "Annual seed grants for artistic projects engaging communities in rural and peri-urban parts of South Africa, Lesotho and Eswatini. Projects must be realised outside the major urban centres (not solely Joburg, Cape Town or Durban) and focus on producing or facilitating artistic content with local communities or arts spaces. 2026 cycle projects are currently in implementation; next call for 2027 projects expected around September 2026.",
       "eligibility": "Arts professionals based in South Africa, Lesotho or Eswatini proposing community-engaged projects in rural or peri-urban settings",
-      "focus_areas": ["Rural & peri-urban community arts", "Site-specific projects", "Artistic production"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["project", "production"],
-      "eligibility_type": ["individual", "collective"],
+      "focus_areas": [
+        "Rural & peri-urban community arts",
+        "Site-specific projects",
+        "Artistic production"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective"
+      ],
       "org_focus": false,
-      "tags": ["rural", "community", "site-specific", "socially-engaged"],
-      "audiences": ["vansa"],
+      "tags": [
+        "rural",
+        "community",
+        "site-specific",
+        "socially-engaged"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "Submit applications by email to gpsapplications@goethe.de during the annual open call. Watch https://www.goethe.de/ins/za for the 2027 call (~Sept 2026).",
       "url": "https://www.goethe.de/ins/za/en/kul/kul/psg.html",
@@ -673,13 +1306,33 @@
       "amount": "Fully funded (studio, accommodation and material support)",
       "description": "Funded residency programme at Nirox Sculpture Park in the Cradle of Humankind World Heritage Site, Gauteng — one of South Africa's most significant contemporary art venues. Open to visual artists, sculptors and interdisciplinary practitioners from anywhere in the world. Residency period: January–June 2027. The biosphere and outdoor environment are central to the programme.",
       "eligibility": "Individual visual artists, sculptors and interdisciplinary practitioners worldwide (international and SA applicants welcome)",
-      "focus_areas": ["Visual art & sculpture", "Site-responsive work", "International residency"],
-      "disciplines": ["visual-art", "interdisciplinary", "public-art"],
-      "purpose": ["residency", "production"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Visual art & sculpture",
+        "Site-responsive work",
+        "International residency"
+      ],
+      "disciplines": [
+        "visual-art",
+        "interdisciplinary",
+        "public-art"
+      ],
+      "purpose": [
+        "residency",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["site-specific", "spatial", "experimental", "international-exchange"],
-      "audiences": ["vansa"],
+      "tags": [
+        "site-specific",
+        "spatial",
+        "experimental",
+        "international-exchange"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "Apply via Res Artis (resartis.org) or contact the Nirox Foundation directly. See the listing at https://resartis.org/listings/artist-in-residence-south-africa-npo-243-824/",
       "url": "https://resartis.org/listings/artist-in-residence-south-africa-npo-243-824/",
@@ -695,13 +1348,30 @@
       "amount": "Cash prize + full production budget + National Arts Festival platform",
       "description": "South Africa's most prestigious emerging-artist award, established 1981. Five artists across different disciplines are selected annually and supported to create and present new work at the National Arts Festival in Makhanda. Winners receive a cash prize, production funding, marketing support and national recognition throughout the award year. 2026 winners announced April 2026. Nominations for 2027 expected to open August 2026. Self-nominations not accepted.",
       "eligibility": "South African artists aged 35 or under, nominated by peers or institutions (no self-nominations), not previously SBYA winners",
-      "focus_areas": ["Emerging SA artists", "New work commissioning", "All disciplines"],
-      "disciplines": ["all-disciplines"],
-      "purpose": ["award", "production"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Emerging SA artists",
+        "New work commissioning",
+        "All disciplines"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "award",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["sa-only", "youth", "nomination-only"],
-      "audiences": ["vansa"],
+      "tags": [
+        "sa-only",
+        "youth",
+        "nomination-only"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "Nominations via nationalartsfestival.co.za (nomination call opens ~August each year).",
       "url": "https://sponsorships.standardbank.com/sbgs/sponsorship/arts-and-culture/young-artist-award",
@@ -717,12 +1387,30 @@
       "amount": "R50,000–R500,000",
       "description": "Annual provincial grants for arts, culture and heritage initiatives in the Western Cape, open to registered arts organisations, individual artists and events companies. Projects may span any discipline and must promote inclusion, innovation, gender equality, skills development or social cohesion. Funding period: 1 April–31 March. 2026/27 round closed 9 March 2026; next call expected December 2026.",
       "eligibility": "SA citizens based in the Western Cape — registered arts, culture and heritage organisations, individual artists and events companies",
-      "focus_areas": ["All disciplines", "Heritage", "Social cohesion", "Skills development"],
-      "disciplines": ["all-disciplines", "heritage"],
-      "purpose": ["project", "production"],
-      "eligibility_type": ["individual", "organisation"],
+      "focus_areas": [
+        "All disciplines",
+        "Heritage",
+        "Social cohesion",
+        "Skills development"
+      ],
+      "disciplines": [
+        "all-disciplines",
+        "heritage"
+      ],
+      "purpose": [
+        "project",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual",
+        "organisation"
+      ],
       "org_focus": false,
-      "tags": ["community", "heritage", "sa-only"],
+      "tags": [
+        "community",
+        "heritage",
+        "sa-only"
+      ],
       "audiences": [],
       "region": "western-cape",
       "how_to_apply": "Apply via the Western Cape Government arts funding portal at westerncape.gov.za/cas (watch for next call around December 2026).",
@@ -739,13 +1427,33 @@
       "amount": "Up to €20,000",
       "description": "Supports collaborative visual arts projects between teams in Sub-Saharan Africa (including South Africa) and Europe, covering production costs, cross-border creative exchange, exhibition and dissemination. The team lead must be based in Sub-Saharan Africa; minimum two-person teams of visual artists, curators, digital media artists or cultural managers. Project duration: 12 months (July 2026–July 2027). Under the EU-funded Africa-Europe Partnerships for Culture (AEPC) programme — distinct from the mobility grants in the same programme.",
       "eligibility": "Teams of 2+ visual arts practitioners (18+) with a Sub-Saharan Africa-based team lead and at least one European partner",
-      "focus_areas": ["Visual art collaboration", "Africa–Europe exchange", "Exhibition & dissemination"],
-      "disciplines": ["visual-art", "new-media-digital", "interdisciplinary"],
-      "purpose": ["project", "production", "mobility"],
-      "eligibility_type": ["individual", "collective"],
+      "focus_areas": [
+        "Visual art collaboration",
+        "Africa–Europe exchange",
+        "Exhibition & dissemination"
+      ],
+      "disciplines": [
+        "visual-art",
+        "new-media-digital",
+        "interdisciplinary"
+      ],
+      "purpose": [
+        "project",
+        "production",
+        "mobility"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective"
+      ],
       "org_focus": false,
-      "tags": ["international-exchange", "experimental"],
-      "audiences": ["vansa"],
+      "tags": [
+        "international-exchange",
+        "experimental"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "international",
       "how_to_apply": "Applications via the Goethe-Institut GAP Portal (now closed). Watch https://www.goethe.de/prj/aep for the next call.",
       "url": "https://www.goethe.de/prj/aep/en/",
@@ -761,13 +1469,30 @@
       "amount": "Studio space and programme support (varies per arrangement)",
       "description": "A rolling artist-in-residence programme at the University of Johannesburg, welcoming emerging and established artists from across the globe, with preference for those linked to Africa. Both physical (on-campus studio) and remote residency formats are available. Artists engage with UJ students, faculty and the broader Joburg arts community during their stay.",
       "eligibility": "Emerging and established individual artists from anywhere in the world; preference for African-linked practitioners",
-      "focus_areas": ["Contemporary practice", "Cross-disciplinary", "Academic & community engagement"],
-      "disciplines": ["all-disciplines", "interdisciplinary"],
-      "purpose": ["residency", "research"],
-      "eligibility_type": ["individual"],
+      "focus_areas": [
+        "Contemporary practice",
+        "Cross-disciplinary",
+        "Academic & community engagement"
+      ],
+      "disciplines": [
+        "all-disciplines",
+        "interdisciplinary"
+      ],
+      "purpose": [
+        "residency",
+        "research"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
       "org_focus": false,
-      "tags": ["international-exchange", "youth"],
-      "audiences": ["vansa"],
+      "tags": [
+        "international-exchange",
+        "youth"
+      ],
+      "audiences": [
+        "vansa"
+      ],
       "region": "national",
       "how_to_apply": "See the On the Move listing and contact UJ directly. Both physical and remote applications are accepted on a rolling basis.",
       "url": "https://on-the-move.org/news/university-johannesburg-artist-residence-programme-south-africa-remote",
@@ -783,12 +1508,28 @@
       "amount": "Varies per project",
       "description": "Annual Grant-in-Aid from the eThekwini Municipality's Recreation and Parks Directorate for non-profit performing arts and cultural organisations operating within the eThekwini Metro (Durban area). Projects must be scheduled between April and June of the funding year. A key source of municipal arts support for KwaZulu-Natal organisations. 2025/26 call closed February 2026.",
       "eligibility": "Registered NPOs and NPCs in the performing arts and cultural sector with programmes and activities within the eThekwini Municipality",
-      "focus_areas": ["Performing arts", "Cultural sector", "Community programmes"],
-      "disciplines": ["performing-arts", "music", "all-disciplines"],
-      "purpose": ["project", "production"],
-      "eligibility_type": ["organisation"],
+      "focus_areas": [
+        "Performing arts",
+        "Cultural sector",
+        "Community programmes"
+      ],
+      "disciplines": [
+        "performing-arts",
+        "music",
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "production"
+      ],
+      "eligibility_type": [
+        "organisation"
+      ],
       "org_focus": true,
-      "tags": ["community", "sa-only"],
+      "tags": [
+        "community",
+        "sa-only"
+      ],
       "audiences": [],
       "region": "kwazulu-natal",
       "how_to_apply": "Application forms available from ethekwini.gov.za or by email from the municipality. Watch for the next annual call around November 2026.",
