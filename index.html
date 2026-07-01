@@ -38,6 +38,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SA Arts Funding Dashboard",
+    "url": "https://arts-funding.vercel.app/",
+    "description": "A live, weekly-updated dashboard of grants, tenders, bursaries, residencies and calls for proposals for South African arts organisations and practitioners.",
+    "inLanguage": "en-ZA",
+    "about": { "@type": "Thing", "name": "Arts funding in South Africa" }
+  }
+  </script>
 </head>
 <body>
   <a class="skip" href="#grid">Skip to opportunities</a>
@@ -156,6 +168,27 @@
           <option value="research">Research</option>
           <option value="commission">Commission</option>
           <option value="procurement">Tender / procurement</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-region">Region</label>
+        <select class="select" id="f-region">
+          <option value="all">All regions</option>
+          <option value="national">National (SA-wide)</option>
+          <option value="gauteng">Gauteng</option>
+          <option value="western-cape">Western Cape</option>
+          <option value="kwazulu-natal">KwaZulu-Natal</option>
+          <option value="africa">Africa-wide</option>
+          <option value="international">International</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-who">Who can apply</label>
+        <select class="select" id="f-who">
+          <option value="all">Anyone</option>
+          <option value="individual">Individuals</option>
+          <option value="collective">Collectives</option>
+          <option value="organisation">Organisations</option>
         </select>
       </div>
       <div class="field">
