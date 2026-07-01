@@ -41,6 +41,12 @@ aggregators:
   - name: advance-africa.com — Artist Grants
     url: https://www.advance-africa.com/Artist-Grants-and-Opportunities.html
     note: Africa-focused grants database. Often picks up SA and pan-African opportunities.
+  - name: Contemporary And (C&) — Opportunities
+    url: https://contemporaryand.com/opportunities/
+    note: Leading platform for African contemporary art; opportunities section lists open calls, residencies and prizes for African artists.
+  - name: Africa Art News
+    url: https://www.africaartnews.com/
+    note: Pan-African art news; regularly posts open calls (surfaced the Spier Light Art 2027 call).
 
 funders:
   - name: Electric South
@@ -67,7 +73,7 @@ funders:
     note: Connections Through Culture (UK–partner collaboration grants, SA eligible, annual ~June–Aug), International Collaboration Grants (UK-lead), Biennials Connect. Watch the open-calls listing.
   - name: Goethe-Institut South Africa
     url: https://www.goethe.de/ins/za/en/kul/kul.html
-    note: Two key programmes — (1) Project Space (GPS): seed grants up to R100k for rural/peri-urban artistic projects in SA, Lesotho and Eswatini; annual call ~Aug–Sept for following year. (2) Africa-Europe Partnerships for Culture (AEPC): mobility grants up to €4k (quarterly cut-offs) and visual-art collaboration grants up to €20k (annual). May block bots — check the cultural funding page manually.
+    note: "Two key programmes — (1) Project Space (GPS): seed grants up to R100k for rural/peri-urban artistic projects in SA, Lesotho and Eswatini; annual call ~Aug–Sept for following year. (2) Africa-Europe Partnerships for Culture (AEPC): mobility grants up to €4k (quarterly cut-offs) and visual-art collaboration grants up to €20k (annual). May block bots — check the cultural funding page manually."
   - name: Institut Français / IFAS South Africa
     url: https://frenchinstitute.org.za/
     note: French cultural diplomacy in SA. Key programmes — Création Africa (cultural entrepreneurship incubation, €15k–€30k support, annual); Open Call for Immersive Artist Teams (R500k–R1.2M, archival digital storytelling); Cité des arts residency prizes. Check frenchinstitute.org.za and on-the-move.org.
@@ -104,6 +110,24 @@ funders:
   - name: Tierney Fellowship (Photography)
     url: https://marketphotoworkshop.co.za/projects/mentorships-residencies/tierney-fellowship/
     note: Emerging SA photographers, R50k + year-long mentorship; via Market Photo Workshop, Wits, Michaelis. Annual.
+  - name: Bag Factory Artists' Studios
+    url: https://www.bagfactoryart.org.za/category/artist-opportunities/
+    note: Joburg studio complex with international residencies plus two flagship annual awards — Cassirer Welz Award (emerging Sub-Saharan artists, 3-month funded residency + solo show + stipend, with Strauss & Co; 2026 winner announced June) and David Koloane Award. Watch the artist-opportunities page.
+  - name: SAMRO Foundation
+    url: https://www.samrofoundation.org.za/
+    note: Music funding — annual student bursaries (SA, Botswana, Lesotho, Eswatini), the prestigious SAMRO Overseas Scholarships (jazz + Western art music, alternating cycles), and the SAMRO Music Creation Support Fund for composers.
+  - name: Jakes Gerwel Foundation
+    url: https://jgf.org.za/residencies/
+    note: Funded writers' residencies at Paulet House (Somerset East) — Second Book residency, PEN Afrikaans/PEN SA partnerships, screenwriting mentorships with M-Net. Rolling calls per programme on the residencies page.
+  - name: Thami Mnyele Foundation
+    url: https://www.thami-mnyele.nl/
+    note: 3-month funded Amsterdam residency for African visual artists (all contemporary media) — accommodation, studio and €850/month allowance; ~2 full residencies/year. Apply via online form; check current deadline.
+  - name: Spier Arts Trust / Spier Light Art
+    url: https://spierlightart.co.za/
+    note: Annual open call (~June–July deadline) for light-art commissions at Spier Wine Farm, Stellenbosch — artist fee + production budget. Spier Arts Trust also runs the Creative Block artwork-purchase programme for SA artists.
+  - name: Rijksakademie van beeldende kunsten
+    url: https://www.rijksakademie.nl/en/residency
+    note: Amsterdam; one of the world's top-tier funded residencies, open to artists worldwide incl. SA. Annual open call, typically ~Dec–Feb window.
 
 # Organisational capacity-building / core-support funders (for arts ORGANISATIONS).
 # These power the "Capacity building" and "VANSA (org)" lenses — most run annual or
@@ -152,6 +176,18 @@ government_grants:
   - name: Goethe-Institut — Project Space (GPS)
     url: https://www.goethe.de/ins/za/en/kul/kul/psg.html
     note: Annual seed grants up to R100k for 3 projects in rural/peri-urban SA, Lesotho, Eswatini. Call opens ~Aug, deadline ~Sept; applications to gpsapplications@goethe.de. 2026 cycle in implementation; next call expected Sept 2026.
+  - name: National Heritage Council (NHC) — Heritage Funding
+    url: https://www.nhc.org.za/funding/
+    note: Annual heritage project funding for community-based orgs (NPOs, NPCs, CBOs, educational institutions, community trusts) — research, documentation, digitisation, education. Apply via Praxis portal; 2026/27 call closed 15 May 2026, next expected ~April 2027.
+  - name: Gauteng Film Commission
+    url: https://gautengfilm.org.za/
+    note: Production, development and marketing funding for Gauteng-based film/TV; also republishes DSAC calls. Periodic funding windows.
+  - name: KZN Film Commission
+    url: https://kwazulunatalfilm.co.za/
+    note: Film fund for KZN productions — development, production, post and marketing; periodic calls.
+  - name: Presidential Employment Stimulus (PESP) — arts sector rounds
+    url: https://www.nac.org.za/
+    note: Large government stimulus rounds for the cultural sector administered via NAC/DSAC/NHC (e.g. PESP7 heritage round). Irregular but high-value — check NAC, DSAC and NHC news pages each run.
 
 # Government tender portals (procurement). These list ALL government tenders, so
 # keyword-filter HARD to arts/culture/heritage/museum/public-art/creative-industries,

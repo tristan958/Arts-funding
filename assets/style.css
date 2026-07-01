@@ -500,6 +500,15 @@ a { color: var(--gold-deep); text-underline-offset: 3px; }
 :root[data-theme="dark"] .card__type--bursary    { background:#1e3a5f; border-color:#1e40af; color:#93c5fd; }
 :root[data-theme="dark"] .card__type--call       { background:#082f49; border-color:#0369a1; color:#7dd3fc; }
 :root[data-theme="dark"] .card__type--tender     { background:#1f2937; border-color:#374151; color:#9ca3af; }
+
+/* "New" pill — entries added within the last two weeks */
+.card__new {
+  font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+  color: #14532d; background: #dcfce7; border: 1px solid #bbf7d0;
+  display: inline-block; margin-bottom: 6px; margin-left: 6px;
+  padding: 3px 9px; border-radius: var(--radius-pill);
+}
+:root[data-theme="dark"] .card__new { background:#052e16; border-color:#166534; color:#86efac; }
 .card__title {
   font-family: var(--font-display);
   font-weight: 600;

@@ -62,7 +62,24 @@
   }
 
   /* ---------- state (URL-synced) ---------- */
-  const DEFAULTS = { q: "", type: "all", discipline: "all", purpose: "all", status: "open", funder: "all", sort: "deadline", view: "all" };
+  const DEFAULTS = { q: "", type: "all", discipline: "all", purpose: "all", region: "all", who: "all", status: "open", funder: "all", sort: "deadline", view: "all" };
+
+  // added within the last 14 days → "New" badge on the card.
+  // Suppressed entirely when a large share of the dataset is that recent
+  // (a bulk import, not a weekly update) — otherwise every card shouts "New".
+  const NEW_WINDOW_DAYS = 14;
+  let SHOW_NEW_BADGES = false;
+  function withinNewWindow(opp) {
+    const d = startOfDay(new Date(opp.date_added));
+    if (isNaN(d)) return false;
+    const age = Math.round((TODAY - d) / 86400000);
+    return age >= 0 && age <= NEW_WINDOW_DAYS;
+  }
+  function isNew(opp) { return SHOW_NEW_BADGES && withinNewWindow(opp); }
+  function calibrateNewBadges() {
+    const n = DATA.filter(withinNewWindow).length;
+    SHOW_NEW_BADGES = n > 0 && n <= Math.max(6, Math.round(DATA.length * 0.25));
+  }
 
   const intersects = (arr, set) => Array.isArray(arr) && arr.some((x) => set.includes(x));
   // Curated "saved views" — each is a predicate over the enriched taxonomy fields.
@@ -115,6 +132,8 @@
       const disc = o.disciplines || [];
       if (state.discipline !== "all" && !disc.includes(state.discipline) && !disc.includes("all-disciplines")) return false;
       if (state.purpose !== "all" && !(o.purpose || []).includes(state.purpose)) return false;
+      if (state.region !== "all" && o.region !== state.region) return false;
+      if (state.who !== "all" && !(o.eligibility_type || []).includes(state.who)) return false;
       if (state.view !== "all" && !(VIEW_PREDICATES[state.view] || VIEW_PREDICATES.all)(o)) return false;
 
       if (state.status === "open" && isClosed(o)) return false;
@@ -122,7 +141,8 @@
       if (state.status === "closing" && !isClosingSoon(o)) return false;
 
       if (q) {
-        const hay = [o.title, o.funder, o.description, (o.focus_areas || []).join(" "), o.type]
+        const hay = [o.title, o.funder, o.description, (o.focus_areas || []).join(" "),
+                     (o.tags || []).join(" "), o.eligibility, o.region, o.type]
           .join(" ").toLowerCase();
         if (!hay.includes(q)) return false;
       }
@@ -207,7 +227,7 @@
       <div class="card__body">
         <div class="card__top">
           <div class="card__head">
-            <span class="card__type card__type--${esc(o.type)}">${esc(o.type)}</span>
+            <span class="card__type card__type--${esc(o.type)}">${esc(o.type)}</span>${isNew(o) && !closed ? '<span class="card__new">New</span>' : ""}
             <h3 class="card__title">${esc(o.title)}</h3>
             <div class="card__funder">${esc(o.funder)}</div>
           </div>
@@ -343,6 +363,8 @@
     $("#f-type").value = state.type;
     $("#f-discipline").value = state.discipline;
     $("#f-purpose").value = state.purpose;
+    $("#f-region").value = state.region;
+    $("#f-who").value = state.who;
     $("#f-status").value = state.status;
     $("#f-funder").value = state.funder;
     $("#f-sort").value = state.sort;
@@ -371,6 +393,8 @@
     $("#f-type").addEventListener("change",       (e) => update({ type: e.target.value }));
     $("#f-discipline").addEventListener("change", (e) => update({ discipline: e.target.value }));
     $("#f-purpose").addEventListener("change",    (e) => update({ purpose: e.target.value }));
+    $("#f-region").addEventListener("change",     (e) => update({ region: e.target.value }));
+    $("#f-who").addEventListener("change",        (e) => update({ who: e.target.value }));
     $("#f-status").addEventListener("change",     (e) => update({ status: e.target.value }));
     $("#f-funder").addEventListener("change",     (e) => update({ funder: e.target.value }));
     $("#f-sort").addEventListener("change",       (e) => update({ sort: e.target.value }));
@@ -437,6 +461,7 @@
       SOURCES = data.sources || [];
       LAST_UPDATED = data.last_updated || "";
 
+      calibrateNewBadges();
       buildSelectOptions();
       renderSources();
       initUpdated();
