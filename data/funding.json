@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-06",
+  "last_updated": "2026-07-13",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1537,22 +1537,43 @@
       "date_added": "2026-06-28"
     },
     {
-      "id": "9a75512a889f",
-      "title": "Open Call: The Truth Lab",
-      "funder": "Goethe-Institut South Africa",
-      "type": "grant",
-      "status": "closed",
-      "deadline": "2026-06-28",
-      "amount": "Varies",
-      "description": "Open Call: The Truth Lab Deadline: 28 June 2026 Truth Lab is a Southern African programme that strengthens media literacy and counters misinformation. It connects young journalists, Wikipedians, artists and creators to explore disinformation and build inclusive knowledge systems through verification",
-      "eligibility": "Artists in South Africa and the region",
+      "id": "padimai-oops-onchain-residency",
+      "title": "Padimai OOPS Onchain Artist Residency",
+      "funder": "Padimai Art & Tech Studio",
+      "type": "residency",
+      "status": "open",
+      "deadline": "2026-08-15",
+      "amount": "SGD 15,000 honorarium + SGD 5,000 documentation budget",
+      "description": "Inaugural edition of Origin of Primary Source (OOPS), a fully-remote three-month online residency inviting artists to explore blockchain technologies as creative tools for artistic production, documentation, authorship and knowledge sharing. Five practitioners are selected internationally; residency runs 20 September–20 December 2026 through online meetings and community engagement. Run by Padimai Art & Tech Studio, a Singapore-based laboratory focused on art, emerging technologies and blockchain infrastructure.",
+      "eligibility": "Individual artists and creative practitioners working at the intersection of art, technology and blockchain; open internationally with no geographic restriction (African and South African artists eligible)",
       "focus_areas": [
-        "International collaboration"
+        "Blockchain & onchain art",
+        "Digital / new media",
+        "Remote residency"
       ],
-      "how_to_apply": "https://www.goethe.de/ins/za/en/kul/kul/tru.html",
-      "url": "https://www.goethe.de/ins/za/en/kul/kul/tru.html",
-      "date_added": "2026-07-06",
-      "auto": true
+      "disciplines": [
+        "new-media-digital",
+        "interdisciplinary"
+      ],
+      "purpose": [
+        "residency",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [
+        "experimental",
+        "international-exchange"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "international",
+      "how_to_apply": "Apply via the Padimai OOPS residency page at https://padimai.net/onchain-artist-residency/ before 15 August 2026 (selections announced 15 September 2026).",
+      "url": "https://padimai.net/onchain-artist-residency/",
+      "date_added": "2026-07-13"
     }
   ]
 }
