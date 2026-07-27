@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-20",
+  "last_updated": "2026-07-27",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1091,51 +1091,14 @@
       "date_added": "2026-06-18"
     },
     {
-      "id": "naca-2026",
-      "title": "National Arts and Culture Awards (NACA) 2026",
-      "funder": "Department of Sport, Arts and Culture (DSAC)",
-      "type": "award",
-      "status": "closed",
-      "deadline": "2026-07-17",
-      "amount": "Recognition awards (Varies)",
-      "description": "DSAC's national awards celebrate achievement, innovation and excellence across South Africa's cultural and creative sectors — including visual arts, design, performance, literature, film, heritage, audio-visual, interactive media and digital content. Held under the theme 'Celebrating Our Nation's Creative Excellence', with the 2026 ceremony at Sun City on 21 August 2026. Public nominations are submitted via an online portal.",
-      "eligibility": "South African artists and creative practitioners across the cultural and creative sectors; nominations submitted by the public",
-      "focus_areas": [
-        "National recognition",
-        "Creative excellence",
-        "All creative sectors"
-      ],
-      "disciplines": [
-        "all-disciplines"
-      ],
-      "purpose": [
-        "award"
-      ],
-      "eligibility_type": [
-        "individual"
-      ],
-      "org_focus": false,
-      "tags": [
-        "nomination-only",
-        "sa-only"
-      ],
-      "audiences": [
-        "vansa"
-      ],
-      "region": "national",
-      "how_to_apply": "Submit nominations via the official NACA portal at https://naca.dsac.gov.za/ before 17 July 2026.",
-      "url": "https://naca.dsac.gov.za/",
-      "date_added": "2026-06-29"
-    },
-    {
       "id": "spier-light-art-2027",
       "title": "Spier Light Art 2027 – Open Call for Proposals",
       "funder": "Spier Arts Trust / Spier Light Art",
       "type": "call",
-      "status": "open",
-      "deadline": "2026-07-21",
+      "status": "closed",
+      "deadline": "Varies (annual — next call ~mid-2027)",
       "amount": "Standardised artist fee + production budget (scale-dependent)",
-      "description": "South Africa's leading platform for light-based contemporary art — Africa's longest-running exhibition of its kind, now in its ninth year. Commissions site-specific, sculptural, interactive, digital, video, sound and light-based works for the Spier Wine Farm in Stellenbosch (exhibition 26 Feb–21 Mar 2027). Light must be central to the concept, medium and subject.",
+      "description": "South Africa's leading platform for light-based contemporary art — Africa's longest-running exhibition of its kind, now in its ninth year. Commissions site-specific, sculptural, interactive, digital, video, sound and light-based works for the Spier Wine Farm in Stellenbosch (exhibition 26 Feb–21 Mar 2027). Light must be central to the concept, medium and subject. The 2027 edition's expression-of-interest call closed on 21 July 2026; this flagship annual open call typically reopens around mid-year, so the next call is expected ~mid-2027.",
       "eligibility": "Artists, designers, collectives, students and institutions from diverse backgrounds, disciplines and career stages",
       "focus_areas": [
         "Light art",
@@ -1170,7 +1133,7 @@
         "vansa"
       ],
       "region": "western-cape",
-      "how_to_apply": "Email an expression of interest via spierlightart.co.za by 21 July 2026. Shortlist notified end Aug 2026; detailed proposals due mid-Sept 2026; final selection early Oct 2026.",
+      "how_to_apply": "The 2027 call closed 21 July 2026. Watch spierlightart.co.za for the next annual open call (~mid-2027).",
       "url": "https://spierlightart.co.za/",
       "date_added": "2026-07-01"
     },
