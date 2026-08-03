@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-07-27",
+  "last_updated": "2026-08-03",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1498,6 +1498,79 @@
       "how_to_apply": "Application forms available from ethekwini.gov.za or by email from the municipality. Watch for the next annual call around November 2026.",
       "url": "https://downtownmusic.africa/open-call-ethekwini-arts-culture-grant-in-aid/",
       "date_added": "2026-06-28"
+    },
+    {
+      "id": "santu-mofokeng-photography-prize",
+      "title": "Santu Mofokeng Foundation Photography Prize",
+      "funder": "Santu Mofokeng Foundation",
+      "type": "award",
+      "status": "open",
+      "deadline": "2026-10-15",
+      "amount": "R100,000 cash prize + editorial support and exhibition opportunities",
+      "description": "The inaugural national photography prize established in honour of the late Santu Mofokeng, recognising emerging South African photographers. The winner receives a R100,000 cash prize, editorial support, a professional artist profile and future exhibition opportunities through Latitudes programmes. Administered by the Santu Mofokeng Foundation with Latitudes Online as platform partner. Applications opened July 2026 and close 15 October 2026.",
+      "eligibility": "Emerging, independent photographic practitioners who live and work in South Africa, submitting work produced within the past five years",
+      "focus_areas": [
+        "Photography / lens-based",
+        "Emerging artists",
+        "National award"
+      ],
+      "disciplines": [
+        "visual-art"
+      ],
+      "purpose": [
+        "award"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [
+        "photography",
+        "sa-only"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "national",
+      "how_to_apply": "Apply via the Santu Mofokeng Foundation and Latitudes Online platform. Application guidelines and entry details at https://santumofokengfoundation.com/ (applications close 15 October 2026).",
+      "url": "https://santumofokengfoundation.com/",
+      "date_added": "2026-08-03"
+    },
+    {
+      "id": "sa-clay-awards-2026",
+      "title": "South African Clay Awards 2026 (Second Edition)",
+      "funder": "Art Formes / South African Clay Awards",
+      "type": "award",
+      "status": "open",
+      "deadline": "2026-08-31",
+      "amount": "Varies (juried selection; exhibition and sale at Art Formes Gallery, November 2026)",
+      "description": "The second edition of the South African Clay Awards, a national juried award celebrating contemporary South African ceramic and clay-based art. Submissions are reviewed anonymously by a selecting panel; selected artists have their work exhibited and offered for sale at the Art Formes Gallery in November 2026. Focused on recognition and platform visibility for local ceramic practice.",
+      "eligibility": "Individual artists residing in South Africa (one submission per artist)",
+      "focus_areas": [
+        "Ceramics / clay",
+        "Contemporary craft",
+        "Exhibition platform"
+      ],
+      "disciplines": [
+        "craft"
+      ],
+      "purpose": [
+        "award"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [
+        "sa-only"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "national",
+      "how_to_apply": "Complete the online submission form and review the guidelines PDF at https://theclayawards.co.za/ (submissions close 31 August 2026). Queries to info@theclayawards.co.za.",
+      "url": "https://theclayawards.co.za/",
+      "date_added": "2026-08-03"
     }
   ]
 }
