@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-03",
+  "last_updated": "2026-08-10",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1498,6 +1498,43 @@
       "how_to_apply": "Application forms available from ethekwini.gov.za or by email from the municipality. Watch for the next annual call around November 2026.",
       "url": "https://downtownmusic.africa/open-call-ethekwini-arts-culture-grant-in-aid/",
       "date_added": "2026-06-28"
+    },
+    {
+      "id": "santu-mofokeng-photography-prize",
+      "title": "Santu Mofokeng Foundation Photography Prize",
+      "funder": "Santu Mofokeng Foundation",
+      "type": "award",
+      "status": "open",
+      "deadline": "2026-10-15",
+      "amount": "R100,000 cash prize + editorial support and artist profile",
+      "description": "A national award for emerging photographers living and working in South Africa, honouring the legacy of photographer Santu Mofokeng (1956–2020). Winners receive a cash prize, editorial support, a professional artist profile and future exhibition opportunities through Latitudes programmes. Applicants submit a cohesive body of 10–15 photographic works made within the past five years. Now in its 10th year.",
+      "eligibility": "Emerging photographers living and working in South Africa — independent photographers, artist groups and collectives — who own copyright to their work; those with exclusive commercial gallery representation are ineligible. No age, nationality or formal-training restrictions.",
+      "focus_areas": [
+        "Photography / lens-based",
+        "Emerging photographers",
+        "Editorial support & profile"
+      ],
+      "disciplines": [
+        "visual-art"
+      ],
+      "purpose": [
+        "award"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective"
+      ],
+      "org_focus": false,
+      "tags": [
+        "photography"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "national",
+      "how_to_apply": "Submit a cohesive body of 10–15 photographic works via the Foundation's online application form. See https://santumofokengfoundation.com/",
+      "url": "https://santumofokengfoundation.com/",
+      "date_added": "2026-08-10"
     }
   ]
 }
