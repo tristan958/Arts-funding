@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-10",
+  "last_updated": "2026-08-17",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1051,46 +1051,6 @@
       "date_added": "2026-06-17"
     },
     {
-      "id": "british-council-ctc-2026",
-      "title": "British Council – Connections Through Culture Grants",
-      "funder": "British Council",
-      "type": "grant",
-      "status": "open",
-      "deadline": "2026-08-12",
-      "amount": "£5,000–£15,000 (varies by country)",
-      "description": "Grants for fresh cultural partnerships between the UK and South Africa — helping artists, collectives, festivals, hubs and cultural organisations develop new collaborations and exchange at any stage. Each project pairs at least one UK-based partner with a South African partner; delivery runs Dec 2026–Dec 2027.",
-      "eligibility": "Creative practitioners, artists, collectives and cultural organisations based in South Africa, partnering with at least one UK-based collaborator",
-      "focus_areas": [
-        "UK–SA collaboration",
-        "International exchange",
-        "Partnership development"
-      ],
-      "disciplines": [
-        "all-disciplines"
-      ],
-      "purpose": [
-        "project",
-        "mobility",
-        "research"
-      ],
-      "eligibility_type": [
-        "individual",
-        "collective",
-        "organisation"
-      ],
-      "org_focus": false,
-      "tags": [
-        "international-exchange"
-      ],
-      "audiences": [
-        "vansa"
-      ],
-      "region": "international",
-      "how_to_apply": "Apply online during the open round at https://arts.britishcouncil.org/connections-through-culture (applications close 12 August 2026, 23:59 BST).",
-      "url": "https://arts.britishcouncil.org/connections-through-culture",
-      "date_added": "2026-06-18"
-    },
-    {
       "id": "spier-light-art-2027",
       "title": "Spier Light Art 2027 – Open Call for Proposals",
       "funder": "Spier Arts Trust / Spier Light Art",
@@ -1424,14 +1384,14 @@
     },
     {
       "id": "uj-artists-in-residence",
-      "title": "University of Johannesburg – Artists in Residence Programme",
+      "title": "University of Johannesburg – 2027 Artists-in-Residence Programme",
       "funder": "University of Johannesburg (UJ)",
       "type": "residency",
       "status": "open",
-      "deadline": "Rolling",
-      "amount": "Studio space and programme support (varies per arrangement)",
-      "description": "A rolling artist-in-residence programme at the University of Johannesburg, welcoming emerging and established artists from across the globe, with preference for those linked to Africa. Both physical (on-campus studio) and remote residency formats are available. Artists engage with UJ students, faculty and the broader Joburg arts community during their stay.",
-      "eligibility": "Emerging and established individual artists from anywhere in the world; preference for African-linked practitioners",
+      "deadline": "2026-08-31",
+      "amount": "R12,000 monthly stipend for 10 months",
+      "description": "A 10-month artist-in-residence programme at the University of Johannesburg supporting artists to develop their creative practice as formal research, with at least one qualifying creative output required. Welcomes emerging and established artists globally (preference for those with African connections), in both remote and physical formats (on-campus studio spaces are limited and not guaranteed). Successful applicants receive a R12,000 monthly stipend for the residency term.",
+      "eligibility": "Individual emerging and established artists worldwide (preference for African-linked practitioners); must hold a relevant post-school qualification (master's/PhD preferred) and not be affiliated with another South African tertiary institution",
       "focus_areas": [
         "Contemporary practice",
         "Cross-disciplinary",
@@ -1457,8 +1417,8 @@
         "vansa"
       ],
       "region": "national",
-      "how_to_apply": "See the On the Move listing and contact UJ directly. Both physical and remote applications are accepted on a rolling basis.",
-      "url": "https://on-the-move.org/news/university-johannesburg-artist-residence-programme-south-africa-remote",
+      "how_to_apply": "Apply via the UJ Arts & Culture call page before 31 August 2026. See https://arts.uj.ac.za/uj-calls-for-applications-for-its-2027-artists-in-residence-programme/",
+      "url": "https://arts.uj.ac.za/uj-calls-for-applications-for-its-2027-artists-in-residence-programme/",
       "date_added": "2026-06-28"
     },
     {
@@ -1535,6 +1495,128 @@
       "how_to_apply": "Submit a cohesive body of 10–15 photographic works via the Foundation's online application form. See https://santumofokengfoundation.com/",
       "url": "https://santumofokengfoundation.com/",
       "date_added": "2026-08-10"
+    },
+    {
+      "id": "sam-residencies-cycle-4",
+      "title": "Singapore Art Museum (SAM) Residencies – Cycle 4",
+      "funder": "Singapore Art Museum",
+      "type": "residency",
+      "status": "open",
+      "deadline": "2026-09-30",
+      "amount": "S$1,500 monthly stipend + return flights, housing and visa support (international)",
+      "description": "A fully-supported international residency at the Singapore Art Museum for artists, curators, educators, researchers and creative practitioners, structured around three thematic strands of artistic research, community engagement and curatorial work. Residencies run between June 2027 and December 2028 (1–3 months for international participants). Support includes a monthly stipend, studio/co-working space, economy return flights, housing, visa assistance and institutional networks. Open to practitioners worldwide, including South Africa.",
+      "eligibility": "Individual artists, curators, educators, researchers and creative practitioners worldwide (South African and African applicants welcome); individuals, duos and collectives across all mediums",
+      "focus_areas": [
+        "International residency",
+        "Artistic research",
+        "Curatorial & community engagement"
+      ],
+      "disciplines": [
+        "all-disciplines",
+        "interdisciplinary"
+      ],
+      "purpose": [
+        "residency",
+        "research"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective"
+      ],
+      "org_focus": false,
+      "tags": [
+        "international-exchange",
+        "research-based"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "international",
+      "how_to_apply": "Apply online via the SAM Residencies portal by 30 September 2026 (23:59 GMT+8). Submit a CV, portfolio, 500–1,000 word statement and a recommendation letter. See https://samresidencies.smapply.org/",
+      "url": "https://samresidencies.smapply.org/",
+      "date_added": "2026-08-17"
+    },
+    {
+      "id": "connect-and-create-2026",
+      "title": "Connect & Create – Africa–Europe Cultural Cooperation",
+      "funder": "European Union / Institut français, Goethe-Institut & Expertise France",
+      "type": "grant",
+      "status": "open",
+      "deadline": "2026-09-30",
+      "amount": "€10,000–€39,500 (varies by strand)",
+      "description": "An EU-funded programme strengthening cultural ties between Africa and Europe through four strands — the circulation and touring of African live-performance creations, professional mobility, capacity building, and euro-African creative partnerships. The current (second) call supports live-performance circulation and professional mobility for artists and cultural professionals based in Sub-Saharan Africa (including South Africa) or the EU.",
+      "eligibility": "Artists and cultural professionals based in one of the 48 Sub-Saharan African countries (incl. South Africa) or the 27 EU member states, working in the performing arts and music",
+      "focus_areas": [
+        "Africa–Europe cooperation",
+        "Live-performance circulation",
+        "Professional mobility"
+      ],
+      "disciplines": [
+        "performing-arts",
+        "music"
+      ],
+      "purpose": [
+        "mobility",
+        "capacity-building",
+        "project"
+      ],
+      "eligibility_type": [
+        "individual",
+        "organisation",
+        "collective"
+      ],
+      "org_focus": false,
+      "tags": [
+        "international-exchange",
+        "organisational-development"
+      ],
+      "audiences": [],
+      "region": "international",
+      "how_to_apply": "Apply online during the open call (second call runs 9 July–30 September 2026). See https://www.institutfrancais.com/fr/programme/aide-projet/connect-create-renforcer-liens-culturels-afrique-europe",
+      "url": "https://www.institutfrancais.com/fr/programme/aide-projet/connect-create-renforcer-liens-culturels-afrique-europe",
+      "date_added": "2026-08-17"
+    },
+    {
+      "id": "naf-curated-programme-2027",
+      "title": "National Arts Festival 2027 – Curated Programme Call for Proposals",
+      "funder": "National Arts Festival",
+      "type": "call",
+      "status": "open",
+      "deadline": "2026-09-27",
+      "amount": "Production support and festival platform (varies)",
+      "description": "Open call for proposals for the 2027 National Arts Festival Curated Programme in Makhanda — South Africa's flagship multidisciplinary arts festival. Selected artists and creative teams present innovative new work with production support and exposure to audiences, critics, producers and industry networks. Covers theatre, dance, contemporary music and visual arts.",
+      "eligibility": "Established and emerging artists and creative teams across all disciplines (South African festival; open to local and international proposals)",
+      "focus_areas": [
+        "Festival platform",
+        "New work",
+        "All disciplines"
+      ],
+      "disciplines": [
+        "performing-arts",
+        "music",
+        "visual-art",
+        "interdisciplinary"
+      ],
+      "purpose": [
+        "production",
+        "project"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective",
+        "organisation"
+      ],
+      "org_focus": false,
+      "tags": [
+        "community"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "national",
+      "how_to_apply": "Submit a proposal via the 'Submit a proposal for the 2027 Festival' form on the National Arts Festival website by 27 September 2026 (23:59 CAT). See https://nationalartsfestival.co.za/",
+      "url": "https://nationalartsfestival.co.za/",
+      "date_added": "2026-08-17"
     }
   ]
 }
