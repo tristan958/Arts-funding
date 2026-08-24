@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-17",
+  "last_updated": "2026-08-24",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1617,6 +1617,46 @@
       "how_to_apply": "Submit a proposal via the 'Submit a proposal for the 2027 Festival' form on the National Arts Festival website by 27 September 2026 (23:59 CAT). See https://nationalartsfestival.co.za/",
       "url": "https://nationalartsfestival.co.za/",
       "date_added": "2026-08-17"
+    },
+    {
+      "id": "aoca-cultural-operators-africa-2026",
+      "title": "African Open Call (AOCA) – Support for Cultural Operators in Africa",
+      "funder": "Institut français",
+      "type": "grant",
+      "status": "open",
+      "deadline": "2026-10-30",
+      "amount": "€5,000–€15,000 (up to 50% of project budget)",
+      "description": "The Institut français African Open Call (AOCA) supports creative projects, regional tours, events and exhibitions led by African cultural operators and taking place between March and December 2027. It strengthens intra-African collaboration by requiring a regional dimension — projects must bring together artists or partners from at least three African countries (or African–French co-productions). Disciplines span visual arts, digital creation, photography, music, theatre, dance and street arts. Selection favours emerging artists, new practices, eco-responsible approaches and gender equality.",
+      "eligibility": "African cultural institutions or organisations based in Africa (South Africa eligible), and members of the French cultural network abroad; projects must involve partners from multiple African countries",
+      "focus_areas": [
+        "Pan-African collaboration",
+        "Regional tours & events",
+        "Multidisciplinary creation"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "production",
+        "mobility"
+      ],
+      "eligibility_type": [
+        "organisation",
+        "collective"
+      ],
+      "org_focus": true,
+      "tags": [
+        "international-exchange",
+        "community"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "africa",
+      "how_to_apply": "Apply online via the Institut français portal at ifprog.emundus.fr by 30 October 2026. See the programme page for eligibility and required support letters.",
+      "url": "https://www.institutfrancais.com/en/programme/project-support/aoca-support-cultural-operators-africa",
+      "date_added": "2026-08-24"
     }
   ]
 }
