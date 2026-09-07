@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-31",
+  "last_updated": "2026-09-07",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1220,48 +1220,6 @@
       "date_added": "2026-06-28"
     },
     {
-      "id": "nirox-foundation-residency-2027",
-      "title": "Nirox Foundation – International Artist Residency",
-      "funder": "Nirox Foundation",
-      "type": "residency",
-      "status": "open",
-      "deadline": "2026-08-31",
-      "amount": "Fully funded (studio, accommodation and material support)",
-      "description": "Funded residency programme at Nirox Sculpture Park in the Cradle of Humankind World Heritage Site, Gauteng — one of South Africa's most significant contemporary art venues. Open to visual artists, sculptors and interdisciplinary practitioners from anywhere in the world. Residency period: January–June 2027. The biosphere and outdoor environment are central to the programme.",
-      "eligibility": "Individual visual artists, sculptors and interdisciplinary practitioners worldwide (international and SA applicants welcome)",
-      "focus_areas": [
-        "Visual art & sculpture",
-        "Site-responsive work",
-        "International residency"
-      ],
-      "disciplines": [
-        "visual-art",
-        "interdisciplinary",
-        "public-art"
-      ],
-      "purpose": [
-        "residency",
-        "production"
-      ],
-      "eligibility_type": [
-        "individual"
-      ],
-      "org_focus": false,
-      "tags": [
-        "site-specific",
-        "spatial",
-        "experimental",
-        "international-exchange"
-      ],
-      "audiences": [
-        "vansa"
-      ],
-      "region": "national",
-      "how_to_apply": "Apply via Res Artis (resartis.org) or contact the Nirox Foundation directly. See the listing at https://resartis.org/listings/artist-in-residence-south-africa-npo-243-824/",
-      "url": "https://resartis.org/listings/artist-in-residence-south-africa-npo-243-824/",
-      "date_added": "2026-06-28"
-    },
-    {
       "id": "standard-bank-young-artist",
       "title": "Standard Bank Young Artist Awards",
       "funder": "Standard Bank / National Arts Festival",
@@ -1380,45 +1338,6 @@
       "region": "international",
       "how_to_apply": "Applications via the Goethe-Institut GAP Portal (now closed). Watch https://www.goethe.de/prj/aep for the next call.",
       "url": "https://www.goethe.de/prj/aep/en/",
-      "date_added": "2026-06-28"
-    },
-    {
-      "id": "uj-artists-in-residence",
-      "title": "University of Johannesburg – 2027 Artists-in-Residence Programme",
-      "funder": "University of Johannesburg (UJ)",
-      "type": "residency",
-      "status": "open",
-      "deadline": "2026-08-31",
-      "amount": "R12,000 monthly stipend for 10 months",
-      "description": "A 10-month artist-in-residence programme at the University of Johannesburg supporting artists to develop their creative practice as formal research, with at least one qualifying creative output required. Welcomes emerging and established artists globally (preference for those with African connections), in both remote and physical formats (on-campus studio spaces are limited and not guaranteed). Successful applicants receive a R12,000 monthly stipend for the residency term.",
-      "eligibility": "Individual emerging and established artists worldwide (preference for African-linked practitioners); must hold a relevant post-school qualification (master's/PhD preferred) and not be affiliated with another South African tertiary institution",
-      "focus_areas": [
-        "Contemporary practice",
-        "Cross-disciplinary",
-        "Academic & community engagement"
-      ],
-      "disciplines": [
-        "all-disciplines",
-        "interdisciplinary"
-      ],
-      "purpose": [
-        "residency",
-        "research"
-      ],
-      "eligibility_type": [
-        "individual"
-      ],
-      "org_focus": false,
-      "tags": [
-        "international-exchange",
-        "youth"
-      ],
-      "audiences": [
-        "vansa"
-      ],
-      "region": "national",
-      "how_to_apply": "Apply via the UJ Arts & Culture call page before 31 August 2026. See https://arts.uj.ac.za/uj-calls-for-applications-for-its-2027-artists-in-residence-programme/",
-      "url": "https://arts.uj.ac.za/uj-calls-for-applications-for-its-2027-artists-in-residence-programme/",
       "date_added": "2026-06-28"
     },
     {
