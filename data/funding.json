@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-07",
+  "last_updated": "2026-09-14",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1227,7 +1227,7 @@
       "status": "closed",
       "deadline": "Varies (annual — nominations ~August each year)",
       "amount": "Cash prize + full production budget + National Arts Festival platform",
-      "description": "South Africa's most prestigious emerging-artist award, established 1981. Five artists across different disciplines are selected annually and supported to create and present new work at the National Arts Festival in Makhanda. Winners receive a cash prize, production funding, marketing support and national recognition throughout the award year. 2026 winners announced April 2026. Nominations for 2027 expected to open August 2026. Self-nominations not accepted.",
+      "description": "South Africa's most prestigious emerging-artist award, established 1981. Artists across different disciplines are selected annually and supported to create and present new work at the National Arts Festival in Makhanda. Winners receive a cash prize, production funding, marketing support and national recognition throughout the award year. 2026 winners announced April 2026. Nominations for the 2027 awards opened August 2026 and closed 31 August 2026; the next nomination call (for 2028) is expected around August 2027. Self-nominations not accepted.",
       "eligibility": "South African artists aged 35 or under, nominated by peers or institutions (no self-nominations), not previously SBYA winners",
       "focus_areas": [
         "Emerging SA artists",
@@ -1576,6 +1576,49 @@
       "how_to_apply": "Apply online via the Institut français portal at ifprog.emundus.fr by 30 October 2026. See the programme page for eligibility and required support letters.",
       "url": "https://www.institutfrancais.com/en/programme/project-support/aoca-support-cultural-operators-africa",
       "date_added": "2026-08-24"
+    },
+    {
+      "id": "goethe-heritage-narrative-clusters",
+      "title": "Goethe-Institut – Heritage Narrative Clusters Artistic Collaboration",
+      "funder": "Goethe-Institut (Africa-Europe Partnerships for Culture)",
+      "type": "grant",
+      "status": "open",
+      "deadline": "2026-10-05",
+      "amount": "€6,000 stipend per artist + travel, accommodation, per diems and co-production/presentation costs",
+      "description": "A Southern African artistic-collaboration programme under the Goethe-Institut / EU Africa-Europe Partnerships for Culture (AEPC). Interdisciplinary artists form 'narrative clusters' of nine practitioners drawn from at least three countries and multiple disciplines to co-create work engaging heritage-related narratives — through a one-week narrative retreat, two joint working sessions, online collaboration and two public project presentations. Open to artists based in Botswana, Eswatini, Lesotho, Namibia, South Africa and Zimbabwe.",
+      "eligibility": "Individual artists and creative practitioners (18+) legally residing and working in Botswana, Eswatini, Lesotho, Namibia, South Africa or Zimbabwe, with at least three years of professional practice and experience or strong potential in heritage-related narratives",
+      "focus_areas": [
+        "Heritage narratives",
+        "Cross-border collaboration",
+        "Interdisciplinary co-creation"
+      ],
+      "disciplines": [
+        "interdisciplinary",
+        "heritage",
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "production",
+        "mobility"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [
+        "heritage",
+        "international-exchange",
+        "socially-engaged",
+        "interdisciplinary"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "africa",
+      "how_to_apply": "Apply online via the Goethe-Institut Application Portal (GAP) by 5 October 2026. See https://www.goethe.de/prj/aep/en/cal/sna.html",
+      "url": "https://www.goethe.de/prj/aep/en/cal/sna.html",
+      "date_added": "2026-09-14"
     }
   ]
 }
