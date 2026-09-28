@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-21",
+  "last_updated": "2026-09-28",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -172,6 +172,10 @@
     {
       "name": "Spier Light Art",
       "url": "https://spierlightart.co.za/"
+    },
+    {
+      "name": "Commonwealth Foundation (grants)",
+      "url": "https://commonwealthfoundation.com/grants/annual/"
     }
   ],
   "opportunities": [
@@ -1496,48 +1500,6 @@
       "date_added": "2026-08-17"
     },
     {
-      "id": "naf-curated-programme-2027",
-      "title": "National Arts Festival 2027 – Curated Programme Call for Proposals",
-      "funder": "National Arts Festival",
-      "type": "call",
-      "status": "open",
-      "deadline": "2026-09-27",
-      "amount": "Production support and festival platform (varies)",
-      "description": "Open call for proposals for the 2027 National Arts Festival Curated Programme in Makhanda — South Africa's flagship multidisciplinary arts festival. Selected artists and creative teams present innovative new work with production support and exposure to audiences, critics, producers and industry networks. Covers theatre, dance, contemporary music and visual arts.",
-      "eligibility": "Established and emerging artists and creative teams across all disciplines (South African festival; open to local and international proposals)",
-      "focus_areas": [
-        "Festival platform",
-        "New work",
-        "All disciplines"
-      ],
-      "disciplines": [
-        "performing-arts",
-        "music",
-        "visual-art",
-        "interdisciplinary"
-      ],
-      "purpose": [
-        "production",
-        "project"
-      ],
-      "eligibility_type": [
-        "individual",
-        "collective",
-        "organisation"
-      ],
-      "org_focus": false,
-      "tags": [
-        "community"
-      ],
-      "audiences": [
-        "vansa"
-      ],
-      "region": "national",
-      "how_to_apply": "Submit a proposal via the 'Submit a proposal for the 2027 Festival' form on the National Arts Festival website by 27 September 2026 (23:59 CAT). See https://nationalartsfestival.co.za/",
-      "url": "https://nationalartsfestival.co.za/",
-      "date_added": "2026-08-17"
-    },
-    {
       "id": "aoca-cultural-operators-africa-2026",
       "title": "African Open Call (AOCA) – Support for Cultural Operators in Africa",
       "funder": "Institut français",
@@ -1576,6 +1538,91 @@
       "how_to_apply": "Apply online via the Institut français portal at ifprog.emundus.fr by 30 October 2026. See the programme page for eligibility and required support letters.",
       "url": "https://www.institutfrancais.com/en/programme/project-support/aoca-support-cultural-operators-africa",
       "date_added": "2026-08-24"
+    },
+    {
+      "id": "commonwealth-foundation-grants",
+      "title": "Commonwealth Foundation Grants 2026/27",
+      "funder": "Commonwealth Foundation",
+      "type": "grant",
+      "status": "open",
+      "deadline": "2026-10-26",
+      "amount": "£15,000–£30,000 per year (up to 2 years)",
+      "description": "Annual grants from the Commonwealth Foundation to civil-society organisations — including creative and cultural organisations — working on its priority themes of freedom of expression, health justice and climate justice. Creative advocacy (the intentional use of creative practices to influence public discourse, policy and behaviour) fits the freedom-of-expression priority, making the fund relevant to arts organisations. Two grant types: Individual Organisation Grants (£15,000–£30,000/yr) and Collective Action Grants (£15,000–£20,000/yr), each for up to two years. Applications opened 23 September 2026 and close 26 October 2026 (1pm GMT).",
+      "eligibility": "Non-profit civil-society organisations legally registered in an eligible Commonwealth country (South Africa eligible), including creative and cultural organisations undertaking creative advocacy",
+      "focus_areas": [
+        "Creative advocacy",
+        "Freedom of expression",
+        "Civil-society partnerships"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "project",
+        "capacity-building"
+      ],
+      "eligibility_type": [
+        "organisation"
+      ],
+      "org_focus": true,
+      "tags": [
+        "organisational-development",
+        "socially-engaged",
+        "narrative-change"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "international",
+      "how_to_apply": "Register and apply online via SurveyMonkey Apply during the open call (23 September–26 October 2026). See https://commonwealthfoundation.com/grants/annual/",
+      "url": "https://commonwealthfoundation.com/grants/annual/",
+      "date_added": "2026-09-28"
+    },
+    {
+      "id": "goethe-heritage-narrative-clusters",
+      "title": "Heritage Narrative Clusters – Artist Collaboration Call (AEPC Southern Africa)",
+      "funder": "Goethe-Institut / EU (Africa-Europe Partnerships for Culture)",
+      "type": "grant",
+      "status": "open",
+      "deadline": "2026-10-05",
+      "amount": "€6,000 stipend per artist (plus travel, accommodation and per diems)",
+      "description": "Open call for individual artists and creative practitioners to join 11 Heritage Narrative Clusters under the EU/Goethe-Institut Africa-Europe Partnerships for Culture (Southern Africa) programme. At least 99 practitioners will be selected; each cluster brings together around nine interdisciplinary artists from at least three of the six eligible countries to co-create new heritage narratives over a six-month period (a one-week retreat, two joint working sessions, online collaboration and two public presentations). Each selected artist receives a €6,000 stipend plus covered travel, accommodation and per diems. The partner heritage organisations were funded through a separate, already-closed call.",
+      "eligibility": "Individual artists and creative practitioners based in Botswana, Eswatini, Lesotho, Namibia, South Africa or Zimbabwe, working across performing arts, visual arts and design, film/media/digital arts, literary and narrative arts, or cultural curation and heritage practice",
+      "focus_areas": [
+        "Heritage & narrative",
+        "Interdisciplinary collaboration",
+        "Southern African exchange"
+      ],
+      "disciplines": [
+        "interdisciplinary",
+        "heritage",
+        "visual-art",
+        "performing-arts",
+        "film-screen",
+        "literature"
+      ],
+      "purpose": [
+        "project",
+        "production",
+        "mobility"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [
+        "heritage",
+        "international-exchange",
+        "socially-engaged",
+        "interdisciplinary"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "africa",
+      "how_to_apply": "Apply online via the Goethe-Institut portal by 5 October 2026. See https://www.goethe.de/prj/aep/en/cal/sna.html",
+      "url": "https://www.goethe.de/prj/aep/en/cal/sna.html",
+      "date_added": "2026-09-28"
     }
   ]
 }
