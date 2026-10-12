@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-05",
+  "last_updated": "2026-10-12",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1454,6 +1454,43 @@
       "how_to_apply": "Apply online via the Institut français portal at ifprog.emundus.fr by 30 October 2026. See the programme page for eligibility and required support letters.",
       "url": "https://www.institutfrancais.com/en/programme/project-support/aoca-support-cultural-operators-africa",
       "date_added": "2026-08-24"
+    },
+    {
+      "id": "acf-lewo-africa-boot-camp-2026",
+      "title": "LEWO Africa Boot Camp (2nd edition) – Leadership & Empowerment for Women in the Arts",
+      "funder": "African Culture Fund (ACF) / ACF Academy",
+      "type": "call",
+      "status": "open",
+      "deadline": "2026-10-16",
+      "amount": "Fully facilitated programme (training + 6-month coaching); no cash grant or stipend",
+      "description": "A capacity-building programme run by the African Culture Fund through its ACF Academy, in partnership with the Institut Kôrè des Arts et Métiers (IKAM). LEWO (Leadership & Empowerment for Women in Africa) is a 5-day online boot camp (14–18 December 2026) for women working in African arts and culture, covering leadership, cultural management, administrative and financial management, personal branding and digital marketing, followed by six months of individualised coaching and mentoring. Thirty participants are selected across artistic disciplines and African regions. The camp is fully online, so transport, accommodation and meals are not covered.",
+      "eligibility": "Women active in the cultural and creative sector through an established structure, collective or project under development, with professional experience in the cultural field, from any African region (including Southern Africa) or the African diaspora; stable internet and French or English proficiency required.",
+      "focus_areas": [
+        "Women in arts leadership",
+        "Cultural management",
+        "Capacity building & coaching"
+      ],
+      "disciplines": [
+        "all-disciplines"
+      ],
+      "purpose": [
+        "capacity-building"
+      ],
+      "eligibility_type": [
+        "individual",
+        "collective"
+      ],
+      "org_focus": false,
+      "tags": [
+        "women",
+        "organisational-development",
+        "international-exchange"
+      ],
+      "audiences": [],
+      "region": "africa",
+      "how_to_apply": "Email a completed application form (from the call page), CV, cover letter, ID copy and a presentation of your structure/project to candidatures@africanculturefund.net (cc applications@africanculturefund.net) by 16 October 2026. Selection on 2 November 2026.",
+      "url": "https://www.africanculturefund.net/en/call-for-applications-lewo-africa-boot-camp-2/",
+      "date_added": "2026-10-12"
     }
   ]
 }
