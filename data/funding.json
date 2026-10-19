@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-12",
+  "last_updated": "2026-10-19",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1379,41 +1379,36 @@
       "date_added": "2026-06-28"
     },
     {
-      "id": "santu-mofokeng-photography-prize",
-      "title": "Santu Mofokeng Foundation Photography Prize",
-      "funder": "Santu Mofokeng Foundation",
+      "id": "evaristo-prize-african-poetry",
+      "title": "Evaristo Prize for African Poetry",
+      "funder": "African Poetry Book Fund",
       "type": "award",
       "status": "open",
-      "deadline": "2026-10-15",
-      "amount": "R100,000 cash prize + editorial support and artist profile",
-      "description": "A national award for emerging photographers living and working in South Africa, honouring the legacy of photographer Santu Mofokeng (1956–2020). Winners receive a cash prize, editorial support, a professional artist profile and future exhibition opportunities through Latitudes programmes. Applicants submit a cohesive body of 10–15 photographic works made within the past five years. Now in its 10th year.",
-      "eligibility": "Emerging photographers living and working in South Africa — independent photographers, artist groups and collectives — who own copyright to their work; those with exclusive commercial gallery representation are ineligible. No age, nationality or formal-training restrictions.",
+      "deadline": "2026-11-01",
+      "amount": "US$1,500",
+      "description": "An annual prize of US$1,500 awarded by the African Poetry Book Fund (Brown University) for a group of ten poems by an African poet who has not yet published a full-length poetry collection. Named in honour of Bernardine Evaristo. Poems must be in English, though translations are accepted; self-published books, chapbooks and pamphlets do not disqualify an entrant. The 2026 submission window runs 1 October–1 November 2026.",
+      "eligibility": "African poets — born in Africa, a national or resident of an African country, or with African parents (South Africans eligible) — who have not yet had a full-length poetry book published at the time of submission. No entry fee.",
       "focus_areas": [
-        "Photography / lens-based",
-        "Emerging photographers",
-        "Editorial support & profile"
+        "Poetry / literature",
+        "Emerging African poets",
+        "English-language (translations accepted)"
       ],
       "disciplines": [
-        "visual-art"
+        "literature"
       ],
       "purpose": [
         "award"
       ],
       "eligibility_type": [
-        "individual",
-        "collective"
+        "individual"
       ],
       "org_focus": false,
-      "tags": [
-        "photography"
-      ],
-      "audiences": [
-        "vansa"
-      ],
-      "region": "national",
-      "how_to_apply": "Submit a cohesive body of 10–15 photographic works via the Foundation's online application form. See https://santumofokengfoundation.com/",
-      "url": "https://santumofokengfoundation.com/",
-      "date_added": "2026-08-10"
+      "tags": [],
+      "audiences": [],
+      "region": "africa",
+      "how_to_apply": "Submit exactly ten poems (each no longer than 40 lines) in a single document via Submittable at africanpoetrybookfund.submittable.com by 1 November 2026. Email submissions are not accepted. Questions: apbf@brown.edu.",
+      "url": "https://africanpoetrybf.brown.edu/contest-prizes/evaristo-prize-for-african-poetry/",
+      "date_added": "2026-10-19"
     },
     {
       "id": "aoca-cultural-operators-africa-2026",
