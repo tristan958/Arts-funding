@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-19",
+  "last_updated": "2026-10-26",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1449,6 +1449,76 @@
       "how_to_apply": "Apply online via the Institut français portal at ifprog.emundus.fr by 30 October 2026. See the programme page for eligibility and required support letters.",
       "url": "https://www.institutfrancais.com/en/programme/project-support/aoca-support-cultural-operators-africa",
       "date_added": "2026-08-24"
+    },
+    {
+      "id": "sillerman-first-book-prize",
+      "title": "Sillerman First Book Prize for African Poets",
+      "funder": "African Poetry Book Fund",
+      "type": "award",
+      "status": "open",
+      "deadline": "2026-12-01",
+      "amount": "US$1,000 + book publication",
+      "description": "An annual prize from the African Poetry Book Fund (University of Nebraska Press / Brown University) for a book-length manuscript by an African poet who has not yet published a full-length poetry collection. The winner receives US$1,000 and publication of the manuscript in the African Poetry Book Series. Poems must be in English (translations accepted, with a share of the prize going to the translator). The 2027-edition submission window runs 15 September–1 December 2026.",
+      "eligibility": "African poets — born in Africa, a national or resident of an African country, or with African parents (South Africans eligible) — who have not yet had a full-length poetry collection published. No entry fee.",
+      "focus_areas": [
+        "Poetry / literature",
+        "First-book manuscript",
+        "English-language (translations accepted)"
+      ],
+      "disciplines": [
+        "literature"
+      ],
+      "purpose": [
+        "award"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [],
+      "audiences": [],
+      "region": "africa",
+      "how_to_apply": "Submit a manuscript of at least 50 pages (author's name omitted) via Submittable at africanpoetrybookfund.submittable.com by 1 December 2026. Electronic submissions only; no entry fee. Questions: apbf@brown.edu.",
+      "url": "https://africanpoetrybf.brown.edu/contest-prizes/",
+      "date_added": "2026-10-26"
+    },
+    {
+      "id": "hopper-prize-artist-grants",
+      "title": "The Hopper Prize – Artist Grants (Fall 2026)",
+      "funder": "The Hopper Prize",
+      "type": "grant",
+      "status": "open",
+      "deadline": "2026-11-17",
+      "amount": "2 × US$4,500 and 4 × US$1,000 unrestricted grants",
+      "description": "A twice-yearly international open call offering unrestricted cash grants to individual artists working in any media — painting, photography, sculpture, drawing, video, performance, conceptual, experimental, installation, printmaking, new media and textile. Six grants are awarded each cycle (two of US$4,500 and four of US$1,000), plus a shortlist of 30 artists whose work is archived and promoted. Open to artists worldwide, including South Africa (past South African winners). A US$40 entry fee applies.",
+      "eligibility": "Individual artists aged 18 and older working in any media, worldwide (South Africa eligible). US$40 submission fee.",
+      "focus_areas": [
+        "Visual arts",
+        "Unrestricted artist grants",
+        "All media"
+      ],
+      "disciplines": [
+        "visual-art",
+        "new-media-digital"
+      ],
+      "purpose": [
+        "project"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [
+        "experimental",
+        "photography"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "international",
+      "how_to_apply": "Submit up to 10 images/videos with the US$40 entry fee via the online form at hopperprize.org by 17 November 2026.",
+      "url": "https://hopperprize.org/",
+      "date_added": "2026-10-26"
     }
   ]
 }
