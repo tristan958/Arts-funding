@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-26",
+  "last_updated": "2026-11-02",
   "sources": [
     {
       "name": "National Arts Council (NAC)",
@@ -1379,19 +1379,60 @@
       "date_added": "2026-06-28"
     },
     {
-      "id": "evaristo-prize-african-poetry",
-      "title": "Evaristo Prize for African Poetry",
+      "id": "hopper-prize-fall-2026",
+      "title": "The Hopper Prize – Artist Grants (Fall 2026)",
+      "funder": "The Hopper Prize",
+      "type": "award",
+      "status": "open",
+      "deadline": "2026-11-17",
+      "amount": "6 grants totalling US$13,000 (2 × US$4,500; 4 × US$1,000)",
+      "description": "Twice-yearly unrestricted cash grants for artists working in any media, awarded by The Hopper Prize. The Fall 2026 round awards six grants — two of US$4,500 and four of US$1,000 — with 30 additional artists shortlisted for exposure via the Journal and Instagram. Open to artists worldwide (past recipients include South African artist Lebohang Kganye); submissions are reviewed anonymously by guest jurors. A US$40 submission fee applies. Winners announced 26 February 2027.",
+      "eligibility": "All artists aged 18 and older working in any media, anywhere in the world (South African and African artists eligible)",
+      "focus_areas": [
+        "Unrestricted artist grants",
+        "All media",
+        "International"
+      ],
+      "disciplines": [
+        "visual-art",
+        "new-media-digital",
+        "interdisciplinary"
+      ],
+      "purpose": [
+        "award",
+        "production"
+      ],
+      "eligibility_type": [
+        "individual"
+      ],
+      "org_focus": false,
+      "tags": [
+        "experimental",
+        "photography",
+        "international-exchange"
+      ],
+      "audiences": [
+        "vansa"
+      ],
+      "region": "international",
+      "how_to_apply": "Submit up to 10 images or videos via hopperprize.org (US$40 fee) by 17 November 2026 (11:59pm PST).",
+      "url": "https://hopperprize.org/",
+      "date_added": "2026-11-02"
+    },
+    {
+      "id": "sillerman-first-book-prize-african-poets",
+      "title": "Sillerman First Book Prize for African Poets",
       "funder": "African Poetry Book Fund",
       "type": "award",
       "status": "open",
-      "deadline": "2026-11-01",
-      "amount": "US$1,500",
-      "description": "An annual prize of US$1,500 awarded by the African Poetry Book Fund (Brown University) for a group of ten poems by an African poet who has not yet published a full-length poetry collection. Named in honour of Bernardine Evaristo. Poems must be in English, though translations are accepted; self-published books, chapbooks and pamphlets do not disqualify an entrant. The 2026 submission window runs 1 October–1 November 2026.",
-      "eligibility": "African poets — born in Africa, a national or resident of an African country, or with African parents (South Africans eligible) — who have not yet had a full-length poetry book published at the time of submission. No entry fee.",
+      "deadline": "2026-12-01",
+      "amount": "US$1,000 + book publication (University of Nebraska Press)",
+      "description": "An annual prize awarded by the African Poetry Book Fund (Brown University / University of Nebraska) for a first full-length poetry manuscript by an African poet who has not yet published a poetry collection. The winner receives US$1,000 and publication through the University of Nebraska Press. Poems must be in English (translations accepted, with part of the prize going to the translator); manuscripts should be at least 50 pages and are read anonymously. No entry fee. The current cycle is open from 15 September through 1 December 2026, with the winner announced in summer 2027.",
+      "eligibility": "African writers who have not published a full-length poetry collection — anyone born in Africa, a national or resident of an African country, or with African parents (South Africans eligible). Current Brown/Nebraska faculty, students and staff and University of Nebraska Press employees are ineligible.",
       "focus_areas": [
         "Poetry / literature",
-        "Emerging African poets",
-        "English-language (translations accepted)"
+        "First-book prize",
+        "Emerging African poets"
       ],
       "disciplines": [
         "literature"
@@ -1406,49 +1447,9 @@
       "tags": [],
       "audiences": [],
       "region": "africa",
-      "how_to_apply": "Submit exactly ten poems (each no longer than 40 lines) in a single document via Submittable at africanpoetrybookfund.submittable.com by 1 November 2026. Email submissions are not accepted. Questions: apbf@brown.edu.",
-      "url": "https://africanpoetrybf.brown.edu/contest-prizes/evaristo-prize-for-african-poetry/",
-      "date_added": "2026-10-19"
-    },
-    {
-      "id": "aoca-cultural-operators-africa-2026",
-      "title": "African Open Call (AOCA) – Support for Cultural Operators in Africa",
-      "funder": "Institut français",
-      "type": "grant",
-      "status": "open",
-      "deadline": "2026-10-30",
-      "amount": "€5,000–€15,000 (up to 50% of project budget)",
-      "description": "The Institut français African Open Call (AOCA) supports creative projects, regional tours, events and exhibitions led by African cultural operators and taking place between March and December 2027. It strengthens intra-African collaboration by requiring a regional dimension — projects must bring together artists or partners from at least three African countries (or African–French co-productions). Disciplines span visual arts, digital creation, photography, music, theatre, dance and street arts. Selection favours emerging artists, new practices, eco-responsible approaches and gender equality.",
-      "eligibility": "African cultural institutions or organisations based in Africa (South Africa eligible), and members of the French cultural network abroad; projects must involve partners from multiple African countries",
-      "focus_areas": [
-        "Pan-African collaboration",
-        "Regional tours & events",
-        "Multidisciplinary creation"
-      ],
-      "disciplines": [
-        "all-disciplines"
-      ],
-      "purpose": [
-        "project",
-        "production",
-        "mobility"
-      ],
-      "eligibility_type": [
-        "organisation",
-        "collective"
-      ],
-      "org_focus": true,
-      "tags": [
-        "international-exchange",
-        "community"
-      ],
-      "audiences": [
-        "vansa"
-      ],
-      "region": "africa",
-      "how_to_apply": "Apply online via the Institut français portal at ifprog.emundus.fr by 30 October 2026. See the programme page for eligibility and required support letters.",
-      "url": "https://www.institutfrancais.com/en/programme/project-support/aoca-support-cultural-operators-africa",
-      "date_added": "2026-08-24"
+      "how_to_apply": "Submit a poetry manuscript (min. 50 pages, name omitted for anonymous reading) electronically via Submittable at africanpoetrybookfund.submittable.com by 1 December 2026. No entry fee; hard copies are not accepted.",
+      "url": "https://africanpoetrybf.brown.edu/contest-prizes/",
+      "date_added": "2026-11-02"
     }
   ]
 }
